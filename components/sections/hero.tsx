@@ -13,22 +13,36 @@ export function Hero() {
       </div>
 
       {/* Logo — absolutely positioned in section, fully unconstrained */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/pristine-logo.webp"
-        alt="Pristine Functional Health"
-        className="hidden xl:block"
+      <div
+        className="hidden xl:flex flex-col items-center justify-center text-center"
         style={{
           position: "absolute",
-          top: "38%",
-          right: 24,
-          width: "clamp(640px, 52vw, 900px)",
-          height: "auto",
+          top: "42%",
+          right: "8%",
+          width: "clamp(350px, 35vw, 500px)",
           transform: "translateY(-50%)",
           pointerEvents: "none",
           zIndex: 0,
         }}
-      />
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/pristine-logo-mark.png"
+          alt="Pristine Functional Health Logo Mark"
+          style={{ width: "100%", height: "auto" }}
+        />
+        <div className="mt-6 flex flex-col items-center gap-1">
+          <h2 className="font-serif text-[4rem] leading-none tracking-wide" style={{ color: "var(--color-forest)" }}>
+            PRISTINE
+          </h2>
+          <h3 className="font-sans text-[1.2rem] tracking-[0.35em] font-light" style={{ color: "var(--color-forest)" }}>
+            FUNCTIONAL HEALTH
+          </h3>
+          <p className="font-serif italic text-[1.5rem] mt-3 opacity-90" style={{ color: "var(--color-forest)" }}>
+            RESTORE. BALANCE. THRIVE.
+          </p>
+        </div>
+      </div>
 
       <div className="mx-auto w-full max-w-[var(--container-page)] px-6 relative z-10">
         {/* Text — constrained left so logo never overlaps */}
