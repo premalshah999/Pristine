@@ -17,9 +17,9 @@ export function Hero() {
         className="hidden xl:flex flex-col items-center justify-center text-center"
         style={{
           position: "absolute",
-          top: "42%",
+          top: "35%",
           right: "12%",
-          width: "clamp(250px, 28vw, 380px)",
+          width: "clamp(350px, 35vw, 500px)",
           transform: "translateY(-50%)",
           pointerEvents: "none",
           zIndex: 0,
