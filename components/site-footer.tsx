@@ -16,7 +16,7 @@ export function SiteFooter() {
         <div className="grid grid-cols-12 gap-y-10 gap-x-8">
           <div className="col-span-12 md:col-span-4">
             <Logo size={30} />
-            <p className="text-[0.9rem] mt-4 max-w-[34ch] leading-relaxed" style={{ color: "var(--color-ink-soft)" }}>
+            <p className="text-[0.95rem] mt-4 max-w-[34ch] leading-relaxed font-medium" style={{ color: "var(--color-ink)" }}>
               Virtual functional medicine, rooted in real clinical experience.
               Calm, science-backed, deeply human.
             </p>
@@ -101,12 +101,12 @@ export function SiteFooter() {
             style={{ borderColor: "var(--color-line)", background: "var(--color-canvas)" }}
           >
             <p
-              className="font-mono text-[0.64rem] tracking-[0.18em] uppercase mb-2"
-              style={{ color: "var(--color-sage)" }}
+              className="font-mono text-[0.7rem] tracking-[0.18em] font-semibold uppercase mb-2"
+              style={{ color: "var(--color-forest)" }}
             >
               HIPAA Compliance
             </p>
-            <p className="text-[0.82rem] leading-relaxed" style={{ color: "var(--color-ink-soft)" }}>
+            <p className="text-[0.88rem] leading-relaxed font-medium" style={{ color: "var(--color-ink)" }}>
               Pristine Functional Health is committed to protecting your health information in full
               compliance with HIPAA. All client records and communications are handled with strict
               confidentiality, stored securely, and never shared without your written consent.
@@ -117,12 +117,12 @@ export function SiteFooter() {
             style={{ borderColor: "var(--color-line)", background: "var(--color-canvas)" }}
           >
             <p
-              className="font-mono text-[0.64rem] tracking-[0.18em] uppercase mb-2"
-              style={{ color: "var(--color-sage)" }}
+              className="font-mono text-[0.7rem] tracking-[0.18em] font-semibold uppercase mb-2"
+              style={{ color: "var(--color-forest)" }}
             >
               FDA Disclaimer
             </p>
-            <p className="text-[0.82rem] leading-relaxed" style={{ color: "var(--color-ink-soft)" }}>
+            <p className="text-[0.88rem] leading-relaxed font-medium" style={{ color: "var(--color-ink)" }}>
               These statements have not been evaluated by the Food and Drug Administration.
               Content on this site is not intended to diagnose, treat, cure, or prevent any disease.
               It is for educational purposes only. Consult a qualified healthcare provider before
@@ -136,7 +136,7 @@ export function SiteFooter() {
           className="mt-8 pt-6 pb-8 border-t flex flex-col md:flex-row md:items-center md:justify-between gap-4 flex-wrap"
           style={{ borderColor: "var(--color-line)" }}
         >
-          <p className="text-[0.78rem]" style={{ color: "var(--color-ink-muted)" }}>
+          <p className="text-[0.85rem] font-medium" style={{ color: "var(--color-ink-soft)" }}>
             © {new Date().getFullYear()} Pristine Functional Health. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-5">
@@ -148,14 +148,14 @@ export function SiteFooter() {
               <Link
                 key={href}
                 href={href}
-                className="text-[0.78rem] underline underline-offset-2 transition-colors hover:text-[var(--color-forest)]"
-                style={{ color: "var(--color-ink-muted)" }}
+                className="text-[0.85rem] font-medium underline underline-offset-2 transition-colors hover:text-[var(--color-forest)]"
+                style={{ color: "var(--color-ink-soft)" }}
               >
                 {label}
               </Link>
             ))}
           </div>
-          <p className="text-[0.78rem] md:max-w-[34ch] leading-relaxed" style={{ color: "var(--color-ink-muted)" }}>
+          <p className="text-[0.85rem] md:max-w-[34ch] leading-relaxed font-medium" style={{ color: "var(--color-ink-soft)" }}>
             Functional medicine is complementary care — not a substitute for emergency medical
             services. In an emergency, call 911.
           </p>
