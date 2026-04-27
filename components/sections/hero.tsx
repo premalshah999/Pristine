@@ -15,7 +15,7 @@ export function Hero() {
       {/* Logo — absolutely positioned in section, fully unconstrained */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/pristine-logo.png"
+        src="/pristine-logo.webp"
         alt="Pristine Functional Health"
         className="hidden xl:block"
         style={{
