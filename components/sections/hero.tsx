@@ -31,17 +31,6 @@ export function Hero() {
           alt="Pristine Functional Health Logo Mark"
           style={{ width: "100%", height: "auto" }}
         />
-        <div className="mt-5 flex flex-col items-center gap-1">
-          <h2 className="font-serif text-[3.2rem] leading-none tracking-wide" style={{ color: "var(--color-forest)" }}>
-            PRISTINE
-          </h2>
-          <h3 className="font-sans text-[1rem] tracking-[0.35em] font-light" style={{ color: "var(--color-forest)" }}>
-            FUNCTIONAL HEALTH
-          </h3>
-          <p className="font-serif italic text-[1.2rem] mt-2 opacity-90" style={{ color: "var(--color-forest)" }}>
-            RESTORE. BALANCE. THRIVE.
-          </p>
-        </div>
       </div>
 
       <div className="mx-auto w-full max-w-[var(--container-page)] px-6 relative z-10">
