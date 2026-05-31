@@ -44,9 +44,10 @@ export default function ConditionsIndex() {
             </h1>
             <p className="lede mt-8 max-w-[60ch]">
               Each common concern below has a story underneath the symptoms.
-              Click any to read our full clinical approach: what's actually
-              going on, what conventional medicine misses, what care may
-              consider, and what to expect.
+              Click any to read a high-level root-cause overview: what's
+              actually going on, what standard care may miss, the broad shape
+              of support, and what to expect. Specific tests, supplements, and
+              protocols are discussed privately only when relevant.
             </p>
           </Reveal>
         </div>

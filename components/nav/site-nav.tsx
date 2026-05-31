@@ -77,7 +77,7 @@ export function SiteNav() {
               size={82}
               priority
               className="shrink-0"
-              wordmarkClassName="hidden md:inline text-[1.05rem] xl:text-[1.12rem]"
+              wordmarkClassName="hidden md:inline text-[1.32rem] xl:text-[1.48rem]"
             />
           </div>
 
@@ -331,7 +331,7 @@ function ServicesDropdown({ onClose }: { onClose: () => void }) {
           <PanelSidebar
             eyebrow="How we work"
             title={<>Five pillars of <em className="italic-serif">whole-person</em> care.</>}
-            body="Testing, root-cause analysis, nutrition, coaching, lifestyle — woven together because real healing isn't one thing."
+            body="Assessment, root-cause analysis, nutrition, coaching, and lifestyle foundations — woven together because real healing isn't one thing."
             linkHref="/services"
             linkLabel="All services"
             onClose={onClose}

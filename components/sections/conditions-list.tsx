@@ -39,8 +39,8 @@ export function ConditionsList() {
           <Reveal className="col-span-12 md:col-span-7 md:pt-2" delay={100}>
             <p className="lede max-w-[58ch]">
               Scan across clinical categories, then open any condition for the
-              full root-cause approach. The layout is built like a working
-              reference index, not a loose marketing grid.
+              high-level root-cause overview. The layout is built like a
+              working reference index, not a loose marketing grid.
             </p>
             <Link
               href="/conditions"

@@ -17,6 +17,14 @@ export interface Service {
   pricing?: string;
 }
 
+export interface PublicServiceDetails {
+  overview: string[];
+  focusAreas: { title: string; description: string }[];
+  why: string[];
+  process: string[];
+  note?: string;
+}
+
 export const services: Service[] = [
   {
     slug: "advanced-functional-testing",
@@ -311,6 +319,237 @@ export const services: Service[] = [
     ],
   },
 ];
+
+const publicServiceDetails: Record<string, PublicServiceDetails> = {
+  "advanced-functional-testing": {
+    overview: [
+      "Testing is used only when it answers a real question. We start with your history, symptoms, and any recent labs before deciding whether additional information is worth pursuing.",
+      "The goal is not to run the biggest panel. The goal is to understand patterns clearly enough to choose the next best step.",
+      "When testing is appropriate, recommendations are explained in context so you understand why it matters and how it may shape your plan.",
+    ],
+    focusAreas: [
+      {
+        title: "Existing lab review",
+        description:
+          "We review recent results through a functional wellness lens and look for meaningful patterns that may have been missed.",
+      },
+      {
+        title: "Targeted next steps",
+        description:
+          "Additional testing may be discussed when it would clarify nutrition, metabolism, hormones, digestion, inflammation, or fatigue patterns.",
+      },
+      {
+        title: "Pattern interpretation",
+        description:
+          "Results are interpreted alongside your symptoms, timeline, lifestyle, goals, and current medical care.",
+      },
+      {
+        title: "Avoiding excess",
+        description:
+          "We avoid unnecessary testing and focus on the smallest useful set of information for your situation.",
+      },
+    ],
+    why: [
+      "You get a clearer picture without being handed a generic checklist.",
+      "Testing decisions stay connected to your goals, safety, and budget.",
+      "Numbers become context for action instead of another source of confusion.",
+    ],
+    process: [
+      "We begin with your story, symptoms, goals, and any recent records you already have.",
+      "If more information would be useful, we discuss options and why they may or may not fit.",
+      "Results are reviewed before your follow-up so the visit can focus on practical decisions.",
+      "Your plan is adjusted based on the full picture, not on any single result.",
+    ],
+    note:
+      "Testing recommendations are individualized. Specific tests, panels, timing, vendors, and costs are discussed privately only when they are relevant to your case.",
+  },
+  "root-cause-analysis": {
+    overview: [
+      "Root-cause work begins by turning scattered symptoms, history, habits, stressors, and available labs into a coherent map.",
+      "Two people can carry the same diagnosis and need completely different priorities. This service is where we identify what should come first.",
+      "The outcome is a practical working hypothesis, not a one-size-fits-all protocol.",
+    ],
+    focusAreas: [
+      {
+        title: "Deep health timeline",
+        description:
+          "We look at when symptoms began, what changed around that time, and what patterns have repeated since.",
+      },
+      {
+        title: "Systems mapping",
+        description:
+          "We connect digestion, metabolism, hormones, immune stress, sleep, nutrition, movement, and environment where relevant.",
+      },
+      {
+        title: "Priority setting",
+        description:
+          "We separate what is urgent, what is downstream, and what can wait so the plan feels usable.",
+      },
+      {
+        title: "Clear explanation",
+        description:
+          "You leave with plain-language context you can understand and share with your broader care team.",
+      },
+    ],
+    why: [
+      "The story starts to make sense as a whole.",
+      "Your plan becomes more focused because it has a clear order of operations.",
+      "You understand the why behind each next step.",
+    ],
+    process: [
+      "We begin with a detailed intake and timeline.",
+      "Available records and patterns are reviewed together.",
+      "We identify the most likely drivers and the safest starting priorities.",
+      "You receive a clear plan that can evolve as your body responds.",
+    ],
+  },
+  "nutrition-counseling": {
+    overview: [
+      "Nutrition support is built around your physiology, preferences, culture, schedule, and real life.",
+      "We do not hand out generic food rules. We build a flexible framework and adjust it as your body responds.",
+      "Supplement guidance may be discussed privately when appropriate, but the public page stays focused on the process rather than a shopping list.",
+    ],
+    focusAreas: [
+      {
+        title: "Personal food framework",
+        description:
+          "We shape meals around energy, blood sugar, digestion, hormones, weight goals, and sustainability.",
+      },
+      {
+        title: "Culture and schedule",
+        description:
+          "Your plan is designed around the foods, family routines, travel, restaurants, and constraints you actually live with.",
+      },
+      {
+        title: "Therapeutic flexibility",
+        description:
+          "Temporary food strategies may be considered when useful, always with a plan to keep nutrition practical.",
+      },
+      {
+        title: "Ongoing refinement",
+        description:
+          "We adjust based on symptoms, preferences, progress, and any relevant clinical context.",
+      },
+    ],
+    why: [
+      "Food becomes a tool instead of a source of stress.",
+      "You learn principles you can use anywhere.",
+      "The plan can adapt instead of collapsing when life gets complicated.",
+    ],
+    process: [
+      "We review your symptoms, routines, preferences, and current food patterns.",
+      "We build a nutrition framework that fits your goals and daily life.",
+      "You practice the plan, then we refine based on what your body shows us.",
+      "Any add-ons are considered privately and only when they make sense for you.",
+    ],
+  },
+  "personal-coaching": {
+    overview: [
+      "Coaching helps translate a plan into daily decisions, especially when life is busy, stressful, or unpredictable.",
+      "The same practitioner who understands your case helps you troubleshoot what is working, what is not, and what needs to change.",
+      "The work is collaborative and practical rather than motivational noise.",
+    ],
+    focusAreas: [
+      {
+        title: "Implementation support",
+        description:
+          "We help turn recommendations into realistic weekly actions.",
+      },
+      {
+        title: "Troubleshooting",
+        description:
+          "When symptoms shift or the plan feels hard, we adjust rather than blaming willpower.",
+      },
+      {
+        title: "Accountability with context",
+        description:
+          "Support is grounded in your actual case, history, goals, and capacity.",
+      },
+      {
+        title: "Private follow-through",
+        description:
+          "Communication and check-ins are handled through appropriate patient channels.",
+      },
+    ],
+    why: [
+      "Knowing what to do becomes easier to actually do.",
+      "Setbacks become useful information.",
+      "The plan can change with your life instead of breaking under pressure.",
+    ],
+    process: [
+      "We choose a support cadence that fits your complexity and goals.",
+      "Sessions focus on the next practical decisions.",
+      "Recommendations are refined as your body and schedule respond.",
+      "Communication stays organized through appropriate care channels.",
+    ],
+  },
+  "lifestyle-optimization": {
+    overview: [
+      "Lifestyle optimization focuses on the foundations that shape physiology every day: sleep, rhythm, movement, stress, recovery, and environment.",
+      "The work is not vague self-care. It is a prioritized plan built around what is most likely to move the needle for you.",
+      "We avoid overwhelming you with everything at once and start where the return is highest.",
+    ],
+    focusAreas: [
+      {
+        title: "Sleep and rhythm",
+        description:
+          "We look at daily timing, routines, rest quality, and the habits that shape energy.",
+      },
+      {
+        title: "Movement and recovery",
+        description:
+          "Movement is matched to your capacity, goals, symptoms, and recovery needs.",
+      },
+      {
+        title: "Stress physiology",
+        description:
+          "We build tools that support regulation without pretending stress is solved by willpower.",
+      },
+      {
+        title: "Environment and routines",
+        description:
+          "When relevant, we look at the everyday exposures and routines that may affect wellness.",
+      },
+    ],
+    why: [
+      "The foundations make every other part of the plan work better.",
+      "You get practical changes instead of a long list of ideals.",
+      "Health becomes supported by your daily rhythm, not dependent on perfection.",
+    ],
+    process: [
+      "We review your current routines and highest-friction areas.",
+      "We choose a small number of changes with the strongest likely impact.",
+      "Progress is tracked through symptoms, energy, sleep, and daily usability.",
+      "The plan is refined as your capacity improves.",
+    ],
+  },
+};
+
+export function getPublicServiceDetails(slug: string): PublicServiceDetails {
+  return publicServiceDetails[slug] ?? {
+    overview: [
+      "This service is personalized to your history, goals, current care, and readiness for change.",
+      "Public examples are intentionally broad. Specific recommendations are discussed only after intake.",
+    ],
+    focusAreas: [
+      {
+        title: "Personalized assessment",
+        description: "We begin with your story and the patterns that matter most.",
+      },
+      {
+        title: "Clear next steps",
+        description: "You leave with a practical direction rather than a generic checklist.",
+      },
+    ],
+    why: ["The work becomes more focused, safer, and easier to use."],
+    process: [
+      "We listen first.",
+      "We identify priorities.",
+      "We build a plan that fits.",
+      "We adjust as your body responds.",
+    ],
+  };
+}
 
 export function getService(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug);

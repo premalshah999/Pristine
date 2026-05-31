@@ -25,9 +25,9 @@ const testingCards = [
       "Not everyone needs extensive testing. Based on your health history, symptoms, and goals, we may recommend additional wellness-focused testing when appropriate. Our goal is to support informed decisions while avoiding unnecessary testing.",
   },
   {
-    title: "Food Sensitivity Testing",
+    title: "Digestive & Food-Response Patterns",
     copy:
-      "Food sensitivities may contribute to digestive discomfort, fatigue, skin concerns, headaches, and other chronic symptoms. When appropriate, we may recommend testing to identify potential dietary triggers and guide a personalized nutrition plan.",
+      "Food responses can be part of a bigger digestive, immune, stress, or lifestyle picture. When appropriate, we may discuss whether additional evaluation could help guide a more personalized nutrition plan.",
   },
 ];
 
@@ -123,8 +123,9 @@ export function TestingOverview() {
                 educational and do not diagnose, treat, cure, or prevent
                 disease. Testing recommendations are intended to support
                 wellness and should not replace medical evaluation or treatment
-                from a licensed healthcare provider. Any tests listed here are
-                examples and may or may not be appropriate for you.
+                from a licensed healthcare provider. Specific testing options
+                are discussed privately only when they are relevant to your
+                case.
               </p>
             </Reveal>
           </div>

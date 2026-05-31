@@ -2,7 +2,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
-import { services, getService, getServiceSlugs } from "@/lib/services";
+import {
+  services,
+  getPublicServiceDetails,
+  getService,
+  getServiceSlugs,
+} from "@/lib/services";
 import { CtaBand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
@@ -41,6 +46,7 @@ export default async function ServicePage({ params }: PageProps) {
   const service = getService(slug);
   if (!service) notFound();
 
+  const publicDetails = getPublicServiceDetails(service.slug);
   const i = services.indexOf(service);
   const prev = i > 0 ? services[i - 1] : services[services.length - 1];
   const next = i < services.length - 1 ? services[i + 1] : services[0];
@@ -114,7 +120,7 @@ export default async function ServicePage({ params }: PageProps) {
               className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-5 max-w-[980px] border-y py-6"
               style={{ borderColor: "var(--color-line)" }}
             >
-              {service.included.slice(0, 3).map((item, idx) => (
+              {publicDetails.focusAreas.slice(0, 3).map((item, idx) => (
                 <div key={item.title}>
                   <p className="font-mono text-[0.72rem] text-[var(--color-ink-muted)] mb-2">
                     {String(idx + 1).padStart(2, "0")}
@@ -158,7 +164,7 @@ export default async function ServicePage({ params }: PageProps) {
               </h2>
             </Reveal>
             <div className="col-span-12 md:col-span-8 space-y-5">
-              {service.whatItIs.map((p, idx) => (
+              {publicDetails.overview.map((p, idx) => (
                 <Reveal key={idx} delay={idx * 80}>
                   <p
                     className={
@@ -186,19 +192,22 @@ export default async function ServicePage({ params }: PageProps) {
           <Reveal>
             <p className="eyebrow mb-4">— What may be included</p>
             <h2 className="title text-[2rem] md:text-[2.4rem] leading-[1.1] max-w-[22ch]">
-              Examples of the work, <em className="italic-serif">spelled out.</em>
+              The broad shape of the work, <em className="italic-serif">without the private playbook.</em>
             </h2>
             <p className="mt-5 max-w-[70ch] text-[0.92rem] leading-relaxed text-[var(--color-ink-soft)]">
               Final recommendations are personalized. Some clients need deeper
-              testing; others need a simpler plan, different pacing, or
-              coordination with their licensed medical provider.
+              assessment; others need a simpler plan, different pacing, or
+              coordination with their licensed medical provider. Specific
+              tests, supplement choices, timing, brands, doses, and protocol
+              details are discussed privately only when they are relevant to
+              your case.
             </p>
           </Reveal>
           <ul
             className="mt-12 divide-y border-y"
             style={{ borderColor: "var(--color-line)" }}
           >
-            {service.included.map((item, idx) => (
+            {publicDetails.focusAreas.map((item, idx) => (
               <Reveal key={idx} delay={idx * 60}>
                 <li
                   className="py-7 md:py-8 grid grid-cols-12 gap-y-3 gap-x-0 md:gap-x-8"
@@ -239,7 +248,7 @@ export default async function ServicePage({ params }: PageProps) {
               className="col-span-12 md:col-span-8 divide-y border-y"
               style={{ borderColor: "var(--color-line)" }}
             >
-              {service.why.map((w, idx) => (
+              {publicDetails.why.map((w, idx) => (
                 <Reveal key={idx} delay={idx * 80}>
                   <li
                     className="py-7 md:py-8 flex items-start gap-4"
@@ -274,7 +283,7 @@ export default async function ServicePage({ params }: PageProps) {
             className="mt-12 divide-y border-y"
             style={{ borderColor: "var(--color-line)" }}
           >
-            {service.process.map((step, idx) => (
+            {publicDetails.process.map((step, idx) => (
               <Reveal key={idx} delay={idx * 60}>
                 <li
                   className="py-6 md:py-7 grid grid-cols-12 gap-4 items-start"
@@ -290,12 +299,12 @@ export default async function ServicePage({ params }: PageProps) {
             ))}
           </ol>
 
-          {service.pricing && (
+          {publicDetails.note && (
             <Reveal className="mt-12 max-w-[820px]">
               <div className="border-l pl-6 md:pl-8" style={{ borderColor: "var(--color-line-strong)" }}>
-                <p className="eyebrow mb-3">A note on pricing</p>
+                <p className="eyebrow mb-3">A note on personalization</p>
                 <p className="text-[var(--color-ink-soft)] leading-relaxed">
-                  {service.pricing}
+                  {publicDetails.note}
                 </p>
               </div>
             </Reveal>
