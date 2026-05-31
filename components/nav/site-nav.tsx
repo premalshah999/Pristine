@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { ChevronDown, Moon, Sun, Menu, X, ArrowUpRight, Calendar } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
@@ -10,6 +11,7 @@ import { services } from "@/lib/services";
 import { Logo } from "@/components/ui/logo";
 
 type DropdownKey = "conditions" | "services" | "about" | null;
+type ThemeMode = "light" | "dark";
 
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
@@ -64,15 +66,20 @@ export function SiteNav() {
         <div
           className={cn(
             "flex items-center justify-between gap-4 transition-[height] duration-300",
-            scrolled ? "h-[84px]" : "h-[96px]"
+            scrolled ? "h-[76px] md:h-[84px]" : "h-[86px] md:h-[96px]"
           )}
         >
-          <Logo
-            size={82}
-            priority
-            className="shrink-0"
-            wordmarkClassName="hidden md:inline text-[1.05rem] xl:text-[1.12rem]"
-          />
+          <div className="md:hidden">
+            <Logo size={74} priority showWordmark={false} className="shrink-0" />
+          </div>
+          <div className="hidden md:block">
+            <Logo
+              size={82}
+              priority
+              className="shrink-0"
+              wordmarkClassName="hidden md:inline text-[1.05rem] xl:text-[1.12rem]"
+            />
+          </div>
 
           {/* Desktop nav */}
           <nav className="hidden xl:flex items-center gap-0.5" aria-label="Primary">
@@ -132,7 +139,9 @@ export function SiteNav() {
               type="button"
               className="xl:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border"
               style={{ borderColor: "var(--color-line-strong)" }}
-              aria-label="Open menu"
+              aria-controls="mobile-menu"
+              aria-expanded={mobileOpen}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
               onClick={() => setMobileOpen((s) => !s)}
             >
               {mobileOpen ? <X size={17} /> : <Menu size={17} />}
@@ -153,7 +162,16 @@ export function SiteNav() {
         <AboutDropdown onClose={() => setOpen(null)} />
       )}
 
-      {mobileOpen && <MobileMenu scrolled={scrolled} onClose={() => setMobileOpen(false)} />}
+      {mobileOpen && (
+        createPortal(
+          <MobileMenu
+            theme={theme}
+            onThemeToggle={toggle}
+            onClose={() => setMobileOpen(false)}
+          />,
+          document.body
+        )
+      )}
     </header>
   );
 }
@@ -417,52 +435,100 @@ function AboutDropdown({ onClose }: { onClose: () => void }) {
 
 /* ─── Mobile menu ────────────────────────────────────────────── */
 
-function MobileMenu({ scrolled, onClose }: { scrolled: boolean; onClose: () => void }) {
+function MobileMenu({
+  theme,
+  onThemeToggle,
+  onClose,
+}: {
+  theme: ThemeMode;
+  onThemeToggle: () => void;
+  onClose: () => void;
+}) {
+  const primaryLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/blog", label: "Blog" },
+    { href: "/new-patient-special", label: "New patient special" },
+    { href: "/shop", label: "Shop" },
+    { href: "/contact", label: "Contact" },
+  ];
+
   return (
     <div
-      className={cn(
-        "xl:hidden fixed inset-x-0 bottom-0 overflow-y-auto",
-        scrolled ? "top-[84px]" : "top-[96px]"
-      )}
-      style={{ background: "var(--color-bone)", zIndex: 199 }}
+      id="mobile-menu"
+      className="fixed inset-0 z-[1000] overflow-y-auto overscroll-contain xl:hidden"
+      style={{ background: "var(--color-bone)", zIndex: 1000 }}
       role="dialog"
       aria-modal="true"
+      aria-label="Mobile navigation"
     >
-      <div className="px-6 py-8 space-y-8">
-        <MobileSection title="Conditions" link="/conditions" onClose={onClose}>
-          {(Object.entries(conditionsByCategory) as [string, (typeof conditionsByCategory)[keyof typeof conditionsByCategory]][])
-            .filter(([, list]) => list.length)
-            .map(([cat, list]) => (
-              <div key={cat} className="mb-5">
-                <p className="font-mono text-[0.68rem] tracking-[0.2em] uppercase mb-2" style={{ color: "var(--color-sage)" }}>
-                  {cat}
-                </p>
-                <ul className="space-y-2">
-                  {list.map((c) => (
-                    <li key={c.slug}>
-                      <Link
-                        href={`/conditions/${c.slug}`}
-                        onClick={onClose}
-                        className="text-[0.95rem]"
-                        style={{ color: "var(--color-ink)" }}
-                      >
-                        {c.shortName ?? c.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-        </MobileSection>
+      <div className="sticky top-0 z-10 flex h-[86px] items-center justify-between border-b px-3 backdrop-blur-md" style={{ borderColor: "var(--color-line)", background: "color-mix(in srgb, var(--color-bone) 94%, transparent)" }}>
+        <Logo size={74} priority showWordmark={false} onClick={onClose} />
+        <button
+          type="button"
+          aria-label="Close menu"
+          onClick={onClose}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border"
+          style={{
+            borderColor: "var(--color-line-strong)",
+            color: "var(--color-ink)",
+          }}
+        >
+          <X size={18} />
+        </button>
+      </div>
 
-        <MobileSection title="Services" link="/services" onClose={onClose}>
-          <ul className="space-y-2.5">
+      <div className="space-y-5 px-5 py-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))]">
+        <div className="grid grid-cols-2 gap-px overflow-hidden border bg-[var(--color-line)]" style={{ borderColor: "var(--color-line)" }}>
+          {primaryLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={onClose}
+              className="min-h-12 bg-[var(--color-paper)] px-4 py-3 text-[0.95rem] font-medium transition-colors hover:bg-[var(--color-canvas)]"
+              style={{ color: "var(--color-ink)" }}
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
+
+        <MobileDisclosure title="Conditions" href="/conditions" onClose={onClose}>
+          <div className="grid gap-5">
+            {(Object.entries(conditionsByCategory) as [string, (typeof conditionsByCategory)[keyof typeof conditionsByCategory]][])
+              .filter(([, list]) => list.length)
+              .map(([cat, list]) => (
+                <div key={cat}>
+                  <p className="font-mono text-[0.68rem] uppercase mb-2" style={{ color: "var(--color-sage)" }}>
+                    {cat}
+                  </p>
+                  <ul className="grid gap-px overflow-hidden border bg-[var(--color-line)]" style={{ borderColor: "var(--color-line)" }}>
+                    {list.map((c) => (
+                      <li key={c.slug}>
+                        <Link
+                          href={`/conditions/${c.slug}`}
+                          onClick={onClose}
+                          className="block bg-[var(--color-paper)] px-4 py-3 text-[0.95rem] transition-colors hover:bg-[var(--color-canvas)]"
+                          style={{ color: "var(--color-ink)" }}
+                        >
+                          {c.shortName ?? c.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+          </div>
+        </MobileDisclosure>
+
+        <MobileDisclosure title="Services" href="/services" onClose={onClose}>
+          <ul className="grid gap-px overflow-hidden border bg-[var(--color-line)]" style={{ borderColor: "var(--color-line)" }}>
             {services.map((s) => (
               <li key={s.slug}>
                 <Link
                   href={`/services/${s.slug}`}
                   onClick={onClose}
-                  className="flex items-baseline gap-2 text-[0.95rem]"
+                  className="flex min-h-12 items-center gap-3 bg-[var(--color-paper)] px-4 py-3 text-[0.95rem] transition-colors hover:bg-[var(--color-canvas)]"
                   style={{ color: "var(--color-ink)" }}
                 >
                   <span className="font-mono text-[0.7rem]" style={{ color: "var(--color-sage)" }}>
@@ -473,26 +539,17 @@ function MobileMenu({ scrolled, onClose }: { scrolled: boolean; onClose: () => v
               </li>
             ))}
           </ul>
-        </MobileSection>
+        </MobileDisclosure>
 
-        <div className="space-y-3 pt-5 border-t" style={{ borderColor: "var(--color-line)" }}>
-          {[
-            { href: "/about", label: "About" },
-            { href: "/new-patient-special", label: "New Patient Special" },
-            { href: "/shop", label: "Shop" },
-            { href: "/contact", label: "Contact" },
-          ].map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={onClose}
-              className="block font-serif text-[1.55rem]"
-              style={{ color: "var(--color-ink)" }}
-            >
-              {label}
-            </Link>
-          ))}
-        </div>
+        <button
+          type="button"
+          onClick={onThemeToggle}
+          className="flex min-h-12 w-full items-center justify-between border bg-[var(--color-paper)] px-4 py-3 text-left text-[0.95rem] font-medium"
+          style={{ borderColor: "var(--color-line)", color: "var(--color-ink)" }}
+        >
+          <span>{theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}</span>
+          {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+        </button>
 
         <Link
           href="/book-appointment"
@@ -508,22 +565,44 @@ function MobileMenu({ scrolled, onClose }: { scrolled: boolean; onClose: () => v
   );
 }
 
-function MobileSection({
-  title, link, onClose, children,
+function MobileDisclosure({
+  title, href, onClose, children, defaultOpen = false,
 }: {
-  title: string; link: string; onClose: () => void; children: React.ReactNode;
+  title: string;
+  href: string;
+  onClose: () => void;
+  children: React.ReactNode;
+  defaultOpen?: boolean;
 }) {
   return (
-    <div>
-      <Link
-        href={link}
-        onClick={onClose}
-        className="block font-serif text-[1.55rem] mb-4 leading-tight"
+    <details
+      className="group border bg-[var(--color-paper)]"
+      style={{ borderColor: "var(--color-line)" }}
+      open={defaultOpen}
+    >
+      <summary
+        className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 font-serif text-[1.45rem] leading-tight"
         style={{ color: "var(--color-ink)" }}
       >
-        {title}
-      </Link>
-      {children}
-    </div>
+        <span>{title}</span>
+        <ChevronDown
+          size={18}
+          className="shrink-0 transition-transform group-open:rotate-180"
+          style={{ color: "var(--color-ink-muted)" }}
+        />
+      </summary>
+      <div className="border-t p-4" style={{ borderColor: "var(--color-line)" }}>
+        <Link
+          href={href}
+          onClick={onClose}
+          className="mb-4 inline-flex items-center gap-1.5 text-[0.88rem] font-medium underline underline-offset-4"
+          style={{ color: "var(--color-forest)" }}
+        >
+          View all {title.toLowerCase()}
+          <ArrowUpRight size={13} />
+        </Link>
+        {children}
+      </div>
+    </details>
   );
 }

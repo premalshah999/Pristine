@@ -5,7 +5,16 @@ import { Reveal } from "@/components/reveal";
 import { services, getService, getServiceSlugs } from "@/lib/services";
 import { CtaBand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
-import { absoluteUrl, pageMetadata, siteName } from "@/lib/seo";
+import {
+  absoluteUrl,
+  adultWellnessAudienceJsonLd,
+  pageMetadata,
+  serviceAreaSchema,
+  serviceKeywords,
+  siteName,
+  siteUrl,
+  virtualServiceChannelJsonLd,
+} from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -20,10 +29,10 @@ export async function generateMetadata({ params }: PageProps) {
   const s = getService(slug);
   if (!s) return {};
   return pageMetadata({
-    title: s.name,
-    description: s.summary,
+    title: `${s.name} | Online functional health service`,
+    description: `Online ${s.name.toLowerCase()} support through virtual functional health consultations with ${siteName}.`,
     path: `/services/${s.slug}`,
-    keywords: [s.name, "functional health service", "root cause wellness"],
+    keywords: serviceKeywords(s.name),
   });
 }
 
@@ -40,17 +49,17 @@ export default async function ServicePage({ params }: PageProps) {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "@id": pageUrl,
+      "@id": `${pageUrl}#service`,
       name: service.name,
+      alternateName: `${service.name} online functional health service`,
       description: service.summary,
       url: pageUrl,
-      provider: {
-        "@type": "Organization",
-        name: siteName,
-        url: absoluteUrl("/"),
-      },
-      areaServed: "United States",
-      serviceType: service.name,
+      provider: { "@id": `${siteUrl}/#organization` },
+      areaServed: serviceAreaSchema,
+      audience: adultWellnessAudienceJsonLd,
+      availableChannel: virtualServiceChannelJsonLd,
+      serviceType: ["Online functional health consultation", service.name],
+      category: "Functional health and functional nutrition",
     },
     {
       "@context": "https://schema.org",
@@ -95,6 +104,12 @@ export default async function ServicePage({ params }: PageProps) {
             </div>
             <h1 className="display-xl max-w-[18ch]">{service.hero.title}</h1>
             <p className="lede mt-7 max-w-[60ch]">{service.hero.subtitle}</p>
+            <p className="mt-5 max-w-[72ch] text-[0.88rem] leading-relaxed text-[var(--color-ink-muted)]">
+              Service details describe tools and support we may use when they
+              fit your history, goals, labs, safety needs, and budget. They are
+              not a promise that every test, supplement, protocol, or resource
+              is recommended for every person.
+            </p>
             <div
               className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-5 max-w-[980px] border-y py-6"
               style={{ borderColor: "var(--color-line)" }}
@@ -119,7 +134,7 @@ export default async function ServicePage({ params }: PageProps) {
                 <ArrowRight size={16} />
               </Link>
               <a href="#what" className="btn btn-ghost">
-                What's included
+                What may be included
               </a>
             </div>
           </Reveal>
@@ -169,10 +184,15 @@ export default async function ServicePage({ params }: PageProps) {
       >
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
           <Reveal>
-            <p className="eyebrow mb-4">— What's included</p>
+            <p className="eyebrow mb-4">— What may be included</p>
             <h2 className="title text-[2rem] md:text-[2.4rem] leading-[1.1] max-w-[22ch]">
-              Everything in this service, <em className="italic-serif">spelled out.</em>
+              Examples of the work, <em className="italic-serif">spelled out.</em>
             </h2>
+            <p className="mt-5 max-w-[70ch] text-[0.92rem] leading-relaxed text-[var(--color-ink-soft)]">
+              Final recommendations are personalized. Some clients need deeper
+              testing; others need a simpler plan, different pacing, or
+              coordination with their licensed medical provider.
+            </p>
           </Reveal>
           <ul
             className="mt-12 divide-y border-y"

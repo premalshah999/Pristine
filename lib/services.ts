@@ -24,7 +24,7 @@ export const services: Service[] = [
     name: "Advanced Functional Testing",
     tagline: "The labs your conventional doctor never ran.",
     summary:
-      "Conventional medicine uses about 20 lab markers in primary care. We use upwards of 100 — testing not just whether you have a disease, but whether your physiology is functioning optimally.",
+      "Conventional medicine often uses a narrow lab set in primary care. When appropriate, we review a broader picture — not just whether you have a disease, but how your physiology is functioning.",
     hero: {
       eyebrow: "Service · 01",
       title: "Advanced functional testing",
@@ -34,7 +34,7 @@ export const services: Service[] = [
     whatItIs: [
       "Standard lab work is built around catching disease — not measuring function. A 'normal' TSH may be off by enough to make you exhausted. A fasting glucose can look fine while your insulin has been elevated for a decade. A B12 may be in range while you're functionally deficient.",
       "Functional testing measures physiology with greater resolution and better reference ranges. We're not looking for 'is this person sick?' — we're looking for 'is this system working at the level this person needs to thrive?'",
-      "We use clinical-grade testing through accredited labs (LabCorp, Quest, Genova, Vibrant America, Real Time Laboratories, DUTCH, Diagnostic Solutions GI-MAP, Cyrex). All testing is interpreted within a comprehensive picture — not in isolation.",
+      "When appropriate, we may recommend clinical-grade testing through accredited labs (LabCorp, Quest, Genova, Vibrant America, Real Time Laboratories, DUTCH, Diagnostic Solutions GI-MAP, Cyrex). All testing is interpreted within a comprehensive picture — not in isolation.",
     ],
     included: [
       {
@@ -70,17 +70,17 @@ export const services: Service[] = [
     ],
     why: [
       "You stop guessing. You start knowing.",
-      "Decisions about supplementation, diet, and lifestyle become precise instead of generic.",
-      "Re-testing at 8–12 weeks confirms the protocol is working — and identifies what to adjust.",
+      "Decisions about supplementation, diet, and lifestyle can become more precise instead of generic.",
+      "When appropriate, re-testing at 8–12 weeks can show whether the plan is working — and identify what to adjust.",
     ],
     process: [
       "Megha selects testing based on your initial intake and presenting symptoms — never a one-size-fits-all panel.",
-      "Most testing is at-home (blood draw, urine collection, stool kit). Some uses a local LabCorp/Quest draw site.",
+      "Many tests are at-home (blood draw, urine collection, stool kit). Some use a local LabCorp/Quest draw site.",
       "Results return in 7–21 days depending on the panel.",
       "Megha reviews and synthesizes results before your follow-up, so the conversation focuses on action — not numbers.",
     ],
     pricing:
-      "Testing is billed at lab cost. Most patients invest $500–$1,800 in initial testing depending on case complexity. We choose the smallest panel that will answer the questions; we never order tests for the sake of ordering.",
+      "Testing is billed at lab cost when recommended. Initial testing can range from roughly $500–$1,800 depending on case complexity, but not everyone needs extensive testing. We choose the smallest panel that will answer the questions; we never order tests for the sake of ordering.",
   },
   {
     slug: "root-cause-analysis",
@@ -98,7 +98,7 @@ export const services: Service[] = [
     whatItIs: [
       "Most chronic illness is a downstream symptom of upstream causes that have been accumulating for years — sometimes decades. A migraine in your 40s may begin with a head injury at 14, antibiotics at 22, mold exposure at 31, and a thyroid shift at 38.",
       "Root-cause analysis is the process of building a coherent timeline: when did things change? what was happening then? what tests reveal? what patterns connect the symptoms?",
-      "It is also where the practice of functional medicine becomes truly individualized. Two patients with the same diagnosis often have different root causes — and therefore different protocols.",
+      "It is also where the practice of functional medicine becomes truly individualized. Two patients with the same diagnosis often have different root causes — and therefore different care priorities.",
     ],
     included: [
       {
@@ -145,7 +145,7 @@ export const services: Service[] = [
     name: "Nutrition Counseling",
     tagline: "No food rules. No moralizing. Just biochemistry that fits your life.",
     summary:
-      "Most nutrition advice fails because it ignores who you are. We build food protocols around your labs, your culture, your schedule, and what you actually like.",
+      "Most nutrition advice fails because it ignores who you are. We build nutrition plans around your labs when available, your culture, your schedule, and what you actually like.",
     hero: {
       eyebrow: "Service · 03",
       title: "Nutrition counseling",
@@ -161,7 +161,7 @@ export const services: Service[] = [
       {
         title: "Personalized food framework",
         description:
-          "Based on your testing: macronutrient ratios, food categories to add, food categories to time around your physiology, and any temporary therapeutic eliminations.",
+          "Based on your history and testing when appropriate: macronutrient ratios, food categories to add, food categories to time around your physiology, and any temporary therapeutic eliminations.",
       },
       {
         title: "Cultural integration",
@@ -174,24 +174,24 @@ export const services: Service[] = [
           "Grocery guidance, batch-cooking strategies, restaurant survival, travel protocols, family-friendly approaches that work with picky eaters or partners.",
       },
       {
-        title: "Therapeutic protocols",
+        title: "Therapeutic nutrition frameworks",
         description:
           "AIP, low-FODMAP, low-histamine, anti-inflammatory, blood-sugar-stabilizing, ketogenic — only when warranted, always time-limited, with a clear plan for reintroduction.",
       },
       {
         title: "Supplement strategy",
         description:
-          "Targeted, evidence-based supplementation that fills the gaps your food can't — using only third-party-tested professional brands. We don't sell supplements; we recommend them.",
+          "Supplement guidance may be considered when food intake, symptoms, medications, labs, and safety history support it — using third-party-tested professional brands when appropriate.",
       },
     ],
     why: [
       "Food becomes medicine, not stress.",
       "You learn to eat in a way you can actually sustain — not for a 6-week reset, but for life.",
-      "Supplements are precise instead of speculative.",
+      "When supplements fit, they are selected thoughtfully instead of speculatively.",
     ],
     process: [
       "Initial 60-minute nutrition appointment after your lab review",
-      "Written nutrition framework and supplement protocol delivered to your portal",
+      "Written nutrition framework and supplement guidance when appropriate delivered to your portal",
       "Bi-weekly check-ins to refine and troubleshoot",
       "Re-evaluation at 8–12 weeks based on lab follow-up",
     ],
@@ -210,8 +210,8 @@ export const services: Service[] = [
         "Most patients don't fail because they don't know what to do. They fail because real life — work, kids, travel, stress, relationships — gets in the way. Coaching is how we keep going.",
     },
     whatItIs: [
-      "Coaching is not therapy and it is not 'accountability.' It's a working relationship with someone who knows your protocol, your labs, your story, and your life — and who is in your corner when the wheels come off.",
-      "Megha does her own coaching — there is no junior coach you get handed off to. The same clinician who designed your protocol is the one who walks it with you.",
+      "Coaching is not therapy and it is not 'accountability.' It's a working relationship with someone who knows your plan, your labs when available, your story, and your life — and who is in your corner when the wheels come off.",
+      "Megha does her own coaching — there is no junior coach you get handed off to. The same clinician who designed your plan is the one who walks it with you.",
       "We meet at a cadence that matches what you need: weekly during the early phase, biweekly or monthly once you've found your stride.",
     ],
     included: [
@@ -244,7 +244,7 @@ export const services: Service[] = [
     process: [
       "Coaching cadence is set based on your case complexity and goals",
       "Sessions held virtually via secure video",
-      "Notes and updated protocols are sent after each session",
+      "Notes and updated recommendations are sent after each session",
       "All communication centralized in your patient portal",
     ],
   },
@@ -264,7 +264,7 @@ export const services: Service[] = [
     whatItIs: [
       "Sleep architecture, circadian rhythm, movement patterns, stress regulation, sun exposure, social connection, and environmental quality (air, water, EMF, indoor air) all shape the body more than most patients realize.",
       "These factors are usually treated as 'self-care' rather than medicine. In functional medicine, they are central — often more impactful than the most carefully chosen supplement.",
-      "Our work here is precise and prescriptive: not 'try to sleep more,' but a protocol you can run, with the why behind it.",
+      "Our work here is precise and practical: not 'try to sleep more,' but a plan you can run, with the why behind it.",
     ],
     included: [
       {
@@ -305,7 +305,7 @@ export const services: Service[] = [
     ],
     process: [
       "Lifestyle audit during your intake",
-      "Prioritized recommendations integrated into your protocol",
+      "Prioritized recommendations integrated into your plan",
       "Specific habit work in coaching sessions",
       "Tracked outcomes (sleep score, HRV, glucose stability) where useful",
     ],

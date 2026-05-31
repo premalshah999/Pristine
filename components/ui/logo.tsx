@@ -8,16 +8,19 @@ export function Logo({
   priority = false,
   showWordmark = true,
   wordmarkClassName,
+  onClick,
 }: {
   className?: string;
   size?: number;
   priority?: boolean;
   showWordmark?: boolean;
   wordmarkClassName?: string;
+  onClick?: () => void;
 }) {
   return (
     <Link
       href="/"
+      onClick={onClick}
       className={cn("group inline-flex items-center gap-3", className)}
       aria-label="Pristine Functional Health home"
     >

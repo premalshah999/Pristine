@@ -4,23 +4,37 @@ import { Reveal } from "@/components/reveal";
 import { conditions, conditionsByCategory } from "@/lib/conditions";
 import { CtaBand } from "@/components/sections/cta-band";
 import { TestingOverview } from "@/components/sections/testing-overview";
-import { pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
+import { absoluteUrl, itemListJsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Conditions we treat",
+  title: "Conditions supported with online functional health consultation",
   description:
-    "Root-cause functional medicine care — explored in depth, from thyroid and gut to mental health, bone health, autoimmunity, and metabolic health.",
+    "Virtual root-cause wellness support for common thyroid, gut, hormone, metabolic, mental health, bone health, and autoimmune patterns.",
   path: "/conditions",
-  keywords: ["functional medicine conditions", "root cause health", "thyroid gut hormones metabolic health"],
+  keywords: ["online functional health consultation", "root cause health", "thyroid gut hormones metabolic health"],
 });
 
 export default function ConditionsIndex() {
   const categories = (
     Object.keys(conditionsByCategory) as Array<keyof typeof conditionsByCategory>
   ).filter((c) => conditionsByCategory[c].length);
+  const jsonLd = itemListJsonLd({
+    id: absoluteUrl("/conditions#conditions-list"),
+    name: "Conditions supported with online functional health consultation",
+    description:
+      "Condition hub for common health patterns supported by Pristine Functional Health's virtual functional health consultations.",
+    items: conditions.map((condition) => ({
+      name: condition.name,
+      url: absoluteUrl(`/conditions/${condition.slug}`),
+      description: condition.summary,
+    })),
+  });
 
   return (
     <>
+      <JsonLd data={jsonLd} />
+
       <section className="pt-20 md:pt-28 pb-16">
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
           <Reveal>
@@ -31,8 +45,8 @@ export default function ConditionsIndex() {
             <p className="lede mt-8 max-w-[60ch]">
               Each common concern below has a story underneath the symptoms.
               Click any to read our full clinical approach: what's actually
-              going on, what conventional medicine misses, our protocol, and
-              what to expect.
+              going on, what conventional medicine misses, what care may
+              consider, and what to expect.
             </p>
           </Reveal>
         </div>

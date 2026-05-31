@@ -1,6 +1,6 @@
 # Pristine Functional Health
 
-Marketing site and patient portal for Pristine Functional Health — virtual functional medicine practice with Megha Shah, PT, CFNC.
+Marketing site for Pristine Functional Health — a virtual functional health practice with Megha Shah, PT, CFNC.
 
 Built with **Next.js 16** (App Router, Turbopack), **Tailwind CSS v4**, and **React 19**.
 
@@ -33,7 +33,7 @@ No environment variables are required for the marketing site itself.
 
 ### Cal.com booking
 
-The booking page (`/book-appointment`) uses Cal.com's element-click embed pointed at `megha.shah/free-functional-health-consultation`. Update that handle in `app/book-appointment/page.tsx` if the Cal.com username changes.
+The booking page (`/book-appointment`) uses Cal.com's element-click embed pointed at `megha.shah/free-functional-health-consultation`. Update that handle in `app/book-appointment/booking-client.tsx` if the Cal.com username changes.
 
 ## Project structure
 
@@ -47,9 +47,10 @@ app/                    # Next.js App Router pages
   new-patient-special/  # Promo page
   privacy/              # Privacy policy
   services/             # Services list + [slug]
+  shop/                 # Coming soon shop preview
   terms/                # Terms & conditions
 components/             # Shared React components
-lib/                    # Static data (services, conditions, blog posts)
+lib/                    # Static content and SEO helpers
 public/                 # Logo, photos, favicons
 ```
 

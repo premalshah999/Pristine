@@ -10,14 +10,14 @@ import { Reveal } from "@/components/reveal";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Root-cause functional medicine, virtually",
+  title: "Online functional health consultation across the USA",
   description:
-    "Pristine Functional Health helps adults find root causes behind fatigue, thyroid issues, gut symptoms, hormones, weight resistance, and chronic symptoms.",
+    "Pristine Functional Health offers online functional health consultations for adults seeking root-cause support for fatigue, gut symptoms, hormones, weight resistance, thyroid concerns, and chronic patterns.",
   path: "/",
   keywords: [
-    "functional medicine",
-    "root cause medicine",
-    "virtual functional medicine",
+    "online functional health consultation",
+    "virtual functional health consultation",
+    "root cause health consultation online",
     "functional nutrition",
   ],
 });
@@ -34,7 +34,7 @@ export default function HomePage() {
       <Testimonials />
       <CtaBand
         eyebrow="Book your free 20-minute call"
-        title="You do not need a louder protocol. You need the right questions."
+        title="You do not need a louder plan. You need the right questions."
         subtitle="Bring the symptoms, the labs, the long story, and the parts no one has connected yet. We'll start there."
       />
     </>
@@ -60,7 +60,7 @@ function ShopPreview() {
         </Reveal>
         <Reveal className="col-span-12 md:col-span-7" delay={100}>
           <p className="lede max-w-[58ch]">
-            A curated shop is coming for patients who want trusted support
+            A curated shop is coming for patients who want carefully selected support
             between appointments: premium quality supplements, food sensitivity
             kits, and premium courses built around sustainable wellness habits.
           </p>

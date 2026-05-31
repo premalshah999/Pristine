@@ -84,14 +84,14 @@ export const conditions: Condition[] = [
         "Strategic carbohydrate placement — not deprivation",
         "Strength training programmed for metabolic adaptation, not punishment",
         "Sleep, circadian, and nervous-system regulation as first-line metabolic medicine",
-        "Targeted supplementation: berberine, magnesium, chromium, omega-3, inositol, adaptogens — only what your labs justify",
+        "Supplement options that may be considered when labs and history support them: berberine, magnesium, chromium, omega-3, inositol, adaptogens",
         "Gut healing if dysbiosis or inflammation is contributing",
       ],
     },
     whatToExpect: [
       "In the first 30 days, most patients see steadier energy, fewer cravings, and better sleep — often before the scale moves. That's a feature, not a bug: we're rebuilding the signal first.",
-      "Within 60–90 days, weight typically begins to release in a sustainable rhythm — usually 1–2 lbs per week — and the changes hold because the underlying drivers have been addressed.",
-      "By 6 months, most patients have achieved meaningful, durable change and a new baseline they understand and can maintain without obsessing over food.",
+      "Within 60–90 days, some patients begin to see a more sustainable rhythm of weight change, though pace varies widely by history, medications, hormones, sleep, stress, and consistency.",
+      "By 6 months, many patients have a clearer baseline they understand and can maintain without obsessing over food.",
     ],
     testimonial: {
       name: "Maya L.",
@@ -106,7 +106,7 @@ export const conditions: Condition[] = [
       },
       {
         q: "Do you prescribe GLP-1 medications?",
-        a: "We can co-manage if a GLP-1 is appropriate, but our default is to repair the underlying insulin signaling first. Most patients don't need it once we do.",
+        a: "We can co-manage if a GLP-1 is appropriate through your prescribing provider, but our default is to support the underlying insulin signaling first. Medication decisions are individualized.",
       },
     ],
   },
@@ -115,14 +115,14 @@ export const conditions: Condition[] = [
     name: "Type 2 Diabetes & Insulin Resistance",
     shortName: "Type 2 Diabetes",
     category: "Metabolic",
-    tagline: "A diagnosis you can often reverse — not just manage.",
+    tagline: "A diagnosis you can often improve — not just manage.",
     summary:
       "Pre-diabetes and Type 2 are not life sentences. They're communication: your body is asking for a different conversation about food, movement, and stress.",
     hero: {
       eyebrow: "Metabolic Care",
       title: "Type 2 Diabetes & Insulin Resistance",
       subtitle:
-        "Insulin resistance starts 10–15 years before diabetes shows up on a lab. We catch it early, reverse it where possible, and rebuild the metabolism underneath.",
+        "Insulin resistance can start years before diabetes shows up on a lab. We look for the pattern early, improve it where possible, and rebuild the metabolism underneath.",
     },
     whatItIs: [
       "Type 2 diabetes is the late stage of a metabolic conversation that started years earlier — often in your 20s or 30s — when your cells slowly stopped responding to insulin's signal to absorb glucose.",
@@ -158,14 +158,14 @@ export const conditions: Condition[] = [
         "Resistance training + zone 2 cardio: the most powerful insulin-sensitizing combination known",
         "Sleep optimization (often the hidden lever)",
         "Stress regulation (cortisol drives gluconeogenesis)",
-        "Targeted supplementation: berberine, alpha-lipoic acid, chromium, magnesium glycinate, inositol",
+        "Supplement options such as berberine, alpha-lipoic acid, chromium, magnesium glycinate, or inositol when clinically appropriate",
         "Co-management with your PCP/endocrinologist on medication tapering as appropriate",
       ],
     },
     whatToExpect: [
-      "Most patients see meaningful CGM improvements in 2–3 weeks. HbA1c reflects 3 months of blood sugar — so the real number tells the story by month 3 or 4.",
-      "By month 6, many of our pre-diabetic and early Type 2 patients have moved out of the diabetic range entirely. Some come off metformin (with their PCP's coordination). Some achieve full remission.",
-      "Long-standing or insulin-dependent diabetes is more complex but still very responsive. Even when full reversal isn't possible, we can dramatically reduce complications, fatigue, and medication burden.",
+      "Many patients see CGM patterns improve before HbA1c changes. HbA1c reflects roughly 3 months of blood sugar, so longer trends matter.",
+      "By month 6, some pre-diabetic and early Type 2 patients see major improvement. Medication changes or remission decisions must happen with the prescribing clinician.",
+      "Long-standing or insulin-dependent diabetes is more complex. The focus is safer blood sugar patterns, better energy, lower risk, and coordinated medical care.",
     ],
     testimonial: {
       name: "David M.",
@@ -231,7 +231,7 @@ export const conditions: Condition[] = [
     },
     whatToExpect: [
       "Many patients feel meaningfully better within 4–6 weeks once cofactors are repleted and gut/stress are addressed — even before any medication change.",
-      "If autoimmune: antibodies typically begin to drop in 3–6 months when the trigger is identified and removed. Some patients see them normalize entirely.",
+      "If autoimmune patterns are involved, antibodies may begin to change over several months when triggers are identified and addressed. Response varies and should be monitored with your medical team.",
       "Long-term, the goal isn't just 'normal labs' — it's normal energy, weight, mood, hair, and cycle. Lab numbers should match how you feel.",
     ],
     testimonial: {
@@ -286,16 +286,16 @@ export const conditions: Condition[] = [
       approach: [
         "Cycle-syncing nutrition (different macros and foods in follicular vs. luteal phases)",
         "Liver and gut support to clear estrogen properly",
-        "PCOS-specific protocols: insulin sensitization (inositol, berberine), inflammation control",
-        "Targeted supplementation: DIM, calcium-d-glucarate, B-complex, magnesium, adaptogens",
+        "PCOS-specific strategies that may include insulin sensitization and inflammation support",
+        "Supplement options such as DIM, calcium-d-glucarate, B-complex, magnesium, or adaptogens when appropriate",
         "Stress regulation — cortisol steals from progesterone (the 'pregnenolone steal')",
         "When appropriate, bioidentical hormone support in coordination with your provider",
       ],
     },
     whatToExpect: [
-      "Cycle changes are visible within 1–3 cycles. Most patients see softer PMS, less pain, and more predictable cycles within 90 days.",
-      "PCOS markers (insulin, androgens) typically improve within 3–6 months with consistent work, often dramatically.",
-      "Perimenopausal symptoms can ease within weeks once cortisol, blood sugar, and nutrient status are stabilized — and bioidentical support, when warranted, accelerates the change.",
+      "Cycle changes may become visible within 1–3 cycles. Some patients see softer PMS, less pain, or more predictable cycles within 90 days.",
+      "PCOS markers such as insulin and androgens may improve within 3–6 months with consistent work, though response varies.",
+      "Perimenopausal symptoms may ease once cortisol, blood sugar, and nutrient status are stabilized — and hormone support, when warranted, should be coordinated with the prescribing provider.",
     ],
     testimonial: {
       name: "Priya S.",
@@ -351,13 +351,13 @@ export const conditions: Condition[] = [
         "Sleep optimization — non-negotiable, often the biggest single lever",
         "Insulin-sensitizing nutrition: protein-forward, blood-sugar-aware",
         "Reduce environmental load: water filtration, plastic exposure, personal care products",
-        "Targeted supplementation: zinc, magnesium, vitamin D, ashwagandha, boron, omega-3 — based on what your labs show",
+        "Supplement options such as zinc, magnesium, vitamin D, ashwagandha, boron, or omega-3 based on labs, safety, and goals",
         "If TRT is appropriate after foundation is built, co-manage carefully with proper monitoring",
       ],
     },
     whatToExpect: [
-      "Most men feel meaningfully different within 4–8 weeks: better energy, better sleep, sharper focus, body composition shifts.",
-      "Hormonal labs typically improve within 3–6 months when foundation work is consistent.",
+      "Some men feel meaningfully different within 4–8 weeks: better energy, better sleep, sharper focus, or body composition shifts.",
+      "Hormonal labs may improve within 3–6 months when foundation work is consistent.",
       "If TRT is the right tool, the body responds far better when it's been prepared. We don't push it; we don't refuse it. We do what your labs and your goals justify.",
     ],
   },
@@ -405,8 +405,8 @@ export const conditions: Condition[] = [
       intro:
         "We treat migraines as a multi-trigger condition with a clear root-cause logic. Mapping your specific pattern is the work.",
       approach: [
-        "High-dose magnesium glycinate or threonate — well-tolerated, often dramatic",
-        "Riboflavin (B2) 400 mg, CoQ10 100–300 mg — both with strong RCT evidence",
+        "Magnesium forms may be considered when appropriate",
+        "Riboflavin (B2) and CoQ10 may be considered based on history, medications, and safety",
         "Hormone balancing for menstrual migraines",
         "Targeted elimination of identified food triggers (often histamine-rich, tyramine, alcohol)",
         "Blood sugar stability — often the simplest, most overlooked lever",
@@ -414,8 +414,8 @@ export const conditions: Condition[] = [
       ],
     },
     whatToExpect: [
-      "Most patients see frequency drop within 6–8 weeks of beginning the protocol — often by 50% or more.",
-      "By month 3, many patients have gone from 8–15 migraines per month to 1–3.",
+      "Some patients see migraine frequency change within 6–8 weeks once the right triggers are addressed.",
+      "By month 3, many patients have a clearer trigger map and a more useful prevention strategy.",
       "The goal is not perfection — it's a life that isn't built around the next migraine.",
     ],
     testimonial: {
@@ -467,16 +467,16 @@ export const conditions: Condition[] = [
         "We work backwards from the nerve to the cause. Protecting and repairing the nerve while we identify what's damaging it is a parallel process.",
       approach: [
         "Address the upstream cause aggressively (most often blood sugar or B12)",
-        "Methylcobalamin B12, methylated folate (5-MTHF) where appropriate",
-        "Alpha-lipoic acid (often dramatic for diabetic neuropathy), benfotiamine, acetyl-L-carnitine, omega-3",
+        "Methylcobalamin B12 or methylated folate (5-MTHF) where appropriate",
+        "Nerve-supportive nutrients such as alpha-lipoic acid, benfotiamine, acetyl-L-carnitine, or omega-3 when appropriate",
         "If autoimmune: immune modulation and AIP-style nutrition",
         "If toxic: gentle, staged detox with proper drainage",
         "Movement, vibration therapy, infrared sauna where tolerated",
       ],
     },
     whatToExpect: [
-      "When the cause is B12 or blood sugar, improvement can begin within weeks. Long-standing nerve damage takes longer — often 4–9 months — but typically does respond.",
-      "Pain often improves before numbness. Some sensation loss may be permanent if damage is advanced; quality of life almost always improves dramatically.",
+      "When the cause is B12 or blood sugar, improvement may begin within weeks. Long-standing nerve damage takes longer — often months — and response varies.",
+      "Pain may improve before numbness. Some sensation loss may be permanent if damage is advanced; quality-of-life goals are individualized.",
       "Patients with chemotherapy-induced neuropathy often see meaningful relief with mitochondrial support, even years after treatment.",
     ],
   },
@@ -526,8 +526,8 @@ export const conditions: Condition[] = [
         "We work alongside your therapist or psychiatrist — never against. The goal is to make their work more effective by calming the body underneath.",
       approach: [
         "Blood sugar stabilization (often dramatic for panic-prone patients)",
-        "Magnesium glycinate, taurine, L-theanine for GABA support",
-        "Methylated B-vitamins where indicated",
+        "Magnesium glycinate, taurine, or L-theanine may be considered for nervous-system support",
+        "Methylated B-vitamins where indicated and tolerated",
         "Gut healing — often a major lever",
         "Adaptogens (ashwagandha, rhodiola) to recalibrate the stress response",
         "Vagal tone work, breathwork, sleep regulation",
@@ -535,7 +535,7 @@ export const conditions: Condition[] = [
       ],
     },
     whatToExpect: [
-      "Many patients feel meaningfully calmer within 2–4 weeks once blood sugar and minerals are stabilized.",
+      "Some patients feel meaningfully calmer within 2–4 weeks once blood sugar and minerals are stabilized.",
       "Deeper work (methylation, gut, hormones) takes 3–6 months but often produces a profound sense of 'my body finally feels safe.'",
       "Goal: reducing reliance on rescue medications, deepening therapy work, and feeling like yourself again.",
     ],
@@ -648,15 +648,15 @@ export const conditions: Condition[] = [
       approach: [
         "Stabilize blood sugar with protein-forward meals, strategic carbohydrates, and meal timing",
         "Support sleep rhythm, morning light exposure, evening wind-down, and consistent wake times",
-        "Replete common mood-linked nutrients when indicated: magnesium, B vitamins, omega-3s, iron, vitamin D, zinc",
+        "Replete common mood-linked nutrients when indicated and safe: magnesium, B vitamins, omega-3s, iron, vitamin D, zinc",
         "Address thyroid, hormone, and cortisol patterns that can mimic or worsen depression",
         "Reduce inflammatory load through gut repair, food sensitivity work, and anti-inflammatory nutrition",
         "Coordinate with mental health professionals and never advise medication changes outside their care",
       ],
     },
     whatToExpect: [
-      "Most patients first notice more stable energy, fewer crashes, better sleep, or a little more capacity before mood fully shifts.",
-      "Nutrient, gut, thyroid, and hormone work typically takes 8–16 weeks to show meaningful patterns, with deeper rebuilding over 3–6 months.",
+      "Many patients first notice more stable energy, fewer crashes, better sleep, or a little more capacity before mood fully shifts.",
+      "Nutrient, gut, thyroid, and hormone work may take 8–16 weeks to show meaningful patterns, with deeper rebuilding over 3–6 months.",
       "If depression is severe, includes suicidal thoughts, or interferes with safety, urgent mental health care comes first. Call 911 or 988 in the United States if you feel unsafe.",
     ],
     faqs: [
@@ -683,7 +683,7 @@ export const conditions: Condition[] = [
       eyebrow: "Gut Care",
       title: "Gut dysfunction",
       subtitle:
-        "Almost every chronic condition has a gut chapter. We use clinical-grade testing to find yours, and a structured 5R protocol to rebuild what's broken.",
+        "Almost every chronic condition has a gut chapter. When appropriate, we use clinical-grade testing and a structured 5R framework to understand and support yours.",
     },
     whatItIs: [
       "Your gut is more than a tube. It contains 70% of your immune system, makes 90% of your serotonin, regulates hormonal signaling, and forms the barrier between the outside world and your bloodstream.",
@@ -712,18 +712,18 @@ export const conditions: Condition[] = [
     },
     functional: {
       intro:
-        "We use the 5R protocol — a structured, sequential framework that has been the backbone of functional gut care for 20+ years.",
+        "We may use the 5R framework — a structured, sequential model that has been part of functional gut care for 20+ years.",
       approach: [
-        "Remove: pathogens, food triggers, irritants",
-        "Replace: digestive enzymes, HCl support if needed, bile support",
-        "Reinoculate: targeted probiotics, prebiotics matched to your microbiome",
-        "Repair: L-glutamine, zinc carnosine, slippery elm, marshmallow root, vitamin A",
+        "Remove: possible pathogens, food triggers, or irritants when identified",
+        "Replace: digestive enzymes, HCl support if needed, or bile support when appropriate",
+        "Reinoculate: targeted probiotics or prebiotics matched to your microbiome when useful",
+        "Repair: gut-supportive nutrients or botanicals when appropriate",
         "Rebalance: stress regulation, sleep, mindful eating, vagal tone",
       ],
     },
     whatToExpect: [
-      "Most patients feel better within 2–4 weeks of starting the protocol — bloating, energy, and mood are often the first to shift.",
-      "A complete gut-rebuild typically takes 3–6 months. SIBO and complex dysbiosis can take longer.",
+      "Some patients feel better within 2–4 weeks of starting the right plan — bloating, energy, and mood are often the first to shift.",
+      "A complete gut-rebuild may take 3–6 months. SIBO and complex dysbiosis can take longer.",
       "The goal isn't a perfect gut — it's a resilient one that handles real life without flaring.",
     ],
   },
@@ -767,9 +767,9 @@ export const conditions: Condition[] = [
     },
     functional: {
       intro:
-        "We use testing as a guide and elimination/reintroduction as the gold standard. The work is precise and time-limited — not lifelong restriction.",
+        "We may use testing as a guide and elimination/reintroduction as a practical confirmation tool. The work should be precise and time-limited — not lifelong restriction.",
       approach: [
-        "30–60 day strategic elimination based on testing + history",
+        "30–60 day strategic elimination based on testing and history when appropriate",
         "Systematic reintroduction (one food every 3 days) to identify true reactors",
         "Gut barrier repair to reduce future sensitivities",
         "Digestive support (HCl, enzymes, bile)",
@@ -777,7 +777,7 @@ export const conditions: Condition[] = [
       ],
     },
     whatToExpect: [
-      "Most patients feel dramatically better within 2 weeks of strategic elimination.",
+      "Some patients feel dramatically better within 2 weeks of strategic elimination, while others need deeper gut or immune work.",
       "Reintroduction takes another 4–8 weeks but produces a clear, personal map.",
       "Goal: the smallest possible long-term elimination, not the biggest. Most people end up with a short list of true reactors and a far wider tolerable diet than they expected.",
     ],
@@ -827,18 +827,18 @@ export const conditions: Condition[] = [
       intro:
         "We work alongside your rheumatologist or specialty care team. Our job is to address the triggers and the terrain — not replace specialty medication, but make it less necessary.",
       approach: [
-        "Autoimmune Protocol (AIP) — a structured 30–60 day elimination",
-        "Gut barrier repair (5R protocol)",
+        "Autoimmune Protocol (AIP) or another structured elimination when appropriate",
+        "Gut barrier support using a 5R-style framework when appropriate",
         "Address infections and toxic load systematically",
         "Stress regulation — chronic stress is one of the most reliable flare triggers",
-        "Targeted supplementation: vitamin D, omega-3, glutathione precursors, curcumin, resveratrol",
+        "Supplement options such as vitamin D, omega-3, glutathione precursors, curcumin, or resveratrol when appropriate",
         "Co-care with your rheumatologist or specialty provider",
       ],
     },
     whatToExpect: [
-      "Most patients see fewer, milder, shorter flares within 90 days.",
-      "Antibody levels often drop measurably within 3–6 months when triggers are identified and removed.",
-      "Some patients reduce or come off biologics under medical supervision; others stay on them but live far better. The win is a life that isn't centered on your disease.",
+      "Some patients see fewer, milder, shorter flares within 90 days.",
+      "Antibody levels may drop measurably within 3–6 months when triggers are identified and addressed.",
+      "Some patients reduce medications only under medical supervision; others stay on them but feel better supported. The win is a life that is less centered on your disease.",
     ],
     testimonial: {
       name: "Rina P.",
@@ -854,7 +854,7 @@ export const conditions: Condition[] = [
     category: "Immune",
     tagline: "Mold, metals, plastics — quiet drivers of fatigue, autoimmunity, and brain symptoms.",
     summary:
-      "Environmental toxins are one of the most under-investigated causes of chronic illness. We test, we drain, and we detox carefully — never aggressively.",
+      "Environmental toxins can be an under-investigated contributor to chronic symptoms. When appropriate, we evaluate exposure patterns and support elimination carefully — never aggressively.",
     hero: {
       eyebrow: "Immune Care",
       title: "Toxicity & heavy metals",
@@ -889,19 +889,19 @@ export const conditions: Condition[] = [
     },
     functional: {
       intro:
-        "We follow a strict order of operations: identify the source, support drainage, then carefully reduce body burden. Detox before drainage is malpractice.",
+        "We follow a careful order of operations: identify likely sources, support elimination pathways, then consider body-burden reduction only when appropriate.",
       approach: [
-        "Source identification and removal — the most important step (often involves remediation or moving)",
-        "Drainage support: bowel, bile, lymph, kidneys, skin",
-        "Binders: charcoal, bentonite clay, chlorella, cholestyramine (RX)",
-        "Glutathione, NAC, sulforaphane to support detox phase II",
-        "Sauna, dry brushing, hydration, gentle movement",
-        "Antifungals (natural or RX) if mold is identified, in proper sequence",
+        "Source identification and reduction where possible",
+        "Elimination-pathway support: bowel, bile, lymph, kidneys, skin",
+        "Binders or prescription options only when clinically appropriate and properly supervised",
+        "Glutathione, NAC, sulforaphane, or other phase II support when appropriate",
+        "Sauna, dry brushing, hydration, or gentle movement where tolerated",
+        "Antifungals or other therapies only if clinically indicated and properly sequenced",
       ],
     },
     whatToExpect: [
-      "Initial improvements often appear within 4–8 weeks once drainage is supported and the source is removed.",
-      "Full mold or heavy metal protocols typically take 6–18 months. Going faster than the body can handle is the most common mistake.",
+      "Initial improvements may appear within 4–8 weeks once elimination pathways are supported and likely sources are reduced.",
+      "Full mold or heavy metal support can take 6–18 months when appropriate. Going faster than the body can handle is the most common mistake.",
       "The goal is a measurable reduction in body burden plus restored function — not 'clean labs' as an end in itself.",
     ],
   },
@@ -955,12 +955,12 @@ export const conditions: Condition[] = [
         "Progressive resistance training, weight-bearing movement, posture work, and balance training",
         "Digestive support to improve mineral and protein absorption",
         "Hormone, thyroid, stress, and inflammation patterns addressed in coordination with your care team",
-        "Medication and supplement review so bone-supportive choices fit your full health picture",
+        "Medication and supplement review so bone-supportive choices can be discussed in the context of your full health picture",
       ],
     },
     whatToExpect: [
       "In the first month, the focus is usually nutrition, fall-risk reduction, strength basics, and making sure your plan is safe for your current fracture risk.",
-      "Bone remodeling is slow. Meaningful DEXA changes often take 12–24 months, but strength, balance, confidence, and nutrient status can improve much sooner.",
+      "Bone remodeling is slow. Meaningful DEXA changes often take 12–24 months, but strength, balance, confidence, and nutrient status may improve much sooner.",
       "Patients with osteoporosis should remain connected to their licensed medical provider for DEXA monitoring, fracture evaluation, and medication decisions.",
     ],
   },
@@ -1018,7 +1018,7 @@ export const conditions: Condition[] = [
     whatToExpect: [
       "Most people feel stronger and more confident before a scan changes. That is still meaningful because falls and frailty drive fracture risk.",
       "Osteopenia work is usually a 6–12 month foundation project, with DEXA trends monitored over a longer timeline.",
-      "The goal is to turn osteopenia into a clear, sustainable prevention plan — not a vague supplement routine.",
+      "The goal is to turn osteopenia into a clear, sustainable prevention plan — not a vague or automatic supplement routine.",
     ],
   },
   {
@@ -1067,13 +1067,13 @@ export const conditions: Condition[] = [
         "Anti-inflammatory nutrition that still supports protein, muscle, and metabolic health",
         "Blood sugar and weight-load strategy without crash dieting",
         "Gut repair and food-trigger investigation when flares suggest immune activation",
-        "Omega-3s, vitamin D, magnesium, curcumin, collagen peptides, or joint nutrients when appropriate",
+        "Omega-3s, vitamin D, magnesium, curcumin, collagen peptides, or joint nutrients when appropriate and safe",
         "Joint-friendly strength training, mobility, gait, posture, and recovery work",
         "Referral or co-care for imaging, rheumatology evaluation, or medication decisions when red flags appear",
       ],
     },
     whatToExpect: [
-      "Pain and stiffness often respond first to nutrition, sleep, blood sugar stability, and smarter movement pacing.",
+      "Pain and stiffness may respond first to nutrition, sleep, blood sugar stability, and smarter movement pacing.",
       "Inflammatory or autoimmune arthritis usually requires longer terrain work and medical co-management; the goal is fewer flares and better function, not ignoring needed medication.",
       "If joints are hot, red, rapidly swelling, severely painful, or paired with fever or sudden weakness, seek medical care promptly.",
     ],
@@ -1124,10 +1124,10 @@ export const conditions: Condition[] = [
       approach: [
         "Gut healing — often produces the most dramatic quality-of-life change",
         "Targeted nutrition aligned with sensory needs (we work with what the child will eat)",
-        "Mineral repletion: magnesium, zinc, vitamin D",
-        "Methylation support where warranted, dosed gently",
-        "Antioxidant support (NAC, glutathione precursors, omega-3)",
-        "Gentle, slow protocols — never aggressive detoxes for kids",
+        "Mineral repletion such as magnesium, zinc, or vitamin D when indicated",
+        "Methylation support where warranted and tolerated, dosed gently",
+        "Antioxidant support options when appropriate",
+        "Gentle, slow plans — never aggressive detoxes for kids",
         "Family-centered: we work with parents, never around them",
       ],
     },

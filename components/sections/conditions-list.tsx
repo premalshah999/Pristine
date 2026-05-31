@@ -40,7 +40,7 @@ export function ConditionsList() {
             <p className="lede max-w-[58ch]">
               Scan across clinical categories, then open any condition for the
               full root-cause approach. The layout is built like a working
-              reference table, not a loose marketing grid.
+              reference index, not a loose marketing grid.
             </p>
             <Link
               href="/conditions"
@@ -53,8 +53,56 @@ export function ConditionsList() {
         </div>
 
         <Reveal>
+          <div className="grid gap-4 lg:hidden">
+            {categoryOrder.map((category) => (
+              <section
+                key={category}
+                className="overflow-hidden border bg-[var(--color-paper)]"
+                style={{ borderColor: "var(--color-line-strong)" }}
+              >
+                <div
+                  className="border-b px-4 py-3"
+                  style={{
+                    borderColor: "var(--color-line)",
+                    background: "var(--color-canvas)",
+                  }}
+                >
+                  <h3 className="font-serif text-[1.35rem] leading-tight">
+                    {category}
+                  </h3>
+                </div>
+                <ul
+                  className="divide-y"
+                  style={{ borderColor: "var(--color-line)" }}
+                >
+                  {conditionsByCategory[category].map((condition) => (
+                    <li key={condition.slug}>
+                      <Link
+                        href={`/conditions/${condition.slug}`}
+                        className="group grid grid-cols-[1fr_auto] gap-4 px-4 py-4 transition-colors hover:bg-[var(--color-canvas)]"
+                      >
+                        <span className="min-w-0">
+                          <span className="block font-serif text-[1.16rem] leading-tight transition-colors group-hover:text-[var(--color-forest)]">
+                            {condition.shortName ?? condition.name}
+                          </span>
+                          <span className="mt-2 block text-[0.86rem] leading-relaxed text-[var(--color-ink-soft)]">
+                            {condition.tagline}
+                          </span>
+                        </span>
+                        <ArrowUpRight
+                          size={15}
+                          className="mt-1 text-[var(--color-ink-muted)] transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--color-ink)]"
+                        />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
+
           <div
-            className="overflow-hidden border bg-[var(--color-paper)]"
+            className="hidden overflow-hidden border bg-[var(--color-paper)] lg:block"
             style={{ borderColor: "var(--color-line-strong)" }}
           >
             <div className="overflow-x-auto">

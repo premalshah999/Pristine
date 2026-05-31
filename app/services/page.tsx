@@ -3,19 +3,34 @@ import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { services } from "@/lib/services";
 import { CtaBand } from "@/components/sections/cta-band";
-import { pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
+import { absoluteUrl, itemListJsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Services",
+  title: "Online functional health services",
   description:
-    "Five pillars of root-cause functional medicine: advanced testing, root-cause analysis, nutrition counseling, personal coaching, and lifestyle optimization.",
+    "Online functional health services including root-cause analysis, nutrition counseling, coaching, testing review, and lifestyle optimization.",
   path: "/services",
-  keywords: ["functional medicine services", "root cause analysis", "functional nutrition counseling"],
+  keywords: ["online functional health services", "root cause analysis", "functional nutrition counseling"],
 });
 
 export default function ServicesIndex() {
+  const jsonLd = itemListJsonLd({
+    id: absoluteUrl("/services#services-list"),
+    name: "Online functional health services",
+    description:
+      "Service hub for Pristine Functional Health's virtual functional health consultation offerings.",
+    items: services.map((service) => ({
+      name: service.name,
+      url: absoluteUrl(`/services/${service.slug}`),
+      description: service.summary,
+    })),
+  });
+
   return (
     <>
+      <JsonLd data={jsonLd} />
+
       <section className="pt-20 md:pt-28 pb-16">
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
           <Reveal>
@@ -24,9 +39,14 @@ export default function ServicesIndex() {
               Five pillars of <em className="italic-serif">whole-person</em> care.
             </h1>
             <p className="lede mt-8 max-w-[60ch]">
-              Real healing isn't one thing. We weave together the work of testing,
-              interpretation, nutrition, behavior change, and the lifestyle
-              foundations that make all of it stick.
+              Real healing isn't one thing. When appropriate, we weave together
+              testing, interpretation, nutrition, behavior change, and the
+              lifestyle foundations that make the work usable.
+            </p>
+            <p className="mt-5 max-w-[68ch] text-[0.88rem] leading-relaxed text-[var(--color-ink-muted)]">
+              Service pages describe examples of support we may consider. Your
+              final plan depends on intake, goals, labs, safety, budget, and
+              clinical fit.
             </p>
           </Reveal>
         </div>
@@ -57,7 +77,7 @@ export default function ServicesIndex() {
                     <p>{s.summary}</p>
                     <div
                       className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4"
-                      aria-label={`${s.name} includes`}
+                      aria-label={`${s.name} possible support areas`}
                     >
                       {s.included.map((item) => (
                         <div key={item.title} className="border-t pt-3" style={{ borderColor: "var(--color-line)" }}>

@@ -3,13 +3,6 @@ import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { testimonialStories, type TestimonialStory } from "@/lib/testimonials";
 
-const accentBackground: Record<TestimonialStory["accent"], string> = {
-  mint: "var(--color-mint)",
-  tan: "var(--color-tan)",
-  sage: "color-mix(in srgb, var(--color-sage) 34%, var(--color-paper))",
-  paper: "var(--color-paper)",
-};
-
 export function Testimonials() {
   return (
     <section
@@ -38,8 +31,11 @@ export function Testimonials() {
         </div>
 
         <Reveal delay={140}>
-          <div className="-mx-6 snap-x snap-mandatory overflow-x-auto px-6 pb-6">
-            <div className="grid auto-cols-[minmax(300px,86vw)] grid-flow-col gap-4 md:auto-cols-[minmax(520px,560px)]">
+          <div className="-mx-6 snap-x snap-mandatory overflow-x-auto overscroll-x-contain px-6 pb-6">
+            <div
+              className="grid auto-cols-[minmax(320px,88vw)] grid-flow-col gap-px overflow-hidden border-y bg-[var(--color-line)] md:auto-cols-[minmax(520px,620px)]"
+              style={{ borderColor: "var(--color-line)" }}
+            >
               {testimonialStories.map((story) => (
                 <StoryCard key={`${story.name}-${story.condition}`} story={story} />
               ))}
@@ -64,18 +60,17 @@ function StoryCard({ story }: { story: TestimonialStory }) {
   return (
     <Link
       href={story.href}
-      className="group grid min-h-[430px] snap-start grid-rows-[auto_1fr_auto] border p-5 transition-colors hover:bg-[var(--color-canvas)] md:min-h-[410px] md:p-6"
+      className="group flex min-h-[390px] snap-start flex-col bg-[var(--color-paper)] p-5 transition-colors hover:bg-[var(--color-canvas)] md:min-h-[420px] md:p-7"
       style={{
-        background: accentBackground[story.accent],
-        borderColor: "var(--color-line-strong)",
+        color: "var(--color-ink)",
       }}
     >
       <span className="flex items-start justify-between gap-5 border-b pb-4" style={{ borderColor: "var(--color-line)" }}>
         <span>
-          <span className="block font-mono text-[0.68rem] uppercase text-[var(--color-ink-muted)]">
+          <span className="block font-mono text-[0.68rem] uppercase text-[var(--color-forest)]">
             {story.condition}
           </span>
-          <span className="mt-1 block text-[0.9rem] leading-snug text-[var(--color-ink-soft)]">
+          <span className="mt-1 block text-[0.88rem] leading-snug text-[var(--color-ink-soft)]">
             {story.detail}
           </span>
         </span>
@@ -85,8 +80,8 @@ function StoryCard({ story }: { story: TestimonialStory }) {
         />
       </span>
 
-      <span className="py-6">
-        <span className="block font-serif text-[1.8rem] leading-[1.04] md:text-[2.1rem]">
+      <span className="py-5 md:py-6">
+        <span className="block font-serif text-[1.35rem] leading-[1.12] md:text-[1.55rem]">
           {story.hook}
         </span>
         <span className="mt-5 block text-[0.98rem] leading-relaxed text-[var(--color-ink-soft)]">
@@ -94,20 +89,24 @@ function StoryCard({ story }: { story: TestimonialStory }) {
         </span>
       </span>
 
-      <span className="border-t pt-4" style={{ borderColor: "var(--color-line)" }}>
-        <span className="mb-4 flex flex-wrap gap-2">
+      <span className="mt-auto border-t pt-4" style={{ borderColor: "var(--color-line)" }}>
+        <span className="mb-4 grid grid-cols-1 gap-px overflow-hidden border bg-[var(--color-line)] sm:grid-cols-3" style={{ borderColor: "var(--color-line)" }}>
           {story.markers.map((marker) => (
             <span
               key={marker}
-              className="rounded-full border px-3 py-1 font-mono text-[0.64rem] uppercase text-[var(--color-ink-soft)]"
-              style={{ borderColor: "var(--color-line-strong)" }}
+              className="bg-[var(--color-paper)] px-3 py-2 font-mono text-[0.64rem] uppercase text-[var(--color-ink-soft)]"
             >
               {marker}
             </span>
           ))}
         </span>
         <span className="grid gap-1 text-[0.9rem] leading-relaxed text-[var(--color-ink-soft)]">
-          <strong className="font-medium text-[var(--color-ink)]">{story.name}</strong>
+          <span className="flex items-center justify-between gap-3">
+            <strong className="font-medium text-[var(--color-ink)]">{story.name}</strong>
+            <span className="font-mono text-[0.64rem] uppercase text-[var(--color-ink-muted)]">
+              Reported shift
+            </span>
+          </span>
           <span>{story.outcome}</span>
         </span>
       </span>

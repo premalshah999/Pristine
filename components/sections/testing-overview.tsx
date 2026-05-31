@@ -54,7 +54,9 @@ export function TestingOverview() {
                 understanding what is happening beneath the surface. Symptoms
                 provide clues; appropriate testing can provide deeper insight
                 into lifestyle, nutritional, and metabolic factors affecting
-                your health.
+                your health. Testing is not automatic or required for everyone;
+                it is recommended only when it would meaningfully inform your
+                plan.
               </p>
             </Reveal>
 
@@ -121,7 +123,8 @@ export function TestingOverview() {
                 educational and do not diagnose, treat, cure, or prevent
                 disease. Testing recommendations are intended to support
                 wellness and should not replace medical evaluation or treatment
-                from a licensed healthcare provider.
+                from a licensed healthcare provider. Any tests listed here are
+                examples and may or may not be appropriate for you.
               </p>
             </Reveal>
           </div>

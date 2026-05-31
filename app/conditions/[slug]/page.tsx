@@ -5,7 +5,16 @@ import { Reveal } from "@/components/reveal";
 import { conditions, getCondition, getConditionSlugs } from "@/lib/conditions";
 import { CtaBand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
-import { absoluteUrl, pageMetadata, siteName } from "@/lib/seo";
+import {
+  absoluteUrl,
+  adultWellnessAudienceJsonLd,
+  conditionKeywords,
+  pageMetadata,
+  serviceAreaSchema,
+  siteName,
+  siteUrl,
+  virtualServiceChannelJsonLd,
+} from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -21,10 +30,10 @@ export async function generateMetadata({ params }: PageProps) {
   if (!c) return {};
 
   return pageMetadata({
-    title: c.name,
-    description: c.summary,
+    title: `${c.name} support | Online functional health consultation`,
+    description: `Virtual root-cause wellness support for ${c.name.toLowerCase()} through online functional health consultations with ${siteName}.`,
     path: `/conditions/${c.slug}`,
-    keywords: [c.name, c.category, "functional medicine", "root cause wellness"],
+    keywords: conditionKeywords(c.name, c.category),
   });
 }
 
@@ -45,6 +54,9 @@ export default async function ConditionPage({ params }: PageProps) {
       url: pageUrl,
       name: `${condition.name} | ${siteName}`,
       description: condition.summary,
+      inLanguage: "en-US",
+      isAccessibleForFree: true,
+      publisher: { "@id": `${siteUrl}/#organization` },
       isPartOf: {
         "@type": "WebSite",
         name: siteName,
@@ -54,6 +66,20 @@ export default async function ConditionPage({ params }: PageProps) {
         "@type": "Thing",
         name: condition.name,
       },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${pageUrl}#condition-support`,
+      name: `${condition.name} functional health support`,
+      description: condition.summary,
+      url: pageUrl,
+      provider: { "@id": `${siteUrl}/#organization` },
+      areaServed: serviceAreaSchema,
+      audience: adultWellnessAudienceJsonLd,
+      availableChannel: virtualServiceChannelJsonLd,
+      serviceType: ["Online functional health consultation", `${condition.name} support`],
+      category: condition.category,
     },
     {
       "@context": "https://schema.org",
@@ -121,7 +147,7 @@ export default async function ConditionPage({ params }: PageProps) {
                 <ArrowRight size={16} />
               </Link>
               <a href="#approach" className="btn btn-ghost">
-                See our approach
+                See possible approach
               </a>
               <Link href="/conditions#testing" className="btn btn-ghost">
                 Testing overview
@@ -259,14 +285,23 @@ export default async function ConditionPage({ params }: PageProps) {
                 </p>
                 <p className="font-serif text-[1.4rem] leading-snug mb-5 max-w-[26ch]">
                   Where root-cause medicine{" "}
-                  <em className="italic-serif">picks it up.</em>
+                  <em className="italic-serif">may focus.</em>
                 </p>
                 <p className="text-[var(--color-ink-soft)] mb-5 leading-relaxed">
                   {condition.functional.intro}
                 </p>
+                <p
+                  className="mb-5 border-l pl-4 text-[0.84rem] leading-relaxed text-[var(--color-ink-muted)]"
+                  style={{ borderColor: "var(--color-line-strong)" }}
+                >
+                  These are examples of what may be considered. Testing,
+                  supplements, nutrition strategies, movement, lifestyle work,
+                  and care priorities are individualized after intake and may
+                  not be appropriate for every person.
+                </p>
 
                 <div>
-                  <p className="eyebrow mb-3">Our protocol</p>
+                  <p className="eyebrow mb-3">What we may consider</p>
                   <ul className="space-y-2">
                     {condition.functional.approach.map((a, idx) => (
                       <li key={idx} className="flex items-start gap-3">

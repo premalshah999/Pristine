@@ -7,11 +7,11 @@ import { posts, formatDate } from "@/lib/blog";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Blog — Functional Medicine Insights",
+  title: "Online functional health insights",
   description:
-    "Evidence-informed articles on functional medicine, root-cause testing, thyroid health, gut function, hormones, and living well — from Megha Shah, PT, CFNC.",
+    "Evidence-informed articles on functional health, root-cause testing, thyroid health, gut function, hormones, and living well from Megha Shah, PT, CFNC.",
   path: "/blog",
-  keywords: ["functional medicine blog", "root cause testing", "thyroid gut hormones"],
+  keywords: ["functional health blog", "root cause testing", "thyroid gut hormones"],
 });
 
 export default function BlogIndexPage() {

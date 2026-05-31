@@ -5,17 +5,17 @@ import { CtaBand } from "@/components/sections/cta-band";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "New Patient Special",
+  title: "Online functional health coaching programs",
   description:
-    "Compare Pristine Functional Health's three-tier coaching programs and apply for the level of support that fits your health goals.",
+    "Compare Pristine Functional Health's three-tier virtual coaching programs and apply for the level of support that fits your wellness goals.",
   path: "/new-patient-special",
-  keywords: ["functional health coaching program", "Pristine Metabolic Reset", "new patient special"],
+  keywords: ["online functional health coaching program", "Pristine Metabolic Reset", "new patient special"],
 });
 
 const programs = [
   {
     name: "Tier 1: The Foundation",
-    access: "Buy it right away",
+    access: "Book a free call for this program",
     bestFor: "Self-starters needing a clear roadmap and expert course correction.",
     duration: "3 Months",
     consultations: "1 Deep-Dive Intake + 2 Monthly Follow-ups",
@@ -27,12 +27,12 @@ const programs = [
   {
     name: "Tier 2: The Transformation",
     badge: "Most Popular",
-    access: "Buy it right away",
-    bestFor: "Individuals ready to reverse chronic symptoms with high accountability.",
+    access: "Book a free call for this program",
+    bestFor: "Individuals ready to address chronic symptoms with high accountability.",
     duration: "3 Months",
     consultations: "1 Deep-Dive Intake + Bi-weekly Follow-ups",
-    support: "Priority Chat Support (Voxer/WhatsApp)",
-    resources: "Personalized Blueprint + Supplement Protocols + Lab Review",
+    support: "Priority Chat Support",
+    resources: "Personalized Blueprint + Lab Review + Supplement Guidance When Appropriate",
     cta: "Apply Now",
     href: "/book-appointment",
   },
@@ -43,8 +43,8 @@ const programs = [
     bestFor: "Deeply complex cases, including neuropathy plus autoimmune patterns, requiring high-touch access.",
     duration: "6 Months",
     consultations: "1 Deep-Dive Intake + Weekly Private Coaching",
-    support: "Unlimited Text/Voice Support + Direct Portal Access",
-    resources: "Full Concierge Planning + Personalized Movement/Nerve Gliding Plans",
+    support: "Priority Chat Support",
+    resources: "Full Concierge Planning + Personalized Movement/Nerve Gliding Guidance",
     cta: "Apply Now",
     href: "/book-appointment",
   },
@@ -199,6 +199,15 @@ export default function NewPatientSpecial() {
             </div>
           </Reveal>
 
+          <Reveal delay={120}>
+            <p className="mt-6 max-w-[82ch] text-[0.84rem] leading-relaxed text-[var(--color-ink-muted)]">
+              Program details describe the intended level of support. Exact
+              recommendations, lab review, supplement guidance, resources, and
+              communication cadence are individualized after intake and may
+              vary based on fit, safety, goals, and clinical need.
+            </p>
+          </Reveal>
+
           <div className="grid grid-cols-1 gap-5 lg:hidden">
             {programs.map((program, index) => (
               <Reveal key={program.name} delay={index * 70}>
@@ -261,7 +270,7 @@ export default function NewPatientSpecial() {
                   A carefully curated shop is coming for patients who want the
                   same standard of quality outside appointments: premium
                   supplements, food sensitivity kits, and practical premium
-                  courses that support the protocols we teach.
+                  courses that support the foundations we teach.
                 </p>
                 <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
                   {[

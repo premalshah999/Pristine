@@ -77,6 +77,41 @@ export function BookingClient() {
               A 20-minute call with Megha Shah — no commitment, no waitlist.
               Pick a time that works for you and let's figure out your next step together.
             </p>
+            <div
+              className="mt-9 grid max-w-[760px] grid-cols-1 divide-y border-y sm:grid-cols-3 sm:divide-x sm:divide-y-0"
+              style={{ borderColor: "var(--color-line)" }}
+              aria-label="Free consultation value"
+            >
+              {[
+                {
+                  value: "$250",
+                  label: "Discovery call value",
+                  note: "Complimentary for your first conversation.",
+                },
+                {
+                  value: "20 min",
+                  label: "Focused review",
+                  note: "Symptoms, history, goals, and fit.",
+                },
+                {
+                  value: "$0",
+                  label: "Due today",
+                  note: "No pressure and no commitment.",
+                },
+              ].map((item) => (
+                <div key={item.label} className="px-0 py-5 sm:px-5">
+                  <p className="font-serif text-[2rem] leading-none tracking-tight text-[var(--color-forest)]">
+                    {item.value}
+                  </p>
+                  <p className="mt-2 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+                    {item.label}
+                  </p>
+                  <p className="mt-2 text-[0.86rem] leading-snug text-[var(--color-ink-soft)]">
+                    {item.note}
+                  </p>
+                </div>
+              ))}
+            </div>
           </Reveal>
         </div>
       </section>

@@ -10,13 +10,13 @@ const shopItems = [
     icon: ShoppingBag,
     title: "Premium quality supplements",
     copy:
-      "Thoughtfully selected professional-grade supplement options that match the same standards used in personalized wellness protocols.",
+      "Thoughtfully selected professional-grade supplement options that may support a personalized wellness plan when appropriate.",
   },
   {
     icon: FlaskConical,
     title: "Food sensitivity kit",
     copy:
-      "At-home food sensitivity testing support for patients who need clearer insight into potential dietary triggers and nutrition planning.",
+      "At-home food sensitivity testing support for patients whose history suggests dietary triggers may be worth exploring.",
   },
   {
     icon: BookOpen,
@@ -68,7 +68,7 @@ export default function ShopPage() {
             </h1>
             <p className="lede mt-7 max-w-[62ch]">
               A carefully curated Pristine Functional Health shop is on the way
-              for patients who want trusted tools between appointments:
+              for patients who want carefully selected tools between appointments:
               premium quality supplements, food sensitivity kits, and premium
               courses that support practical, sustainable wellness routines.
             </p>
@@ -126,7 +126,7 @@ export default function ShopPage() {
       <CtaBand
         eyebrow="Need support now?"
         title="The shop is coming. Personalized care is already open."
-        subtitle="Book a free consultation if you want help choosing the right testing, nutrition, or coaching path before the shop launches."
+        subtitle="Book a free consultation if you want help choosing whether testing, nutrition, coaching, or shop resources fit your needs before the shop launches."
         cta="Book your free call"
         href="/book-appointment"
       />

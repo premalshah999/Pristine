@@ -4,7 +4,7 @@ import { Reveal } from "@/components/reveal";
 import { HeroLiquidEther } from "@/components/sections/hero-liquid-ether";
 import { MorphingText } from "@/components/ui/morphing-text";
 
-const heroMorphingTexts = ["Restore", "Balance", "Thrive"];
+const heroMorphingTexts = ["Root Cause", "Real Solutions", "Lasting Wellness"];
 
 export function Hero() {
   return (

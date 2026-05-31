@@ -38,22 +38,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: siteName,
   title: {
-    default: "Pristine Functional Health — Root-cause functional medicine, virtually",
+    default: "Pristine Functional Health — Online functional health consultations",
     template: `%s · ${siteName}`,
   },
   description: siteDescription,
-  keywords: [
-    "functional medicine",
-    "root cause medicine",
-    "virtual functional medicine",
-    "Hashimoto's",
-    "thyroid",
-    "PCOS",
-    "gut health",
-    "autoimmune",
-    "Megha Shah",
-    "Pristine Functional Health",
-  ],
   authors: [{ name: "Megha Shah" }],
   creator: "Pristine Functional Health",
   publisher: "Pristine Functional Health",
@@ -72,7 +60,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Pristine Functional Health — Root-cause functional medicine, virtually",
+    title: "Pristine Functional Health — Online functional health consultations",
     description: siteDescription,
     siteName: "Pristine Functional Health",
     url: siteUrl,
@@ -89,7 +77,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pristine Functional Health — Root-cause functional medicine, virtually",
+    title: "Pristine Functional Health — Online functional health consultations",
     description: siteDescription,
     images: [absoluteUrl("/pristine-logo-mark.png")],
   },
@@ -114,7 +102,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               (function(){
                 try {
                   var t = localStorage.getItem('pristine-theme');
-                  if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                   if (t === 'dark') document.documentElement.classList.add('dark');
                 } catch(e) {}
               })();

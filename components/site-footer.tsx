@@ -129,7 +129,8 @@ export function SiteFooter() {
               Statements on this site have not been evaluated by the Food and
               Drug Administration. Educational content, supplements, protocols,
               and testing recommendations are not intended to diagnose, treat,
-              cure, or prevent disease.
+              cure, or prevent disease. Site examples are not guarantees of
+              specific tests, supplements, protocols, services, or outcomes.
             </p>
           </div>
           <div

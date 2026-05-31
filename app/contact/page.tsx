@@ -4,11 +4,11 @@ import { CtaBand } from "@/components/sections/cta-band";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Contact",
+  title: "Contact Pristine Functional Health",
   description:
-    "Reach Pristine Functional Health by phone, email, or book a free 20-minute call.",
+    "Contact Pristine Functional Health by phone, email, or book a free online functional health consultation.",
   path: "/contact",
-  keywords: ["contact Pristine Functional Health", "functional health consultation", "Megha Shah contact"],
+  keywords: ["contact Pristine Functional Health", "online functional health consultation", "Megha Shah contact"],
 });
 
 export default function ContactPage() {

@@ -20,8 +20,13 @@ export function ServicesList() {
           </Reveal>
           <Reveal className="col-span-12 md:col-span-7 md:pt-2" delay={100}>
             <p className="lede max-w-[58ch]">
-              The work is connected. Testing informs the map, nutrition and
-              lifestyle change the terrain, and coaching keeps the plan usable.
+              The work is connected. Testing may inform the map, nutrition and
+              lifestyle may change the terrain, and coaching keeps the plan
+              usable when that level of support fits.
+            </p>
+            <p className="mt-5 max-w-[58ch] text-[0.86rem] leading-relaxed text-[var(--color-ink-muted)]">
+              These are examples, not a promise that every service, test,
+              supplement, or protocol is appropriate for every person.
             </p>
           </Reveal>
         </div>
@@ -37,7 +42,7 @@ export function ServicesList() {
             >
               <span className="border-r px-4 py-3" style={{ borderColor: "var(--color-line-strong)" }}>No.</span>
               <span className="border-r px-5 py-3" style={{ borderColor: "var(--color-line-strong)" }}>Service</span>
-              <span className="border-r px-5 py-3" style={{ borderColor: "var(--color-line-strong)" }}>Clinical work inside it</span>
+              <span className="border-r px-5 py-3" style={{ borderColor: "var(--color-line-strong)" }}>Possible work inside it</span>
               <span className="px-4 py-3" />
             </div>
 
@@ -77,7 +82,7 @@ export function ServicesList() {
                       className="border-b px-3 py-3 text-[0.88rem] leading-snug text-[var(--color-ink-muted)] xl:border-r xl:[&:nth-child(3n)]:border-r-0"
                       style={{ borderColor: "var(--color-line)" }}
                     >
-                      + {service.included.length - 3} more
+                      + {service.included.length - 3} more examples
                     </span>
                   ) : null}
                 </span>

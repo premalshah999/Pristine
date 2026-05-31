@@ -6,11 +6,11 @@ import { CtaBand } from "@/components/sections/cta-band";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "About Megha Shah",
+  title: "About Megha Shah | Online functional health consultant",
   description:
-    "Megha Shah, PT, CFNC — a clinician who treats the whole person, not the symptom. Twenty years of clinical experience, rooted in functional medicine.",
+    "Learn about Megha Shah, PT, CFNC, and Pristine Functional Health's virtual root-cause wellness approach for adults across the United States.",
   path: "/about",
-  keywords: ["Megha Shah", "functional nutrition counselor", "functional health clinician"],
+  keywords: ["Megha Shah", "functional nutrition counselor", "online functional health consultant"],
 });
 
 export default function AboutPage() {
@@ -90,7 +90,7 @@ export default function AboutPage() {
           <Reveal>
             <p className="eyebrow mb-4">— Philosophy</p>
             <h2 className="display max-w-[24ch]">
-              Three quiet beliefs <em className="italic-serif">underneath every protocol.</em>
+              Three quiet beliefs <em className="italic-serif">underneath every plan.</em>
             </h2>
           </Reveal>
 

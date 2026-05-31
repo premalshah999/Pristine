@@ -116,6 +116,7 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    color-scheme: light;
     scroll-padding-top: 88px;
   }
   body {
@@ -133,12 +134,17 @@
 
   h1, h2, h3, h4, h5 { font-family: var(--font-serif); font-weight: 400; letter-spacing: 0; }
   em { font-style: italic; }
+  summary::-webkit-details-marker { display: none; }
 
   :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 3px;
     border-radius: var(--radius-xs);
   }
+}
+
+.dark {
+  color-scheme: dark;
 }
 
 /* ============================================================
