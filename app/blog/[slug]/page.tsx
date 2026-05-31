@@ -102,17 +102,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             </Link>
 
             {/* Category badge */}
-            <div className="mb-6">
-              <span
-                className="font-mono text-[0.68rem] tracking-[0.18em] uppercase px-3 py-1.5 rounded-full"
-                style={{
-                  background: "var(--color-mint)",
-                  color: "var(--color-forest)",
-                }}
-              >
-                {post.category}
-              </span>
-            </div>
+            <p className="eyebrow mb-6">{post.category}</p>
 
             {/* Title */}
             <h1 className="display max-w-[26ch] leading-[1.1]">{post.title}</h1>
@@ -145,7 +135,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       {/* BODY */}
       <section className="pb-20 md:pb-28">
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-          <div className="grid grid-cols-12 gap-x-12">
+          <div className="grid grid-cols-12 gap-x-0 lg:gap-x-12">
             {/* Article content */}
             <article className="col-span-12 lg:col-span-8 prose-article">
               {post.body.map((section, idx) => (
@@ -157,13 +147,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <aside className="hidden lg:block col-span-4">
               <div className="sticky top-28 space-y-6">
                 {/* Author card */}
-                <div
-                  className="rounded-2xl border p-6"
-                  style={{
-                    borderColor: "var(--color-line)",
-                    background: "var(--color-bone-2)",
-                  }}
-                >
+                <div className="border-t pt-6" style={{ borderColor: "var(--color-line)" }}>
                   <p className="eyebrow mb-4">About the author</p>
                   <p
                     className="font-serif text-[1.25rem] leading-snug mb-1"
@@ -181,7 +165,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                     className="text-[0.88rem] leading-relaxed"
                     style={{ color: "var(--color-ink-soft)" }}
                   >
-                    Dr. Shah is a Physical Therapist and Certified Functional
+                    Megha Shah is a Physical Therapist and Certified Functional
                     Nutritional Counsellor with 20+ years of clinical experience.
                     She founded Pristine Functional Health to offer the depth of
                     investigation that standard medicine often cannot.
@@ -189,13 +173,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </div>
 
                 {/* Tags */}
-                <div
-                  className="rounded-2xl border p-6"
-                  style={{
-                    borderColor: "var(--color-line)",
-                    background: "var(--color-bone-2)",
-                  }}
-                >
+                <div className="border-t pt-6" style={{ borderColor: "var(--color-line)" }}>
                   <p className="eyebrow mb-4">Topics</p>
                   <div className="flex flex-wrap gap-2">
                     {post.tags.map((tag) => (
@@ -214,10 +192,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </div>
 
                 {/* Free call CTA */}
-                <div
-                  className="rounded-2xl p-6"
-                  style={{ background: "var(--color-forest)" }}
-                >
+                <div className="p-6" style={{ background: "var(--color-forest)" }}>
                   <p
                     className="font-mono text-[0.68rem] tracking-[0.18em] uppercase mb-3"
                     style={{ color: "var(--color-mint)" }}
@@ -228,11 +203,11 @@ export default async function BlogPostPage({ params }: PageProps) {
                     className="font-serif text-[1.15rem] leading-snug mb-4"
                     style={{ color: "var(--color-linen)" }}
                   >
-                    Talk to Dr. Shah about your situation — no commitment.
+                    Talk to Megha Shah about your situation — no commitment.
                   </p>
                   <Link
                     href="/book-appointment"
-                    className="inline-flex items-center gap-2 text-[0.88rem] font-medium px-4 py-2.5 rounded-xl transition-all hover:opacity-90"
+                    className="inline-flex items-center gap-2 text-[0.88rem] font-medium px-4 py-2.5 transition-all hover:opacity-90"
                     style={{ background: "var(--color-mint)", color: "var(--color-forest)" }}
                   >
                     Book your free call
@@ -258,14 +233,16 @@ export default async function BlogPostPage({ params }: PageProps) {
                 <em className="italic-serif">{post.category.toLowerCase()}.</em>
               </h2>
             </Reveal>
-            <ul className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <ul
+              className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8"
+            >
               {related.map((p, idx) => (
                 <Reveal key={p.slug} delay={idx * 80}>
                   <li>
                     <Link
                       href={`/blog/${p.slug}`}
-                      className="group block card-edit p-7 h-full transition-all hover:-translate-y-0.5"
-                      style={{ background: "var(--color-paper)" }}
+                      className="group block border-t pt-6 h-full transition-colors"
+                      style={{ borderColor: "var(--color-line)" }}
                     >
                       <p
                         className="font-mono text-[0.7rem] tracking-widest uppercase mb-3"
@@ -309,7 +286,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       <CtaBand
         eyebrow="Ready to find your root cause?"
         title="Your first conversation is free."
-        subtitle="A 20-minute call with Dr. Megha Shah. No commitment, no sales pressure — just an honest conversation about whether functional medicine is right for you."
+        subtitle="A 20-minute call with Megha Shah. No commitment, no sales pressure — just an honest conversation about whether functional medicine is right for you."
         cta="Book your free call"
         href="/book-appointment"
       />
@@ -371,7 +348,7 @@ function BlogSectionRenderer({ section }: { section: BlogSection }) {
     case "callout":
       return (
         <div
-          className="my-8 rounded-2xl border-l-4 px-7 py-6"
+          className="my-8 border-l-4 px-7 py-6"
           style={{
             borderLeftColor: "var(--color-forest)",
             background: "var(--color-mint)",

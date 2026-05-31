@@ -27,7 +27,7 @@ export const posts: BlogPost[] = [
     readingTime: 9,
     category: "Functional Medicine",
     tags: ["root cause", "functional medicine", "chronic illness", "gut health", "hormones"],
-    author: { name: "Dr. Megha Shah", credentials: "PT, CFNC" },
+    author: { name: "Megha Shah", credentials: "PT, CFNC" },
     heroAlt: "A calm clinical desk with a glass of water, a notebook, and a stethoscope",
     body: [
       {
@@ -145,7 +145,7 @@ export const posts: BlogPost[] = [
       {
         type: "callout",
         content:
-          "At Pristine Functional Health, every patient starts with a free 20-minute discovery call with Dr. Megha Shah. We'll be honest about whether functional medicine is right for your situation — and if it is, we'll tell you exactly where we'd start.",
+          "At Pristine Functional Health, every patient starts with a free 20-minute discovery call with Megha Shah. We'll be honest about whether functional medicine is right for your situation — and if it is, we'll tell you exactly where we'd start.",
       },
     ],
   },
@@ -158,7 +158,7 @@ export const posts: BlogPost[] = [
     readingTime: 8,
     category: "Lab Testing",
     tags: ["lab testing", "thyroid", "functional ranges", "fatigue", "optimal health"],
-    author: { name: "Dr. Megha Shah", credentials: "PT, CFNC" },
+    author: { name: "Megha Shah", credentials: "PT, CFNC" },
     heroAlt: "Lab report printout with a pen beside it on a wooden surface",
     body: [
       {
@@ -293,7 +293,7 @@ export const posts: BlogPost[] = [
       {
         type: "callout",
         content:
-          "Your first conversation with Dr. Megha Shah is free. Schedule a 20-minute discovery call to discuss what you've tried, what your labs have shown, and whether functional medicine is the right next step for you.",
+          "Your first conversation with Megha Shah is free. Schedule a 20-minute discovery call to discuss what you've tried, what your labs have shown, and whether functional medicine is the right next step for you.",
       },
     ],
   },

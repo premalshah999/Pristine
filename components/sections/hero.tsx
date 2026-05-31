@@ -1,90 +1,81 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
+import { HeroLiquidEther } from "@/components/sections/hero-liquid-ether";
+import { MorphingText } from "@/components/ui/morphing-text";
+
+const heroMorphingTexts = ["Restore", "Balance", "Thrive"];
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-16 md:pt-24 pb-24 md:pb-36 min-h-[720px]">
-      {/* Background blobs */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <span className="blob float" style={{ top: "-200px", left: "-160px", width: 620, height: 620, background: "var(--color-mint)" }} />
-        <span className="blob float" style={{ top: "120px", right: "-140px", width: 540, height: 540, background: "var(--color-tan)", animationDelay: "-8s" }} />
-        <span className="blob float" style={{ bottom: "-180px", left: "30%", width: 420, height: 420, background: "var(--color-sage)", animationDelay: "-14s", opacity: 0.35 }} />
+    <section className="relative flex min-h-[calc(100svh-96px)] items-start overflow-hidden pb-20 pt-8 md:pb-24 md:pt-8 lg:pt-6">
+      <div className="absolute inset-0 z-0 opacity-50 dark:opacity-70" aria-hidden>
+        <HeroLiquidEther />
       </div>
-
-      {/* Logo — absolutely positioned in section, fully unconstrained */}
       <div
-        className="hidden xl:flex flex-col items-center justify-center text-center"
+        className="pointer-events-none absolute inset-0 z-[1]"
         style={{
-          position: "absolute",
-          top: "35%",
-          right: "12%",
-          width: "clamp(350px, 35vw, 500px)",
-          transform: "translateY(-50%)",
-          pointerEvents: "none",
-          zIndex: 0,
+          background:
+            "radial-gradient(circle at center, color-mix(in srgb, var(--color-bone) 68%, transparent) 0%, color-mix(in srgb, var(--color-bone) 82%, transparent) 48%, color-mix(in srgb, var(--color-bone) 92%, transparent) 100%)",
         }}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/pristine-logo-mark.png"
-          alt="Pristine Functional Health Logo Mark"
-          style={{ width: "100%", height: "auto" }}
-        />
-      </div>
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-32 md:h-44"
+        style={{
+          background:
+            "linear-gradient(to bottom, color-mix(in srgb, var(--color-bone-2) 0%, transparent) 0%, color-mix(in srgb, var(--color-bone-2) 56%, transparent) 58%, var(--color-bone-2) 100%)",
+        }}
+        aria-hidden
+      />
 
-      <div className="mx-auto w-full max-w-[var(--container-page)] px-6 relative z-10">
-        {/* Text — constrained left so logo never overlaps */}
-        <div className="max-w-[640px]">
+      <div className="relative z-10 mx-auto w-full max-w-[var(--container-page)] px-6">
+        <div className="mx-auto flex max-w-[1120px] flex-col items-center text-center">
+          <Reveal className="mb-5 w-full md:mb-5">
+            <MorphingText
+              texts={heroMorphingTexts}
+              className="hero-morph"
+            />
+          </Reveal>
+
           <Reveal>
-            <h1 className="display-xl max-w-[18ch]">
-              You&apos;re not broken.
-              <br />
-              You&apos;ve been told the
-              <br />
-              <em className="italic-serif">wrong story</em> about your body.
+            <h1 className="display-xl hero-headline mx-auto max-w-[26ch] md:max-w-[31ch] lg:max-w-[34ch]">
+              Beyond Symptoms. Into{" "}
+              <em className="italic-serif">True&nbsp;Healing.</em> Personalized
+              answers for lasting health and vitality.
             </h1>
           </Reveal>
 
           <Reveal delay={120}>
-            <p className="lede max-w-[52ch] mt-8">
+            <p className="lede hero-lede mx-auto mt-6 max-w-[62ch]">
               Pristine Functional Health helps you find the real reason you
-              don&apos;t feel like yourself — and rebuild from the root up. No
+              don&apos;t feel like yourself and rebuild from the root up. No
               more <em className="italic-serif">&ldquo;your labs look fine.&rdquo;</em>{" "}
               No dismissals. Just answers, a plan, and a clinician who actually listens.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/book-appointment" className="btn btn-primary btn-glow">
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link href="/book-appointment" className="btn btn-primary">
                 Book your free call
                 <ArrowRight size={16} />
               </Link>
               <Link href="/conditions" className="btn btn-ghost">
-                Explore conditions we treat
+                Explore conditions
               </Link>
             </div>
           </Reveal>
 
-          <Reveal delay={260} className="mt-12">
-            <div
-              className="border-t pt-7 grid grid-cols-3 gap-6 max-w-[440px]"
+          <Reveal delay={260} className="mt-8 md:mt-10">
+            <dl
+              className="grid max-w-[560px] grid-cols-3 gap-6 border-t pt-7"
               style={{ borderColor: "var(--color-line)" }}
             >
               <StatItem n="20+" l="years of clinical care" />
               <StatItem n="100+" l="lab markers mapped" />
               <StatItem n="14" l="root-cause categories" />
-            </div>
+            </dl>
           </Reveal>
         </div>
       </div>
-
-      {/* Gradient fade into next section */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute bottom-0 left-0 right-0 h-40"
-        style={{
-          background: "linear-gradient(to bottom, transparent 0%, var(--color-bone) 100%)",
-        }}
-      />
     </section>
   );
 }

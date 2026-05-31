@@ -17,7 +17,7 @@ const sections = [
   },
   {
     title: "Protected Health Information (PHI)",
-    body: `Health information you share during consultations or intake forms is treated as Protected Health Information (PHI) under HIPAA. PHI is stored on HIPAA-compliant, encrypted platforms. It is accessed only by Dr. Megha Shah and necessary administrative staff directly involved in your care. PHI is never shared with third parties without your written authorization, except as required by law.`,
+    body: `Health information you share during consultations, intake forms, uploaded lab documents, or secure care communications may be treated as Protected Health Information (PHI). PHI is stored on secure platforms with encryption, access controls, and administrative safeguards. It is accessed only by Megha Shah and necessary administrative support directly involved in scheduling, payment, documentation, or care coordination. PHI is not sold, rented, or used for advertising retargeting. It is not shared with third parties without your written authorization except as permitted or required by law.`,
   },
   {
     title: "Cookies and Analytics",
@@ -25,11 +25,11 @@ const sections = [
   },
   {
     title: "Third-Party Services",
-    body: `We use trusted third-party tools for appointment scheduling (Cal.com), payment processing (Stripe or equivalent), and video consultations (a HIPAA-compliant telehealth platform). These providers have their own privacy policies and we only share the minimum information necessary for them to provide their services. We do not use social media pixels or ad-retargeting technologies.`,
+    body: `We use trusted third-party tools for appointment scheduling, payment processing, forms, secure document exchange, and video consultations. When a tool may handle PHI, we choose vendors intended for healthcare or privacy-sensitive workflows and share only the minimum information necessary for them to provide their services. These providers maintain their own privacy and security practices. We do not use social media pixels or ad-retargeting technologies.`,
   },
   {
     title: "Data Security",
-    body: `We use industry-standard security measures including SSL encryption, secure servers, and access controls to protect your information. While we take all reasonable precautions, no method of electronic transmission is 100% secure. We encourage you not to share sensitive health information via unsecured channels such as standard email.`,
+    body: `We use reasonable administrative, technical, and physical safeguards including SSL encryption, secure systems, role-based access, and careful data handling practices. No method of electronic transmission or storage is 100% secure. Standard email and text messaging may not be appropriate for sensitive health details, so we encourage you to use secure channels whenever available.`,
   },
   {
     title: "Data Retention",
@@ -37,7 +37,7 @@ const sections = [
   },
   {
     title: "Your Rights",
-    body: `You have the right to access, correct, or request deletion of your personal information at any time. For health records governed by HIPAA, you have the right to request copies of your records, request amendments, and receive an accounting of disclosures. To exercise any of these rights, contact us in writing at drmjshah19@gmail.com. We will respond within 30 days.`,
+    body: `You have the right to request access to your records, request corrections or amendments, ask for an accounting of certain disclosures, request limits on some uses or disclosures, and request confidential communications through a preferred method when feasible. Some records must be retained under applicable law and professional standards, so deletion requests may be limited. To exercise any privacy rights, contact us in writing at contact@pristinefunctionalhealth.com. We will respond as promptly as possible and within applicable legal timelines.`,
   },
   {
     title: "Children's Privacy",
@@ -49,7 +49,7 @@ const sections = [
   },
   {
     title: "Contact Us",
-    body: `For questions about this Privacy Policy or to exercise your data rights, contact Dr. Megha Shah at drmjshah19@gmail.com or 240-676-3079. For HIPAA-specific inquiries, you may also contact the U.S. Department of Health and Human Services Office for Civil Rights.`,
+    body: `For questions about this Privacy Policy or to exercise your data rights, contact Megha Shah at contact@pristinefunctionalhealth.com or 240-676-3079. For HIPAA-specific inquiries, you may also contact the U.S. Department of Health and Human Services Office for Civil Rights.`,
   },
 ];
 
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
               collect it, and how we protect it — in plain language.
             </p>
             <p className="mt-4 text-[0.84rem]" style={{ color: "var(--color-ink-muted)" }}>
-              Last updated: April 2025
+              Last updated: May 2026
             </p>
           </Reveal>
         </div>
@@ -110,7 +110,7 @@ export default function PrivacyPage() {
                 </p>
                 <div className="mt-5 flex flex-wrap gap-4 text-[0.9rem]">
                   <a href="tel:+12406763079" style={{ color: "var(--color-forest)" }}>240-676-3079</a>
-                  <a href="mailto:drmjshah19@gmail.com" style={{ color: "var(--color-forest)" }}>drmjshah19@gmail.com</a>
+                  <a href="mailto:contact@pristinefunctionalhealth.com" style={{ color: "var(--color-forest)" }}>contact@pristinefunctionalhealth.com</a>
                 </div>
               </div>
             </Reveal>

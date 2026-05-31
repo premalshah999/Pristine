@@ -47,7 +47,7 @@ export function Special() {
               className="text-[1.05rem] md:text-[1.2rem] leading-[1.55] max-w-[60ch] mx-auto mt-6 relative z-10"
               style={{ color: "rgba(43,56,48,0.80)" }}
             >
-              A free 20-minute discovery call with Dr. Megha. No commitment.
+              A free 20-minute discovery call with Megha. No commitment.
               No upsell. Just an honest conversation about whether we can help —
               and what the real next step might be.
             </p>
@@ -64,7 +64,7 @@ export function Special() {
                 className="font-mono text-[0.72rem] tracking-[0.18em] uppercase"
                 style={{ color: "rgba(43,56,48,0.55)" }}
               >
-                Limited spots each week · personally held by Dr. Shah
+                Limited spots each week · personally held by Megha Shah
               </p>
             </div>
           </div>

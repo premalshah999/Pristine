@@ -8,7 +8,7 @@ import { posts, formatDate } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Blog — Functional Medicine Insights",
   description:
-    "Evidence-informed articles on functional medicine, root-cause testing, thyroid health, gut function, hormones, and living well — from Dr. Megha Shah, PT, CFNC.",
+    "Evidence-informed articles on functional medicine, root-cause testing, thyroid health, gut function, hormones, and living well — from Megha Shah, PT, CFNC.",
   openGraph: {
     title: "Functional Medicine Blog · Pristine Functional Health",
     description:
@@ -47,23 +47,20 @@ export default function BlogIndexPage() {
         style={{ borderColor: "var(--color-line)", background: "var(--color-bone-2)" }}
       >
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
             {sorted.map((post, idx) => (
               <Reveal key={post.slug} delay={idx * 80}>
                 <li>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="group block card-edit h-full p-8 md:p-10 transition-all hover:-translate-y-0.5"
-                    style={{ background: "var(--color-paper)" }}
+                    className="group block border-t pt-7 h-full transition-colors"
+                    style={{ borderColor: "var(--color-line)" }}
                   >
                     {/* Category + reading time */}
                     <div className="flex items-center gap-3 mb-5">
                       <span
-                        className="font-mono text-[0.68rem] tracking-[0.18em] uppercase px-2.5 py-1 rounded-full"
-                        style={{
-                          background: "var(--color-mint)",
-                          color: "var(--color-forest)",
-                        }}
+                        className="font-mono text-[0.68rem] tracking-[0.18em] uppercase"
+                        style={{ color: "var(--color-forest)" }}
                       >
                         {post.category}
                       </span>
@@ -126,7 +123,7 @@ export default function BlogIndexPage() {
       <CtaBand
         eyebrow="Questions about your health?"
         title="A 20-minute call can change the whole direction."
-        subtitle="Talk to Dr. Megha Shah directly. Free, no obligation — just clarity about whether functional medicine is the right next step for you."
+        subtitle="Talk to Megha Shah directly. Free, no obligation — just clarity about whether functional medicine is the right next step for you."
       />
     </>
   );

@@ -49,13 +49,16 @@ export default async function ConditionPage({ params }: PageProps) {
             <h1 className="display-xl max-w-[18ch]">{condition.hero.title}</h1>
             <p className="lede mt-7 max-w-[60ch]">{condition.hero.subtitle}</p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <Link href="/book" className="btn btn-primary btn-glow">
+              <Link href="/book-appointment" className="btn btn-primary">
                 Book your free call
                 <ArrowRight size={16} />
               </Link>
               <a href="#approach" className="btn btn-ghost">
                 See our approach
               </a>
+              <Link href="/conditions#testing" className="btn btn-ghost">
+                Testing overview
+              </Link>
             </div>
           </Reveal>
         </div>
@@ -70,7 +73,7 @@ export default async function ConditionPage({ params }: PageProps) {
         }}
       >
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-          <div className="grid grid-cols-12 gap-y-10 gap-x-12">
+          <div className="grid grid-cols-12 gap-y-10 gap-x-0 md:gap-x-12">
             <Reveal className="col-span-12 md:col-span-4">
               <p className="eyebrow mb-4">— What it actually is</p>
               <h2 className="title text-[2rem] md:text-[2.4rem] leading-[1.1] max-w-[18ch]">
@@ -108,16 +111,16 @@ export default async function ConditionPage({ params }: PageProps) {
               Does any of this <em className="italic-serif">sound like you?</em>
             </h2>
           </Reveal>
-          <ul className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <ul className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-6">
             {condition.symptoms.map((s, idx) => (
               <Reveal key={idx} delay={idx * 40}>
                 <li
-                  className="card-edit p-5 flex items-start gap-3 h-full"
-                  style={{ background: "var(--color-paper)" }}
+                  className="border-t pt-4 flex items-start gap-3 h-full"
+                  style={{ borderColor: "var(--color-line)" }}
                 >
                   <span
-                    className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full mt-0.5"
-                    style={{ background: "var(--color-blush)" }}
+                    className="inline-flex h-5 w-5 shrink-0 items-center justify-center mt-0.5"
+                    style={{ color: "var(--color-forest)" }}
                   >
                     <Check size={14} />
                   </span>
@@ -146,11 +149,11 @@ export default async function ConditionPage({ params }: PageProps) {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-12 mt-12">
             <Reveal>
               <article
-                className="card-edit p-7 md:p-9 h-full"
-                style={{ background: "var(--color-paper)" }}
+                className="border-t pt-8 h-full"
+                style={{ borderColor: "var(--color-line-strong)" }}
               >
                 <p className="font-mono text-[0.75rem] tracking-[0.18em] uppercase text-[var(--color-ink-muted)] mb-3">
                   The conventional path
@@ -166,8 +169,7 @@ export default async function ConditionPage({ params }: PageProps) {
                   {condition.conventional.misses.map((m, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <span
-                        className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full mt-0.5 text-[var(--color-blush-deep)]"
-                        style={{ background: "var(--color-blush)" }}
+                        className="inline-flex h-5 w-5 shrink-0 items-center justify-center mt-0.5 text-[var(--color-ink-muted)]"
                       >
                         <X size={12} />
                       </span>
@@ -182,11 +184,8 @@ export default async function ConditionPage({ params }: PageProps) {
 
             <Reveal delay={120}>
               <article
-                className="card-edit p-7 md:p-9 h-full"
-                style={{
-                  background: "var(--color-paper)",
-                  boxShadow: "var(--shadow)",
-                }}
+                className="border-t pt-8 h-full"
+                style={{ borderColor: "var(--color-forest)" }}
               >
                 <p className="font-mono text-[0.75rem] tracking-[0.18em] uppercase text-[var(--color-lavender-deep)] mb-3">
                   Our functional approach
@@ -199,31 +198,14 @@ export default async function ConditionPage({ params }: PageProps) {
                   {condition.functional.intro}
                 </p>
 
-                <div className="mb-5">
-                  <p className="eyebrow mb-3">Testing we run</p>
-                  <ul className="space-y-2">
-                    {condition.functional.testing.map((t, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <span
-                          className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full mt-0.5"
-                          style={{ background: "var(--color-lavender)" }}
-                        >
-                          <Check size={12} />
-                        </span>
-                        <span className="text-[0.92rem] leading-snug">{t}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
                 <div>
                   <p className="eyebrow mb-3">Our protocol</p>
                   <ul className="space-y-2">
                     {condition.functional.approach.map((a, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <span
-                          className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full mt-0.5"
-                          style={{ background: "var(--color-sage)" }}
+                          className="inline-flex h-5 w-5 shrink-0 items-center justify-center mt-0.5"
+                          style={{ color: "var(--color-forest)" }}
                         >
                           <Check size={12} />
                         </span>
@@ -244,7 +226,7 @@ export default async function ConditionPage({ params }: PageProps) {
         style={{ borderColor: "var(--color-line)" }}
       >
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-          <div className="grid grid-cols-12 gap-y-10 gap-x-12">
+          <div className="grid grid-cols-12 gap-y-10 gap-x-0 md:gap-x-12">
             <Reveal className="col-span-12 md:col-span-4">
               <p className="eyebrow mb-4">— What to expect</p>
               <h2 className="title text-[2rem] md:text-[2.4rem] leading-[1.1] max-w-[20ch]">
@@ -276,11 +258,8 @@ export default async function ConditionPage({ params }: PageProps) {
           <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
             <Reveal>
               <figure
-                className="max-w-[820px] mx-auto rounded-[28px] border p-10 md:p-14 text-center"
-                style={{
-                  background: "var(--color-paper)",
-                  borderColor: "var(--color-line)",
-                }}
+                className="max-w-[900px] mx-auto border-y py-10 md:py-14 text-center"
+                style={{ borderColor: "var(--color-line)" }}
               >
                 <p className="eyebrow mb-6">A patient story</p>
                 <blockquote className="font-serif text-[1.4rem] md:text-[1.75rem] leading-[1.4] tracking-tight">

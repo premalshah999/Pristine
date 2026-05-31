@@ -1,6 +1,6 @@
 # Pristine Functional Health
 
-Marketing site and patient portal for Pristine Functional Health — virtual functional medicine practice with Dr. Megha Shah, PT, CFNC.
+Marketing site and patient portal for Pristine Functional Health — virtual functional medicine practice with Megha Shah, PT, CFNC.
 
 Built with **Next.js 16** (App Router, Turbopack), **Tailwind CSS v4**, and **React 19**.
 
@@ -39,7 +39,7 @@ The booking page (`/book-appointment`) uses Cal.com's element-click embed pointe
 
 ```
 app/                    # Next.js App Router pages
-  about/                # About Dr. Shah
+  about/                # About Megha Shah
   blog/                 # Blog index + [slug]
   book-appointment/     # Cal.com embed
   conditions/           # Conditions list + [slug]

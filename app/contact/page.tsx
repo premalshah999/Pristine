@@ -35,7 +35,7 @@ export default function ContactPage() {
         }}
       >
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 gap-x-10">
             {[
               {
                 icon: <Phone size={18} />,
@@ -47,8 +47,8 @@ export default function ContactPage() {
               {
                 icon: <Mail size={18} />,
                 eyebrow: "Email",
-                title: "drmjshah19@gmail.com",
-                href: "mailto:drmjshah19@gmail.com",
+                title: "contact@pristinefunctionalhealth.com",
+                href: "mailto:contact@pristinefunctionalhealth.com",
                 copy: "For new patient inquiries, press, or partnership questions.",
               },
               {
@@ -61,12 +61,12 @@ export default function ContactPage() {
             ].map((row, i) => (
               <Reveal key={row.eyebrow} delay={i * 60}>
                 <article
-                  className="card-edit p-7 md:p-8 h-full"
-                  style={{ background: "var(--color-paper)" }}
+                  className="border-t pt-6 h-full"
+                  style={{ borderColor: "var(--color-line)" }}
                 >
                   <span
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full mb-5"
-                    style={{ background: "var(--color-lavender)" }}
+                    className="inline-flex h-10 w-10 items-center justify-center mb-5"
+                    style={{ color: "var(--color-forest)" }}
                   >
                     {row.icon}
                   </span>
@@ -88,6 +88,34 @@ export default function ContactPage() {
               </Reveal>
             ))}
           </div>
+
+          <Reveal className="mt-20 max-w-[860px]">
+            <form
+              action="mailto:contact@pristinefunctionalhealth.com"
+              method="post"
+              encType="text/plain"
+              className="border-t pt-8"
+              style={{ borderColor: "var(--color-line-strong)" }}
+            >
+              <p className="eyebrow mb-6">Send a note</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <ContactField label="Your name" id="name" name="name" required />
+                <ContactField label="Email" id="email" name="email" type="email" required />
+              </div>
+              <div className="mt-6">
+                <ContactField label="Subject" id="subject" name="subject" />
+              </div>
+              <div className="mt-6">
+                <label htmlFor="message" className="block font-serif text-[1.35rem] mb-3">
+                  Message
+                </label>
+                <textarea id="message" name="message" rows={6} className="input" required />
+              </div>
+              <button type="submit" className="btn btn-primary mt-7">
+                Send message
+              </button>
+            </form>
+          </Reveal>
         </div>
       </section>
 
@@ -97,5 +125,28 @@ export default function ContactPage() {
         subtitle="20 minutes, virtual, free. The most efficient way to find out if we can help — and the lowest possible barrier to getting your real questions answered."
       />
     </>
+  );
+}
+
+function ContactField({
+  label,
+  id,
+  name,
+  type = "text",
+  required,
+}: {
+  label: string;
+  id: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="block font-serif text-[1.35rem] mb-3">
+        {label}
+      </label>
+      <input id={id} name={name} type={type} required={required} className="input" />
+    </div>
   );
 }

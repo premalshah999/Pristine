@@ -7,6 +7,7 @@ import { useTheme } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { conditionsByCategory } from "@/lib/conditions";
 import { services } from "@/lib/services";
+import { Logo } from "@/components/ui/logo";
 
 type DropdownKey = "conditions" | "services" | "about" | null;
 
@@ -59,25 +60,18 @@ export function SiteNav() {
       }}
     >
       {/* Nav bar row */}
-      <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
+      <div className="mx-auto w-full px-2 md:px-3">
         <div
           className={cn(
             "flex items-center justify-between gap-4 transition-[height] duration-300",
-            scrolled ? "h-[64px]" : "h-[80px]"
+            scrolled ? "h-[84px]" : "h-[96px]"
           )}
         >
-          <Link
-            href="/"
-            className="font-serif text-[1.05rem] tracking-tight leading-tight shrink-0"
-            style={{ color: "var(--color-ink)" }}
-          >
-            Pristine{" "}
-            <span style={{ color: "var(--color-ink-soft)" }}>Functional Health</span>
-          </Link>
+          <Logo size={82} showWordmark={false} priority className="shrink-0" />
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-0.5" aria-label="Primary">
-            <NavLink href="/">Home</NavLink>
+          <nav className="hidden xl:flex items-center gap-0.5" aria-label="Primary">
+            <NavLink href="/">Pristine Functional Health</NavLink>
             <NavTrigger
               label="Conditions"
               active={open === "conditions"}
@@ -130,7 +124,7 @@ export function SiteNav() {
 
             <button
               type="button"
-              className="lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border"
+              className="xl:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border"
               style={{ borderColor: "var(--color-line-strong)" }}
               aria-label="Open menu"
               onClick={() => setMobileOpen((s) => !s)}
@@ -153,7 +147,7 @@ export function SiteNav() {
         <AboutDropdown onClose={() => setOpen(null)} />
       )}
 
-      {mobileOpen && <MobileMenu onClose={() => setMobileOpen(false)} />}
+      {mobileOpen && <MobileMenu scrolled={scrolled} onClose={() => setMobileOpen(false)} />}
     </header>
   );
 }
@@ -214,7 +208,6 @@ function DropPanel({ children }: { children: React.ReactNode }) {
           style={{
             background: "var(--color-paper)",
             borderColor: "var(--color-line-strong)",
-            boxShadow: "0 24px 64px rgba(43,56,48,0.13)",
           }}
         >
           {children}
@@ -370,7 +363,7 @@ function AboutDropdown({ onClose }: { onClose: () => void }) {
           {
             href: "/about",
             eyebrow: "Clinician",
-            title: "Dr. Megha Shah",
+            title: "Megha Shah",
             copy: "Physical Therapist & Functional Nutritional Counsellor — 20+ years of clinical experience rebuilding lives from the root up.",
           },
           {
@@ -418,10 +411,13 @@ function AboutDropdown({ onClose }: { onClose: () => void }) {
 
 /* ─── Mobile menu ────────────────────────────────────────────── */
 
-function MobileMenu({ onClose }: { onClose: () => void }) {
+function MobileMenu({ scrolled, onClose }: { scrolled: boolean; onClose: () => void }) {
   return (
     <div
-      className="lg:hidden fixed inset-0 top-[64px] overflow-y-auto"
+      className={cn(
+        "xl:hidden fixed inset-x-0 bottom-0 overflow-y-auto",
+        scrolled ? "top-[84px]" : "top-[96px]"
+      )}
       style={{ background: "var(--color-bone)", zIndex: 199 }}
       role="dialog"
       aria-modal="true"
@@ -494,7 +490,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
         <Link
           href="/book-appointment"
           onClick={onClose}
-          className="btn btn-glow w-full justify-center gap-2"
+          className="btn btn-primary w-full justify-center gap-2"
           style={{ background: "var(--color-forest)", color: "var(--color-linen)", border: "none" }}
         >
           <Calendar size={15} />

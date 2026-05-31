@@ -7,7 +7,7 @@ export function CtaBand({
   title = "Your body has been telling the truth all along.",
   subtitle = "Book your free 20-minute call. We'll listen, we'll be honest, and you'll leave with a clearer next step than you've had in years.",
   cta = "Book your free call",
-  href = "/book",
+  href = "/book-appointment",
 }: {
   eyebrow?: string;
   title?: string;
@@ -26,7 +26,7 @@ export function CtaBand({
           <h2 className="display max-w-[24ch] mx-auto">{title}</h2>
           <p className="lede mt-7 max-w-[58ch] mx-auto">{subtitle}</p>
           <div className="mt-9 flex justify-center">
-            <Link href={href} className="btn btn-primary btn-glow">
+            <Link href={href} className="btn btn-primary">
               {cta}
               <ArrowRight size={16} />
             </Link>

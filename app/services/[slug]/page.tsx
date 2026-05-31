@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { services, getService, getServiceSlugs } from "@/lib/services";
 import { CtaBand } from "@/components/sections/cta-band";
@@ -44,8 +44,26 @@ export default async function ServicePage({ params }: PageProps) {
             </div>
             <h1 className="display-xl max-w-[18ch]">{service.hero.title}</h1>
             <p className="lede mt-7 max-w-[60ch]">{service.hero.subtitle}</p>
+            <div
+              className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-5 max-w-[980px] border-y py-6"
+              style={{ borderColor: "var(--color-line)" }}
+            >
+              {service.included.slice(0, 3).map((item, idx) => (
+                <div key={item.title}>
+                  <p className="font-mono text-[0.72rem] text-[var(--color-ink-muted)] mb-2">
+                    {String(idx + 1).padStart(2, "0")}
+                  </p>
+                  <p className="font-serif text-[1.2rem] leading-tight text-[var(--color-ink)]">
+                    {item.title}
+                  </p>
+                  <p className="mt-2 text-[0.9rem] leading-relaxed text-[var(--color-ink-soft)]">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
             <div className="mt-9 flex flex-wrap gap-3">
-              <Link href="/book" className="btn btn-primary btn-glow">
+              <Link href="/book-appointment" className="btn btn-primary">
                 Book your free call
                 <ArrowRight size={16} />
               </Link>
@@ -66,7 +84,7 @@ export default async function ServicePage({ params }: PageProps) {
         }}
       >
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-          <div className="grid grid-cols-12 gap-y-10 gap-x-12">
+          <div className="grid grid-cols-12 gap-y-10 gap-x-0 md:gap-x-12">
             <Reveal className="col-span-12 md:col-span-4">
               <p className="eyebrow mb-4">— What it is</p>
               <h2 className="title text-[2rem] md:text-[2.4rem] leading-[1.1] max-w-[20ch]">
@@ -105,23 +123,22 @@ export default async function ServicePage({ params }: PageProps) {
               Everything in this service, <em className="italic-serif">spelled out.</em>
             </h2>
           </Reveal>
-          <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+          <ul
+            className="mt-12 divide-y border-y"
+            style={{ borderColor: "var(--color-line)" }}
+          >
             {service.included.map((item, idx) => (
               <Reveal key={idx} delay={idx * 60}>
                 <li
-                  className="card-edit h-full p-7"
-                  style={{ background: "var(--color-paper)" }}
+                  className="py-7 md:py-8 grid grid-cols-12 gap-y-3 gap-x-0 md:gap-x-8"
                 >
-                  <div className="flex items-start gap-3 mb-3">
-                    <span
-                      className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full"
-                      style={{ background: "var(--color-lavender)" }}
-                    >
-                      <Check size={14} />
-                    </span>
-                    <h3 className="font-serif text-[1.25rem] leading-snug">{item.title}</h3>
-                  </div>
-                  <p className="text-[0.95rem] leading-relaxed text-[var(--color-ink-soft)] pl-10">
+                  <span className="col-span-12 md:col-span-1 font-mono text-[0.72rem] text-[var(--color-ink-muted)]">
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="col-span-12 md:col-span-4 font-serif text-[1.35rem] md:text-[1.6rem] leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="col-span-12 md:col-span-7 text-[0.98rem] leading-relaxed text-[var(--color-ink-soft)]">
                     {item.description}
                   </p>
                 </li>
@@ -140,19 +157,21 @@ export default async function ServicePage({ params }: PageProps) {
         }}
       >
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-          <div className="grid grid-cols-12 gap-y-10 gap-x-12">
+          <div className="grid grid-cols-12 gap-y-10 gap-x-0 md:gap-x-12">
             <Reveal className="col-span-12 md:col-span-4">
               <p className="eyebrow mb-4">— Why it matters</p>
               <h2 className="title text-[2rem] md:text-[2.4rem] leading-[1.1] max-w-[20ch]">
                 What <em className="italic-serif">changes</em> for you.
               </h2>
             </Reveal>
-            <ul className="col-span-12 md:col-span-8 space-y-3 md:space-y-4">
+            <ul
+              className="col-span-12 md:col-span-8 divide-y border-y"
+              style={{ borderColor: "var(--color-line)" }}
+            >
               {service.why.map((w, idx) => (
                 <Reveal key={idx} delay={idx * 80}>
                   <li
-                    className="card-edit p-6 md:p-8 flex items-start gap-4"
-                    style={{ background: "var(--color-paper)" }}
+                    className="py-7 md:py-8 flex items-start gap-4"
                   >
                     <span className="font-mono text-[0.7rem] tracking-widest text-[var(--color-ink-muted)] pt-1.5 w-8 shrink-0">
                       0{idx + 1}
@@ -180,12 +199,14 @@ export default async function ServicePage({ params }: PageProps) {
               The <em className="italic-serif">step-by-step</em>.
             </h2>
           </Reveal>
-          <ol className="mt-12 space-y-3">
+          <ol
+            className="mt-12 divide-y border-y"
+            style={{ borderColor: "var(--color-line)" }}
+          >
             {service.process.map((step, idx) => (
               <Reveal key={idx} delay={idx * 60}>
                 <li
-                  className="card-edit p-6 md:p-7 grid grid-cols-12 gap-4 items-start"
-                  style={{ background: "var(--color-paper)" }}
+                  className="py-6 md:py-7 grid grid-cols-12 gap-4 items-start"
                 >
                   <span className="col-span-12 md:col-span-1 font-mono text-[0.78rem] tracking-widest text-[var(--color-lavender-deep)]">
                     {String(idx + 1).padStart(2, "0")}
@@ -200,13 +221,7 @@ export default async function ServicePage({ params }: PageProps) {
 
           {service.pricing && (
             <Reveal className="mt-12 max-w-[820px]">
-              <div
-                className="rounded-2xl border p-7 md:p-9"
-                style={{
-                  background: "var(--color-bone-2)",
-                  borderColor: "var(--color-line)",
-                }}
-              >
+              <div className="border-l pl-6 md:pl-8" style={{ borderColor: "var(--color-line-strong)" }}>
                 <p className="eyebrow mb-3">A note on pricing</p>
                 <p className="text-[var(--color-ink-soft)] leading-relaxed">
                   {service.pricing}

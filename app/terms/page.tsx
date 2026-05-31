@@ -13,19 +13,23 @@ const sections = [
   },
   {
     title: "Nature of Services",
-    body: `Pristine Functional Health provides virtual functional medicine consultations, nutritional counseling, and wellness coaching services. These services are educational and supportive in nature. They do not constitute the practice of conventional medicine, and they are not a substitute for emergency medical care. Dr. Megha Shah holds a Doctor of Physical Therapy degree and is a Certified Functional Nutritional Counsellor (CFNC). Services are provided within her scope of licensure and certification.`,
+    body: `Pristine Functional Health provides virtual functional health consultations, functional nutrition counseling, and wellness coaching services. These services are educational and supportive in nature. They do not replace diagnosis, treatment, or ongoing care from your licensed medical providers, and they are not a substitute for emergency medical care. Megha Shah is a licensed Physical Therapist (DPT) and Certified Functional Nutritional Counsellor (CFNC). Services are provided within her scope of licensure and certification.`,
   },
   {
     title: "Not a Medical Emergency Service",
     body: `If you are experiencing a medical emergency, call 911 or go to your nearest emergency room immediately. Pristine Functional Health cannot respond to emergencies and is not designed for crisis or acute care situations. Our services are intended for chronic, complex, and lifestyle-related health concerns pursued in a non-emergency context.`,
   },
   {
-    title: "FDA Disclaimer",
-    body: `The information, protocols, supplements, and dietary recommendations discussed through Pristine Functional Health have not been evaluated by the Food and Drug Administration. Nothing on this website or communicated in sessions is intended to diagnose, treat, cure, or prevent any disease. All content is for educational purposes only. You should always consult with a qualified licensed physician or healthcare provider before beginning any new health program, supplement regimen, or dietary change.`,
+    title: "Therapist Safety & Mental Health Support",
+    body: `Pristine Functional Health does not provide psychotherapy, psychiatric diagnosis, crisis counseling, or emergency mental health services. Functional nutrition and wellness coaching may support the body systems that influence mood, energy, and stress resilience, but they do not replace care from a licensed therapist, psychiatrist, psychologist, or other mental health professional. If you are in emotional crisis, feel unsafe, or may harm yourself or someone else, call 911 or call or text 988 for the Suicide & Crisis Lifeline in the United States. Do not start, stop, or change psychiatric medication or therapy plans without guidance from the licensed professional managing that care.`,
   },
   {
-    title: "HIPAA and Confidentiality",
-    body: `Pristine Functional Health is committed to protecting your protected health information (PHI) in compliance with the Health Insurance Portability and Accountability Act (HIPAA). Your health information will not be shared with any third party without your explicit written authorization, except as required by law. All digital communications containing health information are conducted through HIPAA-compliant platforms.`,
+    title: "FDA Disclaimer",
+    body: `Statements on this website, in educational materials, and during wellness sessions have not been evaluated by the Food and Drug Administration. Pristine Functional Health does not claim that any nutrition strategy, supplement, protocol, lab review, lifestyle recommendation, or educational resource will diagnose, treat, cure, or prevent any disease. Products discussed are not represented as FDA-approved treatments unless explicitly stated by the product manufacturer or applicable regulator. Information is provided for educational and wellness purposes only. Always consult a qualified licensed healthcare provider before beginning a supplement, changing medications, delaying medical care, or making significant diet, exercise, or lifestyle changes, especially if you are pregnant, nursing, taking medication, or managing a diagnosed medical condition.`,
+  },
+  {
+    title: "HIPAA Compliance & Confidentiality",
+    body: `Pristine Functional Health protects health information using HIPAA-conscious administrative, technical, and physical safeguards. Protected Health Information (PHI) may include intake forms, consultation notes, lab documents you provide, wellness history, payment records tied to care, and communications about your services. PHI is accessed only by Megha Shah and necessary administrative support involved in scheduling, payment, documentation, or care coordination. We use secure platforms when collecting or storing health information, share the minimum necessary information for operational needs, and do not disclose PHI to third parties without written authorization except as permitted or required by law. Standard email and text messaging can carry security limits, so sensitive health details should be shared through secure channels whenever available.`,
   },
   {
     title: "Appointment Scheduling and Cancellation",
@@ -37,7 +41,7 @@ const sections = [
   },
   {
     title: "Telehealth Consent",
-    body: `By booking a virtual session with Pristine Functional Health, you acknowledge that you understand the benefits and limitations of telehealth services, including potential technology-related disruptions. You consent to the use of video conferencing technology for your consultations. You understand that Dr. Shah may refer you to an in-person provider if telehealth is deemed clinically inadequate for your needs.`,
+    body: `By booking a virtual session with Pristine Functional Health, you acknowledge that you understand the benefits and limitations of telehealth services, including potential technology-related disruptions. You consent to the use of video conferencing technology for your consultations. You understand that Megha Shah may refer you to an in-person provider if telehealth is deemed clinically inadequate for your needs.`,
   },
   {
     title: "Intellectual Property",
@@ -45,7 +49,7 @@ const sections = [
   },
   {
     title: "Limitation of Liability",
-    body: `Pristine Functional Health, Dr. Megha Shah, and affiliated staff are not liable for any direct, indirect, incidental, or consequential damages resulting from the use of, or inability to use, our services or website. Our total liability to you for any claim arising out of or relating to these terms or our services is limited to the amount you paid for the specific service in question. We do not guarantee specific health outcomes.`,
+    body: `Pristine Functional Health, Megha Shah, and affiliated staff are not liable for any direct, indirect, incidental, or consequential damages resulting from the use of, or inability to use, our services or website. Our total liability to you for any claim arising out of or relating to these terms or our services is limited to the amount you paid for the specific service in question. We do not guarantee specific health outcomes.`,
   },
   {
     title: "Governing Law",
@@ -53,7 +57,7 @@ const sections = [
   },
   {
     title: "Contact",
-    body: `If you have questions about these Terms and Conditions, please contact us at drmjshah19@gmail.com or call 240-676-3079. We are happy to clarify anything before you book.`,
+    body: `If you have questions about these Terms and Conditions, please contact us at contact@pristinefunctionalhealth.com or call 240-676-3079. We are happy to clarify anything before you book.`,
   },
 ];
 
@@ -73,7 +77,7 @@ export default function TermsPage() {
               be bound by these terms.
             </p>
             <p className="mt-4 text-[0.84rem]" style={{ color: "var(--color-ink-muted)" }}>
-              Last updated: April 2025
+              Last updated: May 2026
             </p>
           </Reveal>
         </div>
@@ -124,7 +128,7 @@ export default function TermsPage() {
                 </p>
                 <div className="mt-5 flex flex-wrap gap-4 text-[0.9rem]">
                   <a href="tel:+12406763079" style={{ color: "var(--color-forest)" }}>240-676-3079</a>
-                  <a href="mailto:drmjshah19@gmail.com" style={{ color: "var(--color-forest)" }}>drmjshah19@gmail.com</a>
+                  <a href="mailto:contact@pristinefunctionalhealth.com" style={{ color: "var(--color-forest)" }}>contact@pristinefunctionalhealth.com</a>
                 </div>
               </div>
             </Reveal>

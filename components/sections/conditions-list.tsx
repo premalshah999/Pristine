@@ -1,33 +1,46 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
-import { conditions, conditionsByCategory } from "@/lib/conditions";
+import {
+  conditions,
+  conditionsByCategory,
+  type ConditionCategory,
+} from "@/lib/conditions";
+
+const categoryOrder: ConditionCategory[] = [
+  "Metabolic",
+  "Hormonal",
+  "Neurological",
+  "Mental Health",
+  "Gut",
+  "Immune",
+  "Neurodevelopmental",
+];
+
+const maxCategoryRows = Math.max(
+  ...categoryOrder.map((category) => conditionsByCategory[category].length)
+);
 
 export function ConditionsList() {
-  const categories = (
-    Object.keys(conditionsByCategory) as Array<keyof typeof conditionsByCategory>
-  ).filter((c) => conditionsByCategory[c].length);
-
   return (
     <section
       id="conditions"
-      className="py-24 md:py-36 border-t"
+      className="py-20 md:py-28 border-t"
       style={{ borderColor: "var(--color-line)", background: "var(--color-canvas)" }}
     >
       <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-        <div className="grid grid-cols-12 gap-y-10 gap-x-10 mb-16 md:mb-20">
-          <Reveal className="col-span-12 md:col-span-6">
-            <p className="eyebrow mb-5">14 conditions, mapped at the root</p>
-            <h2 className="display max-w-[16ch]">
-              Conditions we help <em className="italic-serif">untangle</em>.
+        <div className="grid grid-cols-12 gap-y-8 gap-x-0 md:gap-x-10 mb-12">
+          <Reveal className="col-span-12 md:col-span-5">
+            <p className="eyebrow mb-5">{conditions.length} conditions, mapped at the root</p>
+            <h2 className="display max-w-[15ch]">
+              A compact index for <em className="italic-serif">messy</em> symptoms.
             </h2>
           </Reveal>
-          <Reveal className="col-span-12 md:col-span-6 md:pt-2" delay={120}>
-            <p className="lede max-w-[52ch]">
-              Every condition below has a story underneath the symptoms — a
-              story conventional medicine almost never has time to read.
-              We test, we listen, we trace it back. Click any condition to
-              read our full clinical approach.
+          <Reveal className="col-span-12 md:col-span-7 md:pt-2" delay={100}>
+            <p className="lede max-w-[58ch]">
+              Scan across clinical categories, then open any condition for the
+              full root-cause approach. The layout is built like a working
+              reference table, not a loose marketing grid.
             </p>
             <Link
               href="/conditions"
@@ -39,56 +52,89 @@ export function ConditionsList() {
           </Reveal>
         </div>
 
-        <div className="space-y-12 md:space-y-16">
-          {categories.map((cat, ci) => (
-            <Reveal key={cat} delay={ci * 60}>
-              <div
-                className="grid grid-cols-12 gap-y-6 gap-x-10 pb-8 border-b"
-                style={{ borderColor: "var(--color-line)" }}
-              >
-                <div className="col-span-12 md:col-span-3">
-                  <p className="eyebrow mb-2">— {cat}</p>
-                </div>
-                <ul className="col-span-12 md:col-span-9 divide-y" style={{ borderColor: "var(--color-line)" }}>
-                  {conditionsByCategory[cat].map((c) => (
-                    <li key={c.slug}>
-                      <Link
-                        href={`/conditions/${c.slug}`}
-                        className="group grid grid-cols-12 items-baseline gap-3 py-5 transition-colors"
+        <Reveal>
+          <div
+            className="overflow-hidden border bg-[var(--color-paper)]"
+            style={{ borderColor: "var(--color-line-strong)" }}
+          >
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[1240px] border-separate border-spacing-0">
+                <thead>
+                  <tr>
+                    <th
+                      scope="col"
+                      className="w-[72px] border-r border-b px-4 py-4 text-left font-mono text-[0.68rem] uppercase text-[var(--color-ink-muted)]"
+                      style={{ borderColor: "var(--color-line-strong)" }}
+                    >
+                      Row
+                    </th>
+                    {categoryOrder.map((category) => (
+                      <th
+                        key={category}
+                        scope="col"
+                        className="border-r border-b px-4 py-4 text-left last:border-r-0"
+                        style={{ borderColor: "var(--color-line-strong)" }}
                       >
-                        <span className="col-span-1 font-mono text-[0.7rem] tracking-widest text-[var(--color-ink-muted)]">
-                          {String(conditions.indexOf(c) + 1).padStart(2, "0")}
+                        <span className="block font-serif text-[1.1rem] leading-tight text-[var(--color-ink)]">
+                          {category}
                         </span>
-                        <span className="col-span-11 md:col-span-4">
-                          <span className="font-serif text-[1.6rem] md:text-[1.85rem] leading-tight tracking-tight group-hover:text-[var(--color-lavender-deep)] transition-colors">
-                            {c.name}
-                          </span>
+                        <span className="mt-1 block font-mono text-[0.66rem] uppercase text-[var(--color-ink-muted)]">
+                          {conditionsByCategory[category].length} condition
+                          {conditionsByCategory[category].length === 1 ? "" : "s"}
                         </span>
-                        <span className="col-span-12 md:col-span-6 text-[0.95rem] text-[var(--color-ink-soft)] leading-snug">
-                          {c.tagline}
-                        </span>
-                        <span className="col-span-12 md:col-span-1 text-right">
-                          <ArrowUpRight
-                            size={18}
-                            className="inline-block text-[var(--color-ink-muted)] group-hover:text-[var(--color-ink)] transition-all group-hover:translate-x-1 group-hover:-translate-y-1"
-                          />
-                        </span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {Array.from({ length: maxCategoryRows }).map((_, rowIndex) => (
+                    <tr key={rowIndex}>
+                      <th
+                        scope="row"
+                        className="border-r border-b px-4 py-4 text-left align-top font-mono text-[0.72rem] text-[var(--color-ink-muted)] last:border-b-0"
+                        style={{ borderColor: "var(--color-line-strong)" }}
+                      >
+                        {String(rowIndex + 1).padStart(2, "0")}
+                      </th>
+                      {categoryOrder.map((category) => {
+                        const condition = conditionsByCategory[category][rowIndex];
 
-        <Reveal className="mt-16 text-center">
-          <p className="text-[var(--color-ink-soft)] mb-4">
-            Don't see yours? We work with the whole story — not the label.
-          </p>
-          <Link href="/book" className="btn btn-primary btn-glow">
-            Book your free call
-          </Link>
+                        return (
+                          <td
+                            key={category}
+                            className="border-r border-b align-top last:border-r-0"
+                            style={{ borderColor: "var(--color-line-strong)" }}
+                          >
+                            {condition ? (
+                              <Link
+                                href={`/conditions/${condition.slug}`}
+                                className="group flex min-h-[142px] flex-col justify-between px-4 py-4 transition-colors hover:bg-[var(--color-canvas)]"
+                              >
+                                <span>
+                                  <span className="block font-serif text-[1.16rem] leading-tight transition-colors group-hover:text-[var(--color-forest)]">
+                                    {condition.shortName ?? condition.name}
+                                  </span>
+                                  <span className="mt-3 block text-[0.82rem] leading-relaxed text-[var(--color-ink-soft)]">
+                                    {condition.tagline}
+                                  </span>
+                                </span>
+                                <ArrowUpRight
+                                  size={15}
+                                  className="mt-4 self-end text-[var(--color-ink-muted)] transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--color-ink)]"
+                                />
+                              </Link>
+                            ) : (
+                              <span className="block min-h-[142px] bg-[var(--color-canvas)] opacity-35" />
+                            )}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </Reveal>
       </div>
     </section>

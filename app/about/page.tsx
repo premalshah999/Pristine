@@ -5,9 +5,9 @@ import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/sections/cta-band";
 
 export const metadata = {
-  title: "About Dr. Megha Shah",
+  title: "About Megha Shah",
   description:
-    "Dr. Megha Shah, PT, CFNC — a clinician who treats the whole person, not the symptom. Twenty years of clinical experience, rooted in functional medicine.",
+    "Megha Shah, PT, CFNC — a clinician who treats the whole person, not the symptom. Twenty years of clinical experience, rooted in functional medicine.",
 };
 
 export default function AboutPage() {
@@ -30,7 +30,7 @@ export default function AboutPage() {
         style={{ borderColor: "var(--color-line)" }}
       >
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-          <div className="grid grid-cols-12 gap-y-12 gap-x-12 items-start">
+          <div className="grid grid-cols-12 gap-y-12 gap-x-0 md:gap-x-12 items-start">
             <Reveal className="col-span-12 md:col-span-5">
               <Portrait />
             </Reveal>
@@ -39,7 +39,7 @@ export default function AboutPage() {
               <Reveal>
                 <p className="eyebrow mb-4">The clinician</p>
                 <h2 className="display">
-                  Dr. Megha Shah, <em className="italic-serif">PT, CFNC.</em>
+                  Megha Shah, <em className="italic-serif">PT, CFNC.</em>
                 </h2>
               </Reveal>
               <Reveal delay={80}>
@@ -91,7 +91,7 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-y-10 gap-x-10">
             {[
               {
                 n: "01",
@@ -111,8 +111,8 @@ export default function AboutPage() {
             ].map((b, i) => (
               <Reveal key={b.n} delay={i * 100}>
                 <article
-                  className="card-edit p-7 md:p-9 h-full"
-                  style={{ background: "var(--color-paper)" }}
+                  className="border-t pt-6 h-full"
+                  style={{ borderColor: "var(--color-line)" }}
                 >
                   <span className="font-mono text-[0.78rem] tracking-[0.18em] text-[var(--color-lavender-deep)] mb-4 block">
                     {b.n}
@@ -136,7 +136,7 @@ export default function AboutPage() {
         style={{ borderColor: "var(--color-line)" }}
       >
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-          <div className="grid grid-cols-12 gap-y-10 gap-x-12">
+          <div className="grid grid-cols-12 gap-y-10 gap-x-0 md:gap-x-12">
             <Reveal className="col-span-12 md:col-span-4">
               <p className="eyebrow mb-4">— How we practice</p>
               <h2 className="title text-[2rem] md:text-[2.4rem] leading-[1.1] max-w-[18ch]">
@@ -203,7 +203,7 @@ export default function AboutPage() {
             className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3"
           >
             {[
-              "Doctor of Physical Therapy (DPT)",
+              "Physical Therapist (DPT)",
               "Certified Functional Nutritional Counsellor (CFNC)",
               "Institute for Functional Medicine — coursework",
               "20+ years clinical experience",
@@ -227,7 +227,7 @@ export default function AboutPage() {
           </ul>
 
           <Reveal className="mt-14 flex flex-wrap gap-3">
-            <Link href="/book" className="btn btn-primary btn-glow">
+            <Link href="/book-appointment" className="btn btn-primary">
               Book your free call
               <ArrowRight size={14} />
             </Link>
@@ -248,7 +248,7 @@ function Portrait() {
     <div className="w-full max-w-[420px] overflow-hidden rounded-2xl">
       <Image
         src="/dr-shah.jpg"
-        alt="Dr. Megha Shah, PT, CFNC — Founder of Pristine Functional Health"
+        alt="Megha Shah, PT, CFNC — Founder of Pristine Functional Health"
         width={852}
         height={1280}
         className="w-full h-auto object-cover object-top"

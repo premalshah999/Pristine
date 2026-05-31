@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteNav } from "@/components/nav/site-nav";
 import { SiteFooter } from "@/components/site-footer";
-import { ChatFab } from "@/components/chat-fab";
 
 const serif = Instrument_Serif({
   subsets: ["latin"],
@@ -33,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s · Pristine Functional Health",
   },
   description:
-    "Virtual functional medicine with Dr. Megha Shah, PT & Certified Functional Nutritional Counsellor. Find the real reason you don't feel like yourself — and rebuild from the root up.",
+    "Virtual functional medicine with Megha Shah, PT & Certified Functional Nutritional Counsellor. Find the real reason you don't feel like yourself — and rebuild from the root up.",
   keywords: [
     "functional medicine",
     "root cause medicine",
@@ -43,7 +42,7 @@ export const metadata: Metadata = {
     "PCOS",
     "gut health",
     "autoimmune",
-    "Dr. Megha Shah",
+    "Megha Shah",
     "Pristine Functional Health",
   ],
   openGraph: {
@@ -91,7 +90,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SiteNav />
           <main className="relative">{children}</main>
           <SiteFooter />
-          <ChatFab />
         </ThemeProvider>
       </body>
     </html>

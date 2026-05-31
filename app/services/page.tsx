@@ -30,25 +30,43 @@ export default function ServicesIndex() {
       </section>
 
       <section className="pb-24">
-        <div className="mx-auto w-full max-w-[var(--container-page)] px-6 space-y-3">
+        <div
+          className="mx-auto w-full max-w-[var(--container-page)] px-6 divide-y border-y"
+          style={{ borderColor: "var(--color-line)" }}
+        >
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={i * 60}>
               <Link
                 href={`/services/${s.slug}`}
-                className="group block card-edit p-7 md:p-10"
+                className="group block py-7 md:py-10 transition-colors hover:bg-[var(--color-paper)]"
               >
-                <div className="grid grid-cols-12 gap-y-4 gap-x-8 items-start">
+                <div className="grid grid-cols-12 gap-y-4 gap-x-0 md:gap-x-8 items-start">
                   <div className="col-span-12 md:col-span-1 font-mono text-[0.78rem] tracking-widest text-[var(--color-ink-muted)] pt-1">
                     {s.number}
                   </div>
                   <div className="col-span-12 md:col-span-4">
-                    <h3 className="font-serif text-[1.8rem] md:text-[2.1rem] leading-[1.05] tracking-tight group-hover:text-[var(--color-lavender-deep)] transition-colors">
+                    <h3 className="font-serif text-[1.8rem] md:text-[2.1rem] leading-[1.05] group-hover:text-[var(--color-forest)] transition-colors">
                       {s.name}
                     </h3>
                   </div>
                   <div className="col-span-12 md:col-span-6 text-[0.98rem] leading-relaxed text-[var(--color-ink-soft)]">
                     <p className="mb-2 text-[var(--color-ink)]">{s.tagline}</p>
                     <p>{s.summary}</p>
+                    <div
+                      className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4"
+                      aria-label={`${s.name} includes`}
+                    >
+                      {s.included.map((item) => (
+                        <div key={item.title} className="border-t pt-3" style={{ borderColor: "var(--color-line)" }}>
+                          <p className="font-serif text-[1.08rem] leading-tight text-[var(--color-ink)]">
+                            {item.title}
+                          </p>
+                          <p className="mt-1 text-[0.86rem] leading-relaxed text-[var(--color-ink-soft)]">
+                            {item.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                   <div className="col-span-12 md:col-span-1 text-right">
                     <ArrowUpRight

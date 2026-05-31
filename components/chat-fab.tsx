@@ -8,7 +8,7 @@ type Msg = { role: "user" | "bot"; text: string };
 const seed: Msg[] = [
   {
     role: "bot",
-    text: "Hi — I'm Pristine AI. Ask me anything about functional medicine, your symptoms, or what to expect from working with Dr. Shah.",
+    text: "Hi — I'm Pristine AI. Ask me anything about functional medicine, your symptoms, or what to expect from working with Megha Shah.",
   },
 ];
 
@@ -56,7 +56,7 @@ const STUB: { match: RegExp; reply: string }[] = [
 ];
 
 const DEFAULT =
-  "That's a great question. Functional medicine looks at the whole picture — labs, lifestyle, history, timing — rather than treating symptoms in isolation. For something this specific, the best next step is a free 20-minute call with Dr. Shah, where she can ask the right follow-up questions.";
+  "That's a great question. Functional medicine looks at the whole picture — labs, lifestyle, history, timing — rather than treating symptoms in isolation. For something this specific, the best next step is a free 20-minute call with Megha Shah, where she can ask the right follow-up questions.";
 
 export function ChatFab() {
   const [open, setOpen] = useState(false);

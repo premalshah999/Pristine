@@ -28,7 +28,7 @@ export interface Condition {
   whatItIs: string[];
   symptoms: string[];
   conventional: { intro: string; misses: string[] };
-  functional: { intro: string; testing: string[]; approach: string[] };
+  functional: { intro: string; approach: string[] };
   whatToExpect: string[];
   testimonial?: { name: string; detail: string; quote: string };
   faqs?: { q: string; a: string }[];
@@ -78,15 +78,6 @@ export const conditions: Condition[] = [
     functional: {
       intro:
         "We start by looking at what's actually happening in your body. Then we build a plan around your biology — not someone else's diet.",
-      testing: [
-        "Comprehensive metabolic panel + fasting insulin + HOMA-IR + HbA1c",
-        "Full thyroid: TSH, Free T3, Free T4, Reverse T3, TPO and TG antibodies",
-        "DUTCH or 4-point salivary cortisol curve",
-        "hs-CRP, ferritin, homocysteine (inflammation markers)",
-        "Sex hormone panel (estradiol, progesterone, testosterone, SHBG, DHEA-S)",
-        "Vitamin D, B12, magnesium RBC, zinc",
-        "Optional: continuous glucose monitor (CGM), GI-MAP stool, food sensitivity",
-      ],
       approach: [
         "Protein-forward, blood-sugar-stabilizing nutrition tailored to your biomarkers",
         "Strategic carbohydrate placement — not deprivation",
@@ -161,15 +152,6 @@ export const conditions: Condition[] = [
     functional: {
       intro:
         "We work with you the way a coach and a clinician would together — not just running labs but helping you actually change the pattern.",
-      testing: [
-        "Fasting insulin, fasting glucose, HbA1c, HOMA-IR",
-        "Advanced lipids: ApoB, LDL particle number, triglyceride/HDL ratio",
-        "Liver panel + GGT (often the first sign of fatty liver)",
-        "hs-CRP, fibrinogen (inflammation)",
-        "CGM (continuous glucose monitor) for 2–4 weeks of real-life data",
-        "Vitamin D, magnesium RBC, zinc, B12",
-        "Sleep study if apnea is suspected",
-      ],
       approach: [
         "Personalized low-glycemic, protein-forward nutrition with carb timing",
         "Resistance training + zone 2 cardio: the most powerful insulin-sensitizing combination known",
@@ -238,13 +220,6 @@ export const conditions: Condition[] = [
     functional: {
       intro:
         "We treat the thyroid the way it actually works in your body: as part of a system, not a single number.",
-      testing: [
-        "Full thyroid: TSH, Free T3, Free T4, Reverse T3, TPO antibodies, TG antibodies",
-        "Cofactors: ferritin, vitamin D, B12, selenium, zinc, magnesium RBC",
-        "If autoimmune: gut testing (GI-MAP), gluten cross-reactivity, EBV titers",
-        "Sex hormones (estrogen dominance affects thyroid binding)",
-        "Cortisol curve (chronic stress lowers conversion of T4 to T3)",
-      ],
       approach: [
         "Where appropriate, optimize medication (T4 only, T4/T3 combo, or natural desiccated thyroid) in coordination with your prescribing provider",
         "Address the autoimmune trigger: gluten elimination trial, gut healing, infection load, environmental toxins (fluoride, bromide, mold)",
@@ -307,14 +282,6 @@ export const conditions: Condition[] = [
     functional: {
       intro:
         "We map your hormones to your cycle, look at how you metabolize them, and treat the system — not just the symptom.",
-      testing: [
-        "DUTCH (Dried Urine Test for Comprehensive Hormones) — gold-standard for cycle-mapped hormones and estrogen metabolism",
-        "Full thyroid, fasting insulin, HOMA-IR (especially for PCOS)",
-        "Cortisol curve — adrenal-ovarian axis",
-        "SHBG, DHEA-S, free testosterone",
-        "Vitamin D, magnesium, B12, ferritin",
-        "Gut testing if estrogen recirculation is suspected (estrobolome)",
-      ],
       approach: [
         "Cycle-syncing nutrition (different macros and foods in follicular vs. luteal phases)",
         "Liver and gut support to clear estrogen properly",
@@ -333,7 +300,7 @@ export const conditions: Condition[] = [
       name: "Priya S.",
       detail: "41 · PCOS & cycle migraines",
       quote:
-        "I was put on birth control at 16 for acne. I was 38 before someone actually tested my hormones in a meaningful way. Six months with Kiwi and I have regular cycles for the first time in my life.",
+        "I was put on birth control at 16 for acne. I was 38 before someone actually tested my hormones in a meaningful way. Six months with Pristine Functional Health and I have regular cycles for the first time in my life.",
     },
   },
   {
@@ -378,14 +345,6 @@ export const conditions: Condition[] = [
     functional: {
       intro:
         "We start with a comprehensive picture of your hormonal and metabolic system, then build the foundation. TRT, if needed, becomes far more effective on a body that's been prepared for it.",
-      testing: [
-        "Total + free testosterone, SHBG, estradiol (sensitive), DHT, DHEA-S, LH, FSH, prolactin",
-        "Fasting insulin, HOMA-IR, full lipid panel with ApoB",
-        "Full thyroid panel",
-        "Cortisol curve (DUTCH)",
-        "Vitamin D, zinc, magnesium RBC, B12, ferritin",
-        "Sleep study if apnea is suspected",
-      ],
       approach: [
         "Resistance training as primary metabolic and hormonal medicine",
         "Sleep optimization — non-negotiable, often the biggest single lever",
@@ -444,13 +403,6 @@ export const conditions: Condition[] = [
     functional: {
       intro:
         "We treat migraines as a multi-trigger condition with a clear root-cause logic. Mapping your specific pattern is the work.",
-      testing: [
-        "RBC magnesium, vitamin D, B12, methylation panel",
-        "Full thyroid, sex hormones (DUTCH, mapped to cycle)",
-        "Food sensitivity (IgG) panel as a guide; elimination + reintroduction as the test",
-        "Detailed migraine journal (food, sleep, cycle, stress, weather)",
-        "Gut testing if histamine or estrogen recirculation is suspected",
-      ],
       approach: [
         "High-dose magnesium glycinate or threonate — well-tolerated, often dramatic",
         "Riboflavin (B2) 400 mg, CoQ10 100–300 mg — both with strong RCT evidence",
@@ -512,14 +464,6 @@ export const conditions: Condition[] = [
     functional: {
       intro:
         "We work backwards from the nerve to the cause. Protecting and repairing the nerve while we identify what's damaging it is a parallel process.",
-      testing: [
-        "Fasting glucose, insulin, HOMA-IR, HbA1c, CGM if appropriate",
-        "B12, methylmalonic acid, homocysteine, folate (functional B12 status)",
-        "Full thyroid panel including antibodies",
-        "ANA, autoimmune small-fiber neuropathy panel if indicated",
-        "Heavy metal and mycotoxin testing where exposure is suspected",
-        "Methylation panel (MTHFR, MTRR)",
-      ],
       approach: [
         "Address the upstream cause aggressively (most often blood sugar or B12)",
         "Methylcobalamin B12, methylated folate (5-MTHF) where appropriate",
@@ -579,14 +523,6 @@ export const conditions: Condition[] = [
     functional: {
       intro:
         "We work alongside your therapist or psychiatrist — never against. The goal is to make their work more effective by calming the body underneath.",
-      testing: [
-        "Methylation panel (MTHFR, MTRR, CBS)",
-        "Organic acids test (neurotransmitter and mitochondrial markers)",
-        "Full thyroid + antibodies",
-        "Cortisol curve (DUTCH)",
-        "RBC magnesium, B12, methylmalonic acid, folate, vitamin D, ferritin",
-        "Gut testing (GI-MAP) if dysbiosis is suspected",
-      ],
       approach: [
         "Blood sugar stabilization (often dramatic for panic-prone patients)",
         "Magnesium glycinate, taurine, L-theanine for GABA support",
@@ -651,14 +587,6 @@ export const conditions: Condition[] = [
     functional: {
       intro:
         "We map the biology under your ADHD and address the parts that respond. We do not replace treatment with your psychiatrist — we partner with it.",
-      testing: [
-        "Ferritin, B12, methylmalonic acid, folate, vitamin D, magnesium RBC, zinc",
-        "Methylation panel (MTHFR, MTRR, COMT)",
-        "Full thyroid panel",
-        "Omega-3 index",
-        "Organic acids (neurotransmitter precursors)",
-        "Food sensitivity panel as a guide",
-      ],
       approach: [
         "Protein-forward breakfast (often the biggest single lever for adult ADHD)",
         "Omega-3 (high EPA), magnesium glycinate, methylated B-vitamins where indicated",
@@ -717,13 +645,6 @@ export const conditions: Condition[] = [
     functional: {
       intro:
         "We use the 5R protocol — a structured, sequential framework that has been the backbone of functional gut care for 20+ years.",
-      testing: [
-        "GI-MAP or Genova GI Effects (microbiome, pathogens, digestion, inflammation)",
-        "SIBO breath test (lactulose or glucose)",
-        "Lactulose-mannitol or zonulin (intestinal permeability)",
-        "Organic acids (bacterial and yeast markers)",
-        "Food sensitivity (IgG) panel",
-      ],
       approach: [
         "Remove: pathogens, food triggers, irritants",
         "Replace: digestive enzymes, HCl support if needed, bile support",
@@ -779,13 +700,6 @@ export const conditions: Condition[] = [
     functional: {
       intro:
         "We use testing as a guide and elimination/reintroduction as the gold standard. The work is precise and time-limited — not lifelong restriction.",
-      testing: [
-        "IgG food sensitivity panel (Vibrant or Cyrex)",
-        "Celiac and gluten cross-reactivity",
-        "Lactulose-mannitol or zonulin (intestinal permeability)",
-        "GI-MAP for underlying gut dysfunction",
-        "Histamine and DAO if histamine intolerance is suspected",
-      ],
       approach: [
         "30–60 day strategic elimination based on testing + history",
         "Systematic reintroduction (one food every 3 days) to identify true reactors",
@@ -816,7 +730,7 @@ export const conditions: Condition[] = [
         "1 in 5 Americans has an autoimmune diagnosis. Conventional care manages the fire. Functional medicine works on what keeps lighting it.",
     },
     whatItIs: [
-      "Autoimmune conditions involve a confused immune system attacking healthy tissue. The 'autoimmune triad' (Dr. Datis Kharrazian, Dr. Tom O'Bryan) describes three components present in nearly every case: genetic predisposition, an environmental trigger, and intestinal permeability (leaky gut).",
+      "Autoimmune conditions involve a confused immune system attacking healthy tissue. The 'autoimmune triad' (Datis Kharrazian and Tom O'Bryan) describes three components present in nearly every case: genetic predisposition, an environmental trigger, and intestinal permeability (leaky gut).",
       "You can't change your genes. You can change the trigger and you can heal the gut.",
       "Common triggers: gluten, dairy, persistent infections (EBV, H. pylori, Lyme, mold), heavy metals, environmental toxins, chronic stress, and disrupted sleep.",
     ],
@@ -844,15 +758,6 @@ export const conditions: Condition[] = [
     functional: {
       intro:
         "We work alongside your rheumatologist or specialty care team. Our job is to address the triggers and the terrain — not replace specialty medication, but make it less necessary.",
-      testing: [
-        "Comprehensive autoimmune panel (ANA, RF, CCP, specific antibodies)",
-        "Wheat-Zoomer or Cyrex Array 3/4 (gluten and cross-reactivity)",
-        "GI-MAP, intestinal permeability, organic acids",
-        "EBV, H. pylori, Lyme (if suspected)",
-        "Mycotoxin panel (Real Time Labs or Vibrant)",
-        "Heavy metal urine challenge if exposure suspected",
-        "Vitamin D, omega-3 index, methylation",
-      ],
       approach: [
         "Autoimmune Protocol (AIP) — a structured 30–60 day elimination",
         "Gut barrier repair (5R protocol)",
@@ -868,7 +773,7 @@ export const conditions: Condition[] = [
       "Some patients reduce or come off biologics under medical supervision; others stay on them but live far better. The win is a life that isn't centered on your disease.",
     ],
     testimonial: {
-      name: "Dr. R. Patel",
+      name: "Rina P.",
       detail: "47 · Multiple autoimmune conditions",
       quote:
         "I'm a physician myself. I knew the system wasn't going to find what was wrong with me — I'd been trained in it. Working with Megha was the first time someone treated me like a whole human. I send patients to her now.",
@@ -917,14 +822,6 @@ export const conditions: Condition[] = [
     functional: {
       intro:
         "We follow a strict order of operations: identify the source, support drainage, then carefully reduce body burden. Detox before drainage is malpractice.",
-      testing: [
-        "Urine mycotoxin panel",
-        "HERTSMI-2 / ERMI for indoor environment",
-        "Provoked or unprovoked urine heavy metal panel",
-        "MARCoNS, VIP, MSH, TGF-beta if CIRS is suspected",
-        "Genova or Doctor's Data toxic element panels",
-        "Glutathione, methylation, organic acids (detox capacity)",
-      ],
       approach: [
         "Source identification and removal — the most important step (often involves remediation or moving)",
         "Drainage support: bowel, bile, lymph, kidneys, skin",
@@ -983,14 +880,6 @@ export const conditions: Condition[] = [
     functional: {
       intro:
         "We work as a quiet medical layer alongside your existing therapy team. We coordinate with your developmental pediatrician, neurologist, and therapists — never replacing them.",
-      testing: [
-        "Comprehensive stool testing (GI-MAP)",
-        "Organic acids (mitochondrial, neurotransmitter, yeast, oxalate markers)",
-        "Methylation panel and folate metabolism",
-        "Zinc, copper, RBC magnesium, B12, vitamin D, omega-3 index",
-        "Food sensitivity testing as a guide",
-        "Heavy metals if exposure history warrants",
-      ],
       approach: [
         "Gut healing — often produces the most dramatic quality-of-life change",
         "Targeted nutrition aligned with sensory needs (we work with what the child will eat)",

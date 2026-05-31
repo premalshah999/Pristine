@@ -11,7 +11,7 @@ export function AboutPreview() {
       style={{ borderColor: "var(--color-line)" }}
     >
       <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-        <div className="grid grid-cols-12 gap-y-12 gap-x-12 items-center">
+        <div className="grid grid-cols-12 gap-y-12 gap-x-0 md:gap-x-12 items-center">
           <Reveal className="col-span-12 md:col-span-5">
             <Portrait />
           </Reveal>
@@ -19,7 +19,7 @@ export function AboutPreview() {
           <Reveal className="col-span-12 md:col-span-7" delay={120}>
             <p className="eyebrow mb-5">Meet your clinician</p>
             <h2 className="display">
-              Dr. Megha Shah, <em className="italic-serif">PT, CFNC.</em>
+              Megha Shah, <em className="italic-serif">PT, CFNC.</em>
             </h2>
             <p className="lede mt-6 max-w-[58ch]">
               For over twenty years, Megha has worked with people the system
@@ -42,7 +42,7 @@ export function AboutPreview() {
             >
               {[
                 "20+ yrs clinical experience",
-                "Doctor of Physical Therapy",
+                "Physical Therapist (DPT)",
                 "Cert. Functional Nutritional Counsellor",
                 "1,200+ patients guided",
                 "IFM-aligned methodology",
@@ -66,7 +66,7 @@ export function AboutPreview() {
                 Read Megha's full bio
                 <ArrowRight size={14} />
               </Link>
-              <Link href="/book" className="btn btn-primary btn-glow">
+              <Link href="/book-appointment" className="btn btn-primary">
                 Book your free call
               </Link>
             </div>
@@ -82,7 +82,7 @@ function Portrait() {
     <div className="w-full max-w-[420px] mx-auto overflow-hidden rounded-2xl">
       <Image
         src="/dr-shah.jpg"
-        alt="Dr. Megha Shah, PT, CFNC — Founder of Pristine Functional Health"
+        alt="Megha Shah, PT, CFNC — Founder of Pristine Functional Health"
         width={852}
         height={1280}
         className="w-full h-auto object-cover object-top"

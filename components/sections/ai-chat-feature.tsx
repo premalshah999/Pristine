@@ -7,7 +7,7 @@ export function AiChatFeature() {
       style={{ borderColor: "var(--color-line)" }}
     >
       <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-        <div className="grid grid-cols-12 gap-y-12 gap-x-12 items-center">
+        <div className="grid grid-cols-12 gap-y-12 gap-x-0 md:gap-x-12 items-center">
           <Reveal className="col-span-12 md:col-span-6">
             <p className="eyebrow mb-5">Built-in support</p>
             <h2 className="display max-w-[18ch]">
@@ -16,7 +16,7 @@ export function AiChatFeature() {
             </h2>
             <p className="lede mt-6 max-w-[54ch]">
               Our private Pristine AI assistant is trained on functional medicine
-              principles and Dr. Shah's clinical philosophy. Get thoughtful
+              principles and Megha Shah's clinical philosophy. Get thoughtful
               answers about symptoms, testing, and what to expect — anytime,
               day or night.
             </p>

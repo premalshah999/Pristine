@@ -6,7 +6,7 @@ import { CtaBand } from "@/components/sections/cta-band";
 export const metadata = {
   title: "New Patient Special",
   description:
-    "Your first 20-minute discovery call with Dr. Megha Shah is free. No commitment. No upsell.",
+    "Your first 20-minute discovery call with Megha Shah is free. No commitment. No upsell.",
 };
 
 export default function NewPatientSpecial() {
@@ -20,7 +20,7 @@ export default function NewPatientSpecial() {
               Your first call <em className="italic-serif">is on us.</em>
             </h1>
             <p className="lede mt-7 max-w-[60ch]">
-              Twenty minutes. Virtual. Held personally by Dr. Shah. No commitment,
+              Twenty minutes. Virtual. Held personally by Megha Shah. No commitment,
               no card on file, no hidden upsell at the end. Just an honest first
               conversation.
             </p>
@@ -32,13 +32,12 @@ export default function NewPatientSpecial() {
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
           <Reveal>
             <div
-              className="relative overflow-hidden rounded-[36px] px-8 md:px-16 py-16 md:py-20"
+              className="relative overflow-hidden px-8 md:px-16 py-16 md:py-20"
               style={{
-                background:
-                  "linear-gradient(135deg, #CBDED3 0%, #EDF3F0 45%, #D2C49E 100%)",
+                background: "var(--color-mint)",
               }}
             >
-              <div className="grid grid-cols-12 gap-y-10 gap-x-12 relative z-10">
+              <div className="grid grid-cols-12 gap-y-10 gap-x-0 md:gap-x-12 relative z-10">
                 <div className="col-span-12 md:col-span-7">
                   <p
                     className="font-mono text-[0.72rem] tracking-[0.22em] uppercase mb-5"
@@ -47,7 +46,7 @@ export default function NewPatientSpecial() {
                     Limited spots each week
                   </p>
                   <h2
-                    className="font-serif text-[clamp(2rem,4.5vw,3.4rem)] leading-[1.04] tracking-[-0.03em]"
+                    className="font-serif text-[2.4rem] md:text-[3.4rem] leading-[1.04]"
                     style={{ color: "#2B3830" }}
                   >
                     Free 20-minute discovery call.
@@ -55,7 +54,7 @@ export default function NewPatientSpecial() {
                   <ul className="mt-8 space-y-3 max-w-[44ch]">
                     {[
                       "Virtual, scheduled at your convenience",
-                      "Held personally by Dr. Shah",
+                      "Held personally by Megha Shah",
                       "We'll talk about what's been going on, what's been tried",
                       "We'll be honest about whether we can help",
                       "If we are a fit, we'll outline the realistic next step",
@@ -67,10 +66,10 @@ export default function NewPatientSpecial() {
                         style={{ color: "rgba(43,56,48,0.85)" }}
                       >
                         <span
-                          className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full mt-0.5"
-                          style={{ background: "rgba(59,98,85,0.15)" }}
+                          className="inline-flex h-6 w-6 shrink-0 items-center justify-center mt-0.5"
+                          style={{ color: "#2B3830" }}
                         >
-                          <Check size={14} style={{ color: "#2B3830" }} />
+                          <Check size={14} />
                         </span>
                         <span className="leading-snug">{c}</span>
                       </li>
@@ -78,8 +77,8 @@ export default function NewPatientSpecial() {
                   </ul>
                   <div className="mt-10">
                     <Link
-                      href="/book"
-                      className="btn btn-glow"
+                      href="/book-appointment"
+                      className="btn"
                       style={{ background: "#3B6255", color: "#E2DFDA" }}
                     >
                       Claim your free call
@@ -90,7 +89,7 @@ export default function NewPatientSpecial() {
 
                 <div className="col-span-12 md:col-span-5">
                   <div
-                    className="rounded-2xl border p-7"
+                    className="border p-7"
                     style={{
                       background: "rgba(255,255,255,0.55)",
                       borderColor: "rgba(59,98,85,0.20)",
@@ -122,14 +121,6 @@ export default function NewPatientSpecial() {
                 </div>
               </div>
 
-              <div
-                aria-hidden
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "radial-gradient(800px 240px at 50% -20%, rgba(255,255,255,0.45), transparent 70%)",
-                }}
-              />
             </div>
           </Reveal>
         </div>

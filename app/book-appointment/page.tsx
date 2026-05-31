@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Shield, Clock, Video } from "lucide-react";
+import { ArrowLeft, Calendar } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 
 declare global {
@@ -57,10 +57,9 @@ export default function BookAppointmentPage() {
 
   return (
     <>
-      {/* HERO */}
-      <section className="pt-20 md:pt-28 pb-10">
+      <section className="pt-20 md:pt-28 pb-16">
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-          <Reveal>
+          <Reveal className="max-w-[860px]">
             <Link
               href="/"
               className="inline-flex items-center gap-1.5 text-[0.84rem] mb-8 transition-colors hover:text-[var(--color-forest)]"
@@ -69,187 +68,106 @@ export default function BookAppointmentPage() {
               <ArrowLeft size={14} />
               Back to home
             </Link>
-            <p className="eyebrow mb-5">— Book an appointment</p>
+            <p className="eyebrow mb-5">Book an appointment</p>
             <h1 className="display-xl max-w-[18ch]">
               Schedule your{" "}
               <em className="italic-serif">free consultation.</em>
             </h1>
             <p className="lede mt-6 max-w-[56ch]">
-              A 20-minute call with Dr. Megha Shah — no commitment, no waitlist.
+              A 20-minute call with Megha Shah — no commitment, no waitlist.
               Pick a time that works for you and let's figure out your next step together.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* BOOKING SECTION */}
       <section className="pb-24">
-        <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-          <div className="grid grid-cols-12 gap-y-10 gap-x-10 items-start">
-
-            {/* Left: info + CTA */}
-            <Reveal className="col-span-12 lg:col-span-5">
-              <div
-                className="rounded-2xl border p-8 md:p-10"
-                style={{ background: "var(--color-paper)", borderColor: "var(--color-line)" }}
+        <div className="mx-auto w-full max-w-[920px] px-6">
+          <Reveal>
+            <div className="border-y py-8 md:py-10" style={{ borderColor: "var(--color-line)" }}>
+              <p className="eyebrow mb-3">Free · 20 minutes · virtual</p>
+              <h2 className="font-serif text-[2rem] md:text-[2.6rem] leading-[1.08] mb-4">
+                Free Functional Health Consultation
+              </h2>
+              <p className="text-[var(--color-ink-soft)] leading-[1.7] max-w-[64ch] mb-8">
+                We'll talk through your symptoms, your history, and what you've
+                already tried. You'll leave with clarity on whether functional
+                medicine is the right fit and, if it is, exactly where we'd start.
+              </p>
+              <button
+                type="button"
+                data-cal-link="megha.shah/free-functional-health-consultation"
+                data-cal-namespace="free-functional-health-consultation"
+                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+                className="btn btn-primary"
               >
-                <p
-                  className="font-mono text-[0.68rem] tracking-[0.18em] uppercase mb-6"
-                  style={{ color: "var(--color-sage)" }}
-                >
-                  Free · 20 minutes · Virtual
-                </p>
+                <Calendar size={17} />
+                Book your free call
+              </button>
+              <p className="text-[0.78rem] mt-4" style={{ color: "var(--color-ink-muted)" }}>
+                Powered by Cal.com · privacy-conscious scheduling
+              </p>
+            </div>
+          </Reveal>
 
-                <h2
-                  className="font-serif text-[1.8rem] leading-[1.1] tracking-tight mb-4"
-                  style={{ color: "var(--color-ink)" }}
-                >
-                  Free Functional Health Consultation
-                </h2>
-
-                <p
-                  className="text-[0.97rem] leading-[1.7] mb-8"
-                  style={{ color: "var(--color-ink-soft)" }}
-                >
-                  We'll talk through your symptoms, your history, and what you've
-                  already tried. You'll leave with clarity on whether functional
-                  medicine is the right fit — and if it is, exactly where we'd start.
-                </p>
-
-                <ul className="space-y-4 mb-8">
-                  {[
-                    { icon: Video, text: "Secure video call — from anywhere" },
-                    { icon: Clock, text: "20 minutes, no rushing" },
-                    { icon: Shield, text: "Completely free, no obligation" },
-                    { icon: Calendar, text: "Evenings & weekends available" },
-                  ].map(({ icon: Icon, text }) => (
-                    <li
-                      key={text}
-                      className="flex items-center gap-3 text-[0.93rem]"
-                      style={{ color: "var(--color-ink-soft)" }}
-                    >
-                      <span
-                        className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
-                        style={{ background: "var(--color-mint)" }}
-                      >
-                        <Icon size={14} style={{ color: "var(--color-forest)" }} />
-                      </span>
-                      {text}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Cal element-click trigger button */}
-                <button
-                  type="button"
-                  data-cal-link="megha.shah/free-functional-health-consultation"
-                  data-cal-namespace="free-functional-health-consultation"
-                  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl px-6 py-4 text-[1rem] font-medium transition-opacity hover:opacity-90"
-                  style={{
-                    background: "var(--color-forest)",
-                    color: "var(--color-linen)",
-                  }}
-                >
-                  <Calendar size={17} />
-                  Book your free call
-                </button>
-
-                <p
-                  className="text-[0.78rem] text-center mt-4"
-                  style={{ color: "var(--color-ink-muted)" }}
-                >
-                  Powered by Cal.com · HIPAA-safe scheduling
-                </p>
-              </div>
-            </Reveal>
-
-            {/* Right: what to expect */}
-            <Reveal className="col-span-12 lg:col-span-7" delay={100}>
-              <div className="space-y-4">
-                <p className="eyebrow mb-6">— What to expect</p>
-
-                {[
-                  {
-                    n: "01",
-                    h: "You'll tell us what's been going on.",
-                    p: "Share your symptoms, your history, and whatever you've already tried. There's no judgment — and no seven-minute clock.",
-                  },
-                  {
-                    n: "02",
-                    h: "We'll be honest about fit.",
-                    p: "We'll tell you directly whether functional medicine is likely to help your situation — and if there's a better first step, we'll say so.",
-                  },
-                  {
-                    n: "03",
-                    h: "You'll leave with a clear next step.",
-                    p: "Not a vague 'we'll follow up.' You'll know exactly what we'd investigate first and what the path forward looks like.",
-                  },
-                  {
-                    n: "04",
-                    h: "No pressure, ever.",
-                    p: "This is an honest conversation. We only take on patients we genuinely believe we can help — and we'll tell you either way.",
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.n}
-                    className="card-edit p-6 md:p-7 flex items-start gap-4"
-                    style={{ background: "var(--color-paper)" }}
-                  >
-                    <span
-                      className="font-mono text-[0.7rem] tracking-widest pt-1.5 w-8 shrink-0"
-                      style={{ color: "var(--color-lavender-deep)" }}
-                    >
-                      {item.n}
-                    </span>
-                    <div>
-                      <h3
-                        className="font-serif text-[1.2rem] leading-snug mb-2"
-                        style={{ color: "var(--color-ink)" }}
-                      >
-                        {item.h}
-                      </h3>
-                      <p
-                        className="text-[0.93rem] leading-relaxed"
-                        style={{ color: "var(--color-ink-soft)" }}
-                      >
-                        {item.p}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-
-                <div
-                  className="rounded-2xl border px-6 py-5 mt-2"
-                  style={{ borderColor: "var(--color-line)", background: "var(--color-bone-2)" }}
-                >
-                  <p
-                    className="text-[0.85rem] leading-relaxed"
-                    style={{ color: "var(--color-ink-muted)" }}
-                  >
-                    <strong style={{ color: "var(--color-ink)" }}>Prefer email?</strong>{" "}
-                    Reach Dr. Shah directly at{" "}
-                    <a
-                      href="mailto:drmjshah19@gmail.com"
-                      className="underline underline-offset-2 hover:text-[var(--color-forest)] transition-colors"
-                      style={{ color: "var(--color-ink-soft)" }}
-                    >
-                      drmjshah19@gmail.com
-                    </a>{" "}
-                    or call{" "}
-                    <a
-                      href="tel:+12406763079"
-                      className="underline underline-offset-2 hover:text-[var(--color-forest)] transition-colors"
-                      style={{ color: "var(--color-ink-soft)" }}
-                    >
-                      240-676-3079
-                    </a>
-                    .
+          <Reveal className="mt-16 md:mt-20" delay={100}>
+            <p className="eyebrow mb-6">What to expect</p>
+            <ol className="divide-y border-y" style={{ borderColor: "var(--color-line)" }}>
+              {[
+                {
+                  h: "You'll tell us what's been going on.",
+                  p: "Share your symptoms, your history, and whatever you've already tried. There's no judgment and no seven-minute clock.",
+                },
+                {
+                  h: "We'll be honest about fit.",
+                  p: "We'll tell you directly whether functional medicine is likely to help your situation, and if there's a better first step, we'll say so.",
+                },
+                {
+                  h: "You'll leave with a clear next step.",
+                  p: "Not a vague follow-up promise. You'll know what we'd investigate first and what the path forward looks like.",
+                },
+                {
+                  h: "No pressure, ever.",
+                  p: "This is an honest conversation. We only take on patients we genuinely believe we can help.",
+                },
+              ].map((item, index) => (
+                <li key={item.h} className="py-6 grid grid-cols-12 gap-y-3 gap-x-0 sm:gap-x-6">
+                  <span className="col-span-12 sm:col-span-2 font-mono text-[0.72rem] text-[var(--color-ink-muted)]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="col-span-12 sm:col-span-4 font-serif text-[1.35rem] leading-snug">
+                    {item.h}
+                  </h3>
+                  <p className="col-span-12 sm:col-span-6 text-[0.95rem] leading-relaxed text-[var(--color-ink-soft)]">
+                    {item.p}
                   </p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
+
+          <Reveal className="mt-10" delay={160}>
+            <p className="text-[0.92rem] leading-relaxed" style={{ color: "var(--color-ink-muted)" }}>
+              <strong style={{ color: "var(--color-ink)" }}>Prefer email?</strong>{" "}
+              Reach Megha Shah directly at{" "}
+              <a
+                href="mailto:contact@pristinefunctionalhealth.com"
+                className="underline underline-offset-2 hover:text-[var(--color-forest)] transition-colors"
+                style={{ color: "var(--color-ink-soft)" }}
+              >
+                contact@pristinefunctionalhealth.com
+              </a>{" "}
+              or call{" "}
+              <a
+                href="tel:+12406763079"
+                className="underline underline-offset-2 hover:text-[var(--color-forest)] transition-colors"
+                style={{ color: "var(--color-ink-soft)" }}
+              >
+                240-676-3079
+              </a>
+              .
+            </p>
+          </Reveal>
         </div>
       </section>
     </>

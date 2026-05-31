@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { conditions, conditionsByCategory } from "@/lib/conditions";
 import { CtaBand } from "@/components/sections/cta-band";
+import { TestingOverview } from "@/components/sections/testing-overview";
 
 export const metadata = {
   title: "Conditions we treat",
@@ -27,12 +28,14 @@ export default function ConditionsIndex() {
             <p className="lede mt-8 max-w-[60ch]">
               Each of the 14 categories below has a story underneath the
               symptoms. Click any to read our full clinical approach: what's
-              actually going on, what conventional medicine misses, what testing
-              we run, how we treat it, and what to expect.
+              actually going on, what conventional medicine misses, our
+              protocol, and what to expect.
             </p>
           </Reveal>
         </div>
       </section>
+
+      <TestingOverview />
 
       <section className="pb-20">
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
@@ -40,7 +43,7 @@ export default function ConditionsIndex() {
             {categories.map((cat, ci) => (
               <Reveal key={cat} delay={ci * 60}>
                 <div
-                  className="grid grid-cols-12 gap-y-6 gap-x-10 pb-8 border-b"
+                  className="grid grid-cols-12 gap-y-6 gap-x-0 md:gap-x-10 pb-8 border-b"
                   style={{ borderColor: "var(--color-line)" }}
                 >
                   <div className="col-span-12 md:col-span-3">

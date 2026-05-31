@@ -44,7 +44,7 @@ export default function BookPage() {
         }}
       >
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
-          <div className="grid grid-cols-12 gap-y-12 gap-x-12">
+          <div className="grid grid-cols-12 gap-y-12 gap-x-0 md:gap-x-12">
             <Reveal className="col-span-12 md:col-span-5">
               <p className="eyebrow mb-4">— What you can expect</p>
               <h2 className="title text-[2rem] md:text-[2.4rem] leading-[1.1] max-w-[20ch]">
@@ -53,7 +53,7 @@ export default function BookPage() {
               <ul className="mt-8 space-y-3">
                 {[
                   "20 minutes, virtual, scheduled at your convenience",
-                  "Held personally by Dr. Shah — not an intake coordinator",
+                  "Held personally by Megha Shah — not an intake coordinator",
                   "Honest: we'll tell you if we're not a fit",
                   "No commitment, no pressure, no card on file",
                   "If it is a fit, we'll outline the realistic next step",

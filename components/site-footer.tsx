@@ -13,9 +13,9 @@ export function SiteFooter() {
       <div className="mx-auto w-full max-w-[var(--container-page)] px-6 pt-16 md:pt-20 pb-0">
 
         {/* Main columns */}
-        <div className="grid grid-cols-12 gap-y-10 gap-x-8">
+        <div className="grid grid-cols-12 gap-y-10 gap-x-0 md:gap-x-8">
           <div className="col-span-12 md:col-span-4">
-            <Logo size={30} />
+            <Logo size={54} />
             <p className="text-[0.95rem] mt-4 max-w-[34ch] leading-relaxed font-medium" style={{ color: "var(--color-ink)" }}>
               Virtual functional medicine, rooted in real clinical experience.
               Calm, science-backed, deeply human.
@@ -68,7 +68,7 @@ export function SiteFooter() {
           </FooterCol>
 
           <FooterCol title="Practice">
-            <FooterLink href="/about">About Dr. Shah</FooterLink>
+            <FooterLink href="/about">About Megha Shah</FooterLink>
             <FooterLink href="/blog">Blog</FooterLink>
             <FooterLink href="/new-patient-special">New patient special</FooterLink>
             <FooterLink href="/book-appointment">Book an appointment</FooterLink>
@@ -84,21 +84,23 @@ export function SiteFooter() {
             </li>
             <li>
               <a
-                href="mailto:drmjshah19@gmail.com"
+                href="mailto:contact@pristinefunctionalhealth.com"
                 className="text-[0.9rem] transition-colors break-all hover:text-[var(--color-forest)]"
                 style={{ color: "var(--color-ink)" }}
               >
-                drmjshah19@gmail.com
+                contact@pristinefunctionalhealth.com
               </a>
             </li>
           </FooterCol>
         </div>
 
-        {/* HIPAA + FDA disclaimers */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5">
+        {/* HIPAA + FDA + therapist safety disclaimers */}
+        <div
+          className="mt-14 grid grid-cols-1 gap-x-8 gap-y-7 border-t pt-8 md:grid-cols-3"
+          style={{ borderColor: "var(--color-line)" }}
+        >
           <div
-            className="rounded-xl border px-5 py-4"
-            style={{ borderColor: "var(--color-line)", background: "var(--color-canvas)" }}
+            className="max-w-[58ch]"
           >
             <p
               className="font-mono text-[0.7rem] tracking-[0.18em] font-semibold uppercase mb-2"
@@ -107,14 +109,14 @@ export function SiteFooter() {
               HIPAA Compliance
             </p>
             <p className="text-[0.88rem] leading-relaxed font-medium" style={{ color: "var(--color-ink)" }}>
-              Pristine Functional Health is committed to protecting your health information in full
-              compliance with HIPAA. All client records and communications are handled with strict
-              confidentiality, stored securely, and never shared without your written consent.
+              Pristine Functional Health protects health information with
+              privacy-conscious safeguards, secure platforms, limited access,
+              and minimum-necessary sharing. PHI is not disclosed without
+              written authorization except as permitted or required by law.
             </p>
           </div>
           <div
-            className="rounded-xl border px-5 py-4"
-            style={{ borderColor: "var(--color-line)", background: "var(--color-canvas)" }}
+            className="max-w-[58ch]"
           >
             <p
               className="font-mono text-[0.7rem] tracking-[0.18em] font-semibold uppercase mb-2"
@@ -123,10 +125,26 @@ export function SiteFooter() {
               FDA Disclaimer
             </p>
             <p className="text-[0.88rem] leading-relaxed font-medium" style={{ color: "var(--color-ink)" }}>
-              These statements have not been evaluated by the Food and Drug Administration.
-              Content on this site is not intended to diagnose, treat, cure, or prevent any disease.
-              It is for educational purposes only. Consult a qualified healthcare provider before
-              making any changes to your health regimen.
+              Statements on this site have not been evaluated by the Food and
+              Drug Administration. Educational content, supplements, protocols,
+              and testing recommendations are not intended to diagnose, treat,
+              cure, or prevent disease.
+            </p>
+          </div>
+          <div
+            className="max-w-[58ch]"
+          >
+            <p
+              className="font-mono text-[0.7rem] tracking-[0.18em] font-semibold uppercase mb-2"
+              style={{ color: "var(--color-forest)" }}
+            >
+              Therapist Safety
+            </p>
+            <p className="text-[0.88rem] leading-relaxed font-medium" style={{ color: "var(--color-ink)" }}>
+              Services are not psychotherapy, psychiatric care, or crisis
+              counseling. Continue working with your therapist or prescriber as
+              directed. If you feel unsafe or in crisis, call 911 or call or
+              text 988 in the United States.
             </p>
           </div>
         </div>
