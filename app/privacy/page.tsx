@@ -1,10 +1,12 @@
 import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/sections/cta-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Privacy Policy",
   description: "How Pristine Functional Health collects, uses, and protects your personal information.",
-};
+  path: "/privacy",
+});
 
 const sections = [
   {
@@ -25,11 +27,15 @@ const sections = [
   },
   {
     title: "Third-Party Services",
-    body: `We use trusted third-party tools for appointment scheduling, payment processing, forms, secure document exchange, and video consultations. When a tool may handle PHI, we choose vendors intended for healthcare or privacy-sensitive workflows and share only the minimum information necessary for them to provide their services. These providers maintain their own privacy and security practices. We do not use social media pixels or ad-retargeting technologies.`,
+    body: `We use trusted third-party tools for appointment scheduling, payment processing, forms, secure document exchange, and video consultations. When a tool may handle PHI, we choose vendors intended for healthcare or privacy-sensitive workflows, use business-associate safeguards when applicable, and share only the minimum information necessary for them to provide their services. These providers maintain their own privacy and security practices. We do not use social media pixels or ad-retargeting technologies.`,
   },
   {
     title: "Data Security",
     body: `We use reasonable administrative, technical, and physical safeguards including SSL encryption, secure systems, role-based access, and careful data handling practices. No method of electronic transmission or storage is 100% secure. Standard email and text messaging may not be appropriate for sensitive health details, so we encourage you to use secure channels whenever available.`,
+  },
+  {
+    title: "Security Incidents",
+    body: `If we become aware of a privacy or security incident involving your information, we will review the facts promptly, take reasonable steps to contain the issue, and provide notices required by applicable law. We also encourage clients to contact us immediately if they believe information was sent to the wrong place or accessed by an unauthorized person.`,
   },
   {
     title: "Data Retention",

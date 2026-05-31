@@ -4,12 +4,15 @@ import { Reveal } from "@/components/reveal";
 import { conditions, conditionsByCategory } from "@/lib/conditions";
 import { CtaBand } from "@/components/sections/cta-band";
 import { TestingOverview } from "@/components/sections/testing-overview";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Conditions we treat",
   description:
-    "14 categories of root-cause functional medicine care — explored in depth, from thyroid and gut to autoimmunity and metabolic health.",
-};
+    "Root-cause functional medicine care — explored in depth, from thyroid and gut to mental health, bone health, autoimmunity, and metabolic health.",
+  path: "/conditions",
+  keywords: ["functional medicine conditions", "root cause health", "thyroid gut hormones metabolic health"],
+});
 
 export default function ConditionsIndex() {
   const categories = (
@@ -26,10 +29,10 @@ export default function ConditionsIndex() {
               Where most people <em className="italic-serif">finally</em> get answers.
             </h1>
             <p className="lede mt-8 max-w-[60ch]">
-              Each of the 14 categories below has a story underneath the
-              symptoms. Click any to read our full clinical approach: what's
-              actually going on, what conventional medicine misses, our
-              protocol, and what to expect.
+              Each common concern below has a story underneath the symptoms.
+              Click any to read our full clinical approach: what's actually
+              going on, what conventional medicine misses, our protocol, and
+              what to expect.
             </p>
           </Reveal>
         </div>
@@ -49,8 +52,7 @@ export default function ConditionsIndex() {
                   <div className="col-span-12 md:col-span-3">
                     <p className="eyebrow mb-2">— {cat}</p>
                     <p className="text-[0.92rem] text-[var(--color-ink-soft)] max-w-[28ch]">
-                      {conditionsByCategory[cat].length}{" "}
-                      {conditionsByCategory[cat].length === 1 ? "condition" : "conditions"}
+                      Common patterns we see often.
                     </p>
                   </div>
                   <ul

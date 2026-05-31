@@ -4,6 +4,8 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { services, getService, getServiceSlugs } from "@/lib/services";
 import { CtaBand } from "@/components/sections/cta-band";
+import { JsonLd } from "@/components/seo/json-ld";
+import { absoluteUrl, pageMetadata, siteName } from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -17,7 +19,12 @@ export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const s = getService(slug);
   if (!s) return {};
-  return { title: s.name, description: s.summary };
+  return pageMetadata({
+    title: s.name,
+    description: s.summary,
+    path: `/services/${s.slug}`,
+    keywords: [s.name, "functional health service", "root cause wellness"],
+  });
 }
 
 export default async function ServicePage({ params }: PageProps) {
@@ -28,9 +35,53 @@ export default async function ServicePage({ params }: PageProps) {
   const i = services.indexOf(service);
   const prev = i > 0 ? services[i - 1] : services[services.length - 1];
   const next = i < services.length - 1 ? services[i + 1] : services[0];
+  const pageUrl = absoluteUrl(`/services/${service.slug}`);
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": pageUrl,
+      name: service.name,
+      description: service.summary,
+      url: pageUrl,
+      provider: {
+        "@type": "Organization",
+        name: siteName,
+        url: absoluteUrl("/"),
+      },
+      areaServed: "United States",
+      serviceType: service.name,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: absoluteUrl("/"),
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: absoluteUrl("/services"),
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: service.name,
+          item: pageUrl,
+        },
+      ],
+    },
+  ];
 
   return (
     <>
+      <JsonLd data={jsonLd} />
+
       {/* HERO */}
       <section className="pt-20 md:pt-28 pb-16 md:pb-24">
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">

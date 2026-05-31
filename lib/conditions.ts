@@ -15,6 +15,7 @@ export type ConditionCategory =
   | "Gut"
   | "Mental Health"
   | "Immune"
+  | "Bone Health"
   | "Neurodevelopmental";
 
 export interface Condition {
@@ -602,6 +603,73 @@ export const conditions: Condition[] = [
       "Goal: not curing ADHD, but creating a body that supports the brain you have.",
     ],
   },
+  {
+    slug: "depression",
+    name: "Depression",
+    category: "Mental Health",
+    tagline: "Low mood can be mental, metabolic, inflammatory, hormonal — and often all of it.",
+    summary:
+      "Depression is real mental health care territory. We support the physiology underneath mood: blood sugar, thyroid, inflammation, sleep, nutrients, gut health, hormones, and stress biology.",
+    hero: {
+      eyebrow: "Mental Health",
+      title: "Depression support",
+      subtitle:
+        "When mood, motivation, sleep, appetite, and energy are all affected, the body deserves to be part of the conversation too.",
+    },
+    whatItIs: [
+      "Depression is not a character flaw or a lack of discipline. It is a serious mood condition that can affect emotion, motivation, sleep, appetite, cognition, libido, pain sensitivity, and the ability to function in daily life.",
+      "Functional health support does not replace therapy, psychiatry, medication, or urgent mental health care. It asks a complementary question: what body systems may be making depression harder to recover from?",
+      "Common physiological contributors include thyroid dysfunction, blood sugar instability, chronic inflammation, gut dysbiosis, nutrient depletion, low iron or B12, vitamin D insufficiency, hormonal shifts, poor sleep architecture, alcohol use, chronic stress, and medication side effects.",
+    ],
+    symptoms: [
+      "Persistent low mood, emptiness, or emotional numbness",
+      "Loss of interest or pleasure in things that used to matter",
+      "Low motivation, slowed thinking, or difficulty making decisions",
+      "Sleep changes: insomnia, early waking, or sleeping too much",
+      "Appetite or weight changes",
+      "Fatigue that feels heavier than ordinary tiredness",
+      "Irritability, withdrawal, guilt, or hopelessness",
+      "Body symptoms: headaches, digestive issues, pain, or low libido",
+    ],
+    conventional: {
+      intro:
+        "Therapy and medication can be essential and life-changing. The gap is that many people receive mood support without anyone asking why their body feels inflamed, depleted, exhausted, or metabolically unstable.",
+      misses: [
+        "Thyroid patterns, iron status, B12, folate, vitamin D, magnesium, and omega-3 status are often underexplored.",
+        "Blood sugar swings can look like anxiety, irritability, fatigue, and low motivation but rarely get connected to mood.",
+        "Gut inflammation and microbiome disruption are treated as unrelated to mental health symptoms.",
+        "Hormonal transitions — postpartum, perimenopause, menopause, and low testosterone — may be minimized.",
+        "Sleep apnea, circadian disruption, alcohol use, and medication side effects may not be investigated deeply enough.",
+      ],
+    },
+    functional: {
+      intro:
+        "We work alongside your therapist, psychiatrist, or prescribing provider. Our role is to help remove physiological drag so mental health treatment has a stronger foundation.",
+      approach: [
+        "Stabilize blood sugar with protein-forward meals, strategic carbohydrates, and meal timing",
+        "Support sleep rhythm, morning light exposure, evening wind-down, and consistent wake times",
+        "Replete common mood-linked nutrients when indicated: magnesium, B vitamins, omega-3s, iron, vitamin D, zinc",
+        "Address thyroid, hormone, and cortisol patterns that can mimic or worsen depression",
+        "Reduce inflammatory load through gut repair, food sensitivity work, and anti-inflammatory nutrition",
+        "Coordinate with mental health professionals and never advise medication changes outside their care",
+      ],
+    },
+    whatToExpect: [
+      "Most patients first notice more stable energy, fewer crashes, better sleep, or a little more capacity before mood fully shifts.",
+      "Nutrient, gut, thyroid, and hormone work typically takes 8–16 weeks to show meaningful patterns, with deeper rebuilding over 3–6 months.",
+      "If depression is severe, includes suicidal thoughts, or interferes with safety, urgent mental health care comes first. Call 911 or 988 in the United States if you feel unsafe.",
+    ],
+    faqs: [
+      {
+        q: "Do you replace therapy or medication?",
+        a: "No. We support the physiology that can influence mood, but depression care should include a licensed mental health professional when symptoms are persistent, severe, or unsafe.",
+      },
+      {
+        q: "Can nutrition really affect depression?",
+        a: "Nutrition cannot replace mental health care, but blood sugar, nutrients, inflammation, sleep, gut health, and hormones all influence mood biology. We address those levers carefully.",
+      },
+    ],
+  },
 
   // ────────────────────────────────────────── GUT
   {
@@ -838,6 +906,179 @@ export const conditions: Condition[] = [
     ],
   },
 
+  // ────────────────────────────────────────── BONE HEALTH
+  {
+    slug: "osteoporosis",
+    name: "Osteoporosis",
+    category: "Bone Health",
+    tagline: "Fragile bones are not just a calcium problem.",
+    summary:
+      "Osteoporosis means bone density and bone quality have dropped enough to raise fracture risk. We look at minerals, hormones, inflammation, digestion, strength, balance, and medication history.",
+    hero: {
+      eyebrow: "Bone Health",
+      title: "Osteoporosis",
+      subtitle:
+        "Bone loss is a whole-body signal. The goal is not only a better scan — it is fewer falls, stronger muscle, better mineral status, and a lower fracture risk.",
+    },
+    whatItIs: [
+      "Osteoporosis develops when bone mineral density, bone mass, or bone structure declines enough to weaken the skeleton. Many people do not know it is happening until a DEXA scan or a fracture reveals it.",
+      "The most common story is postmenopausal bone loss, but osteoporosis also affects men, people with thyroid or parathyroid issues, chronic digestive problems, inflammatory disease, eating disorders, low body weight, steroid exposure, smoking history, heavy alcohol use, or long-term medication patterns that affect bone.",
+      "Functional bone care is about the full terrain: calcium and vitamin D, yes — but also protein, magnesium, vitamin K2, sex hormones, cortisol, digestion, inflammation, muscle strength, balance, and fall prevention.",
+    ],
+    symptoms: [
+      "Low bone density or osteoporosis on DEXA scan",
+      "History of low-trauma fracture",
+      "Height loss or posture changes",
+      "Back pain or concern for vertebral compression",
+      "Small frame, low body weight, or unintended weight loss",
+      "Early menopause, irregular cycles, or low sex hormones",
+      "Long-term steroid, PPI, SSRI, seizure medication, or aromatase inhibitor use",
+      "Fear of falling, weakness, or declining balance",
+    ],
+    conventional: {
+      intro:
+        "Conventional osteoporosis care often starts with a DEXA score, calcium, vitamin D, and medication discussion. That matters, but it may not explain why bone loss accelerated in the first place.",
+      misses: [
+        "Protein intake, digestion, mineral absorption, and stomach acid are often overlooked.",
+        "Thyroid, parathyroid, cortisol, estrogen, progesterone, and testosterone patterns may not be connected to bone loss.",
+        "Inflammation, autoimmune disease, celiac risk, and gut health can quietly affect bone remodeling.",
+        "Strength, balance, fall risk, and safe progressive loading are under-prescribed.",
+        "Medication history is not always reviewed through a bone-health lens.",
+      ],
+    },
+    functional: {
+      intro:
+        "We build a bone-strength plan around the reason your bones are losing density, not just the score on the scan.",
+      approach: [
+        "Protein-forward nutrition with calcium-rich foods and mineral sufficiency",
+        "Vitamin D, magnesium, vitamin K2, boron, zinc, and omega-3 support when appropriate",
+        "Progressive resistance training, weight-bearing movement, posture work, and balance training",
+        "Digestive support to improve mineral and protein absorption",
+        "Hormone, thyroid, stress, and inflammation patterns addressed in coordination with your care team",
+        "Medication and supplement review so bone-supportive choices fit your full health picture",
+      ],
+    },
+    whatToExpect: [
+      "In the first month, the focus is usually nutrition, fall-risk reduction, strength basics, and making sure your plan is safe for your current fracture risk.",
+      "Bone remodeling is slow. Meaningful DEXA changes often take 12–24 months, but strength, balance, confidence, and nutrient status can improve much sooner.",
+      "Patients with osteoporosis should remain connected to their licensed medical provider for DEXA monitoring, fracture evaluation, and medication decisions.",
+    ],
+  },
+  {
+    slug: "osteopenia",
+    name: "Osteopenia",
+    category: "Bone Health",
+    tagline: "The warning light before osteoporosis deserves a real plan.",
+    summary:
+      "Osteopenia means bone density is below expected range but not yet osteoporosis. It is the ideal window to act on nutrition, hormones, digestion, strength, balance, and inflammation.",
+    hero: {
+      eyebrow: "Bone Health",
+      title: "Osteopenia",
+      subtitle:
+        "Osteopenia is not a reason to panic. It is a reason to stop guessing and build the habits and biology that protect bone over time.",
+    },
+    whatItIs: [
+      "Osteopenia is lower-than-normal bone density that has not crossed the threshold for osteoporosis. It can be stable for years, improve, or progress depending on the signals your bones receive.",
+      "The key question is trajectory: are you losing bone quickly, holding steady, or rebuilding? That depends on hormones, protein intake, mineral status, vitamin D, gut absorption, inflammation, medications, activity, and fall risk.",
+      "Functional support aims to catch the pattern early — before the first fracture, before fear takes over, and before bone loss becomes harder to reverse.",
+    ],
+    symptoms: [
+      "Osteopenia on DEXA scan",
+      "Family history of osteoporosis or hip fracture",
+      "Perimenopause, menopause, or cycle changes",
+      "Low protein intake, dieting history, or low appetite",
+      "Digestive issues that may affect nutrient absorption",
+      "Low vitamin D or low mineral intake",
+      "Sedentary routine or fear of strength training",
+      "History of falls, poor balance, or low muscle mass",
+    ],
+    conventional: {
+      intro:
+        "Osteopenia is often handled with 'take calcium and vitamin D, then recheck later.' That advice can be useful, but it is rarely enough for a person losing bone for multiple reasons.",
+      misses: [
+        "The rate of bone loss and full fracture-risk picture may not be explained clearly.",
+        "Muscle mass, balance, gait, and progressive loading are often treated as optional instead of central.",
+        "Protein and mineral absorption are rarely assessed.",
+        "Perimenopause and menopause hormone shifts may be discussed too late.",
+        "Inflammation, gut issues, thyroid patterns, and medication history may not be connected.",
+      ],
+    },
+    functional: {
+      intro:
+        "We use osteopenia as a prevention window: strengthen the terrain now so osteoporosis is not the assumed next chapter.",
+      approach: [
+        "Nutrition blueprint focused on protein, calcium-rich foods, minerals, and blood-sugar stability",
+        "Vitamin D and mineral strategy individualized to your intake, labs, and history",
+        "Progressive strength training and impact or weight-bearing work scaled to your current ability",
+        "Balance, posture, and fall-prevention practices built into weekly routines",
+        "Digestive and inflammatory drivers addressed when nutrient absorption looks compromised",
+        "Co-care with your medical provider for DEXA timing and medication conversations if risk changes",
+      ],
+    },
+    whatToExpect: [
+      "Most people feel stronger and more confident before a scan changes. That is still meaningful because falls and frailty drive fracture risk.",
+      "Osteopenia work is usually a 6–12 month foundation project, with DEXA trends monitored over a longer timeline.",
+      "The goal is to turn osteopenia into a clear, sustainable prevention plan — not a vague supplement routine.",
+    ],
+  },
+  {
+    slug: "arthritis",
+    name: "Arthritis",
+    category: "Bone Health",
+    tagline: "Joint pain is a signal. The type of signal matters.",
+    summary:
+      "Arthritis is an umbrella term for joint pain and inflammation, from osteoarthritis to autoimmune arthritis. We focus on inflammation, metabolic health, muscle support, gut triggers, and movement tolerance.",
+    hero: {
+      eyebrow: "Bone Health",
+      title: "Arthritis",
+      subtitle:
+        "Stiff, swollen, painful joints can come from wear-and-tear, immune activation, old injuries, metabolic inflammation, or all of the above. We help sort the pattern.",
+    },
+    whatItIs: [
+      "Arthritis is not one condition. Osteoarthritis, rheumatoid arthritis, psoriatic arthritis, gout, lupus-related joint pain, and post-injury joint degeneration all need different medical evaluation and different support strategies.",
+      "Functional care does not replace rheumatology, imaging, or medication when needed. It addresses the terrain that can make joints more inflamed: blood sugar, weight load, gut health, food reactions, nutrient status, sleep, stress, toxin exposure, and movement patterns.",
+      "The goal is less pain, better mobility, fewer flares, stronger surrounding muscle, and a clearer understanding of what your joints are reacting to.",
+    ],
+    symptoms: [
+      "Joint pain, aching, swelling, or warmth",
+      "Morning stiffness or stiffness after sitting",
+      "Reduced range of motion",
+      "Flares that follow stress, food, alcohol, illness, or poor sleep",
+      "Knee, hip, hand, foot, spine, or shoulder pain",
+      "History of joint injury or repetitive strain",
+      "Family history of autoimmune or inflammatory arthritis",
+      "Fatigue, brain fog, skin symptoms, or gut symptoms alongside joint pain",
+    ],
+    conventional: {
+      intro:
+        "Standard arthritis care often focuses on pain control, anti-inflammatory medications, injections, imaging, or rheumatology medication. Those tools can be important, but they do not always explain why inflammation keeps returning.",
+      misses: [
+        "Metabolic inflammation, insulin resistance, and weight distribution are often addressed too generally.",
+        "Gut health, food sensitivities, and intestinal permeability are rarely connected to joint flares.",
+        "Vitamin D, omega-3 status, magnesium, and protein sufficiency may not be optimized.",
+        "Sleep quality, stress chemistry, and recovery capacity are under-discussed.",
+        "Movement plans may be either too aggressive or too vague for painful joints.",
+      ],
+    },
+    functional: {
+      intro:
+        "We personalize joint support based on the arthritis pattern and stay in co-care with your medical team when autoimmune disease or structural damage is present.",
+      approach: [
+        "Anti-inflammatory nutrition that still supports protein, muscle, and metabolic health",
+        "Blood sugar and weight-load strategy without crash dieting",
+        "Gut repair and food-trigger investigation when flares suggest immune activation",
+        "Omega-3s, vitamin D, magnesium, curcumin, collagen peptides, or joint nutrients when appropriate",
+        "Joint-friendly strength training, mobility, gait, posture, and recovery work",
+        "Referral or co-care for imaging, rheumatology evaluation, or medication decisions when red flags appear",
+      ],
+    },
+    whatToExpect: [
+      "Pain and stiffness often respond first to nutrition, sleep, blood sugar stability, and smarter movement pacing.",
+      "Inflammatory or autoimmune arthritis usually requires longer terrain work and medical co-management; the goal is fewer flares and better function, not ignoring needed medication.",
+      "If joints are hot, red, rapidly swelling, severely painful, or paired with fever or sudden weakness, seek medical care promptly.",
+    ],
+  },
+
   // ────────────────────────────────────────── NEURODEVELOPMENTAL
   {
     slug: "autism",
@@ -910,6 +1151,7 @@ export const conditionsByCategory = (() => {
     Gut: [],
     "Mental Health": [],
     Immune: [],
+    "Bone Health": [],
     Neurodevelopmental: [],
   };
   for (const c of conditions) groups[c.category].push(c);

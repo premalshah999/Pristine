@@ -4,18 +4,15 @@ import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/sections/cta-band";
 import { posts, formatDate } from "@/lib/blog";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Blog — Functional Medicine Insights",
   description:
     "Evidence-informed articles on functional medicine, root-cause testing, thyroid health, gut function, hormones, and living well — from Megha Shah, PT, CFNC.",
-  openGraph: {
-    title: "Functional Medicine Blog · Pristine Functional Health",
-    description:
-      "Evidence-informed articles on functional medicine, root-cause testing, thyroid health, gut function, and more.",
-    type: "website",
-  },
-};
+  path: "/blog",
+  keywords: ["functional medicine blog", "root cause testing", "thyroid gut hormones"],
+});
 
 export default function BlogIndexPage() {
   const sorted = [...posts].sort(

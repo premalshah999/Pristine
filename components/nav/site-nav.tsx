@@ -67,11 +67,16 @@ export function SiteNav() {
             scrolled ? "h-[84px]" : "h-[96px]"
           )}
         >
-          <Logo size={82} showWordmark={false} priority className="shrink-0" />
+          <Logo
+            size={82}
+            priority
+            className="shrink-0"
+            wordmarkClassName="hidden md:inline text-[1.05rem] xl:text-[1.12rem]"
+          />
 
           {/* Desktop nav */}
           <nav className="hidden xl:flex items-center gap-0.5" aria-label="Primary">
-            <NavLink href="/">Pristine Functional Health</NavLink>
+            <NavLink href="/">Home</NavLink>
             <NavTrigger
               label="Conditions"
               active={open === "conditions"}
@@ -89,6 +94,7 @@ export function SiteNav() {
             />
             <NavLink href="/blog">Blog</NavLink>
             <NavLink href="/new-patient-special">New Patient Special</NavLink>
+            <NavLink href="/shop">Shop</NavLink>
             <NavLink href="/contact">Contact</NavLink>
           </nav>
 
@@ -111,7 +117,7 @@ export function SiteNav() {
 
             <Link
               href="/book-appointment"
-              className="hidden sm:inline-flex btn text-sm py-2.5 px-5 gap-2"
+              className="hidden items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium leading-none transition-colors sm:inline-flex gap-2"
               style={{
                 background: "var(--color-forest)",
                 color: "var(--color-linen)",
@@ -258,7 +264,7 @@ function ConditionsMega({ onClose }: { onClose: () => void }) {
           <PanelSidebar
             eyebrow="Find your story"
             title={<>Conditions we <em className="italic-serif">untangle.</em></>}
-            body="14 chronic conditions — each with deep, root-cause-framed clinical content."
+            body="Common chronic patterns — each with deep, root-cause-framed clinical content."
             linkHref="/conditions"
             linkLabel="Browse all conditions"
             onClose={onClose}
@@ -473,6 +479,7 @@ function MobileMenu({ scrolled, onClose }: { scrolled: boolean; onClose: () => v
           {[
             { href: "/about", label: "About" },
             { href: "/new-patient-special", label: "New Patient Special" },
+            { href: "/shop", label: "Shop" },
             { href: "/contact", label: "Contact" },
           ].map(({ href, label }) => (
             <Link

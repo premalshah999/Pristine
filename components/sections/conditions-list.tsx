@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import {
-  conditions,
   conditionsByCategory,
   type ConditionCategory,
 } from "@/lib/conditions";
@@ -14,6 +13,7 @@ const categoryOrder: ConditionCategory[] = [
   "Mental Health",
   "Gut",
   "Immune",
+  "Bone Health",
   "Neurodevelopmental",
 ];
 
@@ -28,10 +28,10 @@ export function ConditionsList() {
       className="py-20 md:py-28 border-t"
       style={{ borderColor: "var(--color-line)", background: "var(--color-canvas)" }}
     >
-      <div className="mx-auto w-full max-w-[var(--container-page)] px-6">
+      <div className="mx-auto w-full max-w-[1500px] px-6">
         <div className="grid grid-cols-12 gap-y-8 gap-x-0 md:gap-x-10 mb-12">
           <Reveal className="col-span-12 md:col-span-5">
-            <p className="eyebrow mb-5">{conditions.length} conditions, mapped at the root</p>
+            <p className="eyebrow mb-5">Common concerns, mapped at the root</p>
             <h2 className="display max-w-[15ch]">
               A compact index for <em className="italic-serif">messy</em> symptoms.
             </h2>
@@ -58,7 +58,7 @@ export function ConditionsList() {
             style={{ borderColor: "var(--color-line-strong)" }}
           >
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[1240px] border-separate border-spacing-0">
+              <table className="w-full min-w-[1360px] border-separate border-spacing-0">
                 <thead>
                   <tr>
                     <th
@@ -77,10 +77,6 @@ export function ConditionsList() {
                       >
                         <span className="block font-serif text-[1.1rem] leading-tight text-[var(--color-ink)]">
                           {category}
-                        </span>
-                        <span className="mt-1 block font-mono text-[0.66rem] uppercase text-[var(--color-ink-muted)]">
-                          {conditionsByCategory[category].length} condition
-                          {conditionsByCategory[category].length === 1 ? "" : "s"}
                         </span>
                       </th>
                     ))}

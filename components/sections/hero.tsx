@@ -71,7 +71,7 @@ export function Hero() {
             >
               <StatItem n="20+" l="years of clinical care" />
               <StatItem n="100+" l="lab markers mapped" />
-              <StatItem n="14" l="root-cause categories" />
+              <StatItem n="1:1" l="personalized support" />
             </dl>
           </Reveal>
         </div>

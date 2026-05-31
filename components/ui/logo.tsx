@@ -7,11 +7,13 @@ export function Logo({
   size = 36,
   priority = false,
   showWordmark = true,
+  wordmarkClassName,
 }: {
   className?: string;
   size?: number;
   priority?: boolean;
   showWordmark?: boolean;
+  wordmarkClassName?: string;
 }) {
   return (
     <Link
@@ -35,7 +37,7 @@ export function Logo({
         />
       </span>
       {showWordmark && (
-        <span className="font-serif text-[1.1rem] leading-tight">
+        <span className={cn("font-serif text-[1.1rem] leading-tight", wordmarkClassName)}>
           Pristine{" "}
           <em className="not-italic" style={{ color: "var(--color-ink-soft)" }}>
             Functional Health

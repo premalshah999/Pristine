@@ -139,7 +139,7 @@ export default function LiquidEther({
         this.renderer = new THREE.WebGLRenderer({
           antialias: true,
           alpha: true,
-          preserveDrawingBuffer: true
+          preserveDrawingBuffer: false
         });
         // Always transparent
         this.renderer.autoClear = false;

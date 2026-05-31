@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { ArrowRight, BookOpen, FlaskConical, ShoppingBag } from "lucide-react";
 import { Hero } from "@/components/sections/hero";
 import { ConditionsList } from "@/components/sections/conditions-list";
 import { ServicesList } from "@/components/sections/services-list";
@@ -5,6 +7,20 @@ import { Testimonials } from "@/components/sections/testimonials";
 import { AboutPreview } from "@/components/sections/about-preview";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Reveal } from "@/components/reveal";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Root-cause functional medicine, virtually",
+  description:
+    "Pristine Functional Health helps adults find root causes behind fatigue, thyroid issues, gut symptoms, hormones, weight resistance, and chronic symptoms.",
+  path: "/",
+  keywords: [
+    "functional medicine",
+    "root cause medicine",
+    "virtual functional medicine",
+    "functional nutrition",
+  ],
+});
 
 export default function HomePage() {
   return (
@@ -13,6 +29,7 @@ export default function HomePage() {
       <ProblemSection />
       <ConditionsList />
       <ServicesList />
+      <ShopPreview />
       <AboutPreview />
       <Testimonials />
       <CtaBand
@@ -21,6 +38,55 @@ export default function HomePage() {
         subtitle="Bring the symptoms, the labs, the long story, and the parts no one has connected yet. We'll start there."
       />
     </>
+  );
+}
+
+function ShopPreview() {
+  const items = [
+    { icon: ShoppingBag, label: "Premium quality supplements" },
+    { icon: FlaskConical, label: "Food sensitivity kit" },
+    { icon: BookOpen, label: "Premium courses" },
+  ];
+
+  return (
+    <section
+      className="py-20 md:py-28 border-t"
+      style={{ borderColor: "var(--color-line)", background: "var(--color-bone-2)" }}
+    >
+      <div className="mx-auto grid w-full max-w-[var(--container-page)] grid-cols-12 gap-y-8 px-6 md:gap-x-10">
+        <Reveal className="col-span-12 md:col-span-5">
+          <p className="eyebrow mb-5">Shop</p>
+          <h2 className="display max-w-[12ch]">Coming soon.</h2>
+        </Reveal>
+        <Reveal className="col-span-12 md:col-span-7" delay={100}>
+          <p className="lede max-w-[58ch]">
+            A curated shop is coming for patients who want trusted support
+            between appointments: premium quality supplements, food sensitivity
+            kits, and premium courses built around sustainable wellness habits.
+          </p>
+          <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {items.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <li
+                  key={item.label}
+                  className="border-t pt-4 text-[0.95rem]"
+                  style={{ borderColor: "var(--color-line)" }}
+                >
+                  <Icon size={16} className="mb-3 text-[var(--color-forest)]" />
+                  {item.label}
+                </li>
+              );
+            })}
+          </ul>
+          <Link href="/shop" className="btn btn-ghost mt-8">
+            Visit shop preview
+            <ArrowRight size={16} />
+          </Link>
+        </Reveal>
+      </div>
+    </section>
   );
 }
 

@@ -4,6 +4,15 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteNav } from "@/components/nav/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+import { JsonLd } from "@/components/seo/json-ld";
+import {
+  absoluteUrl,
+  organizationJsonLd,
+  siteDescription,
+  siteName,
+  siteUrl,
+  websiteJsonLd,
+} from "@/lib/seo";
 
 const serif = Instrument_Serif({
   subsets: ["latin"],
@@ -26,13 +35,13 @@ const mono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pristinefunctionalhealth.com"),
+  metadataBase: new URL(siteUrl),
+  applicationName: siteName,
   title: {
     default: "Pristine Functional Health — Root-cause functional medicine, virtually",
-    template: "%s · Pristine Functional Health",
+    template: `%s · ${siteName}`,
   },
-  description:
-    "Virtual functional medicine with Megha Shah, PT & Certified Functional Nutritional Counsellor. Find the real reason you don't feel like yourself — and rebuild from the root up.",
+  description: siteDescription,
   keywords: [
     "functional medicine",
     "root cause medicine",
@@ -45,14 +54,45 @@ export const metadata: Metadata = {
     "Megha Shah",
     "Pristine Functional Health",
   ],
+  authors: [{ name: "Megha Shah" }],
+  creator: "Pristine Functional Health",
+  publisher: "Pristine Functional Health",
+  alternates: {
+    canonical: absoluteUrl("/"),
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: "Pristine Functional Health — Root-cause functional medicine, virtually",
-    description:
-      "Find the real reason you don't feel like yourself — and rebuild from the root up.",
+    description: siteDescription,
     siteName: "Pristine Functional Health",
+    url: siteUrl,
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: absoluteUrl("/pristine-logo-mark.png"),
+        width: 512,
+        height: 512,
+        alt: "Pristine Functional Health logo",
+      },
+    ],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pristine Functional Health — Root-cause functional medicine, virtually",
+    description: siteDescription,
+    images: [absoluteUrl("/pristine-logo-mark.png")],
+  },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
@@ -63,14 +103,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en"
       className={`${serif.variable} ${sans.variable} ${mono.variable}`}
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
       <head>
-        <link
-          rel="icon"
-          type="image/svg+xml"
-          href="data:image/svg+xml,%3Csvg xmlns='http%3A//www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%236E8164'/%3E%3Cellipse cx='50' cy='50' rx='28' ry='34' fill='%23F6F1E9'/%3E%3Cg fill='%231B1825'%3E%3Ccircle cx='50' cy='50' r='2.2'/%3E%3Ccircle cx='42' cy='40' r='1.6'/%3E%3Ccircle cx='58' cy='40' r='1.6'/%3E%3Ccircle cx='42' cy='60' r='1.6'/%3E%3Ccircle cx='58' cy='60' r='1.6'/%3E%3Ccircle cx='38' cy='50' r='1.6'/%3E%3Ccircle cx='62' cy='50' r='1.6'/%3E%3C/g%3E%3C/svg%3E"
-        />
+        <JsonLd data={[organizationJsonLd, websiteJsonLd]} />
         <script
           dangerouslySetInnerHTML={{
             __html: `

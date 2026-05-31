@@ -1,10 +1,12 @@
 import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/sections/cta-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Terms & Conditions",
   description: "Terms and conditions for Pristine Functional Health services.",
-};
+  path: "/terms",
+});
 
 const sections = [
   {
@@ -20,16 +22,20 @@ const sections = [
     body: `If you are experiencing a medical emergency, call 911 or go to your nearest emergency room immediately. Pristine Functional Health cannot respond to emergencies and is not designed for crisis or acute care situations. Our services are intended for chronic, complex, and lifestyle-related health concerns pursued in a non-emergency context.`,
   },
   {
-    title: "Therapist Safety & Mental Health Support",
+    title: "Disclaimer",
     body: `Pristine Functional Health does not provide psychotherapy, psychiatric diagnosis, crisis counseling, or emergency mental health services. Functional nutrition and wellness coaching may support the body systems that influence mood, energy, and stress resilience, but they do not replace care from a licensed therapist, psychiatrist, psychologist, or other mental health professional. If you are in emotional crisis, feel unsafe, or may harm yourself or someone else, call 911 or call or text 988 for the Suicide & Crisis Lifeline in the United States. Do not start, stop, or change psychiatric medication or therapy plans without guidance from the licensed professional managing that care.`,
   },
   {
     title: "FDA Disclaimer",
-    body: `Statements on this website, in educational materials, and during wellness sessions have not been evaluated by the Food and Drug Administration. Pristine Functional Health does not claim that any nutrition strategy, supplement, protocol, lab review, lifestyle recommendation, or educational resource will diagnose, treat, cure, or prevent any disease. Products discussed are not represented as FDA-approved treatments unless explicitly stated by the product manufacturer or applicable regulator. Information is provided for educational and wellness purposes only. Always consult a qualified licensed healthcare provider before beginning a supplement, changing medications, delaying medical care, or making significant diet, exercise, or lifestyle changes, especially if you are pregnant, nursing, taking medication, or managing a diagnosed medical condition.`,
+    body: `Statements on this website, in educational materials, and during wellness sessions have not been evaluated by the Food and Drug Administration. Pristine Functional Health does not claim that any nutrition strategy, supplement, protocol, lab review, lifestyle recommendation, food sensitivity kit, or educational resource will diagnose, treat, cure, or prevent any disease. Products discussed are not represented as FDA-approved treatments unless explicitly stated by the product manufacturer or applicable regulator. Information is provided for educational and wellness purposes only. Always consult a qualified licensed healthcare provider before beginning a supplement, changing medications, delaying medical care, or making significant diet, exercise, or lifestyle changes, especially if you are pregnant, nursing, taking medication, or managing a diagnosed medical condition.`,
   },
   {
     title: "HIPAA Compliance & Confidentiality",
-    body: `Pristine Functional Health protects health information using HIPAA-conscious administrative, technical, and physical safeguards. Protected Health Information (PHI) may include intake forms, consultation notes, lab documents you provide, wellness history, payment records tied to care, and communications about your services. PHI is accessed only by Megha Shah and necessary administrative support involved in scheduling, payment, documentation, or care coordination. We use secure platforms when collecting or storing health information, share the minimum necessary information for operational needs, and do not disclose PHI to third parties without written authorization except as permitted or required by law. Standard email and text messaging can carry security limits, so sensitive health details should be shared through secure channels whenever available.`,
+    body: `Pristine Functional Health protects health information using HIPAA-conscious administrative, technical, and physical safeguards. Protected Health Information (PHI) may include intake forms, consultation notes, lab documents you provide, wellness history, payment records tied to care, and communications about your services. PHI is accessed only by Megha Shah and necessary administrative support involved in scheduling, payment, documentation, or care coordination. We use secure platforms when collecting or storing health information, share the minimum necessary information for operational needs, and do not disclose PHI to third parties without written authorization except as permitted or required by law. Where a vendor handles PHI, we use privacy-sensitive systems and business-associate safeguards when applicable. Standard email and text messaging can carry security limits, so sensitive health details should be shared through secure channels whenever available.`,
+  },
+  {
+    title: "Testimonials and Results",
+    body: `Testimonials, case examples, and representative patient stories on this website are provided for educational context. Some stories may be composites or edited for privacy, clarity, and length. They are not guarantees of results, and they should not be interpreted as medical claims. Your outcome depends on your health history, consistency, medical care, labs, lifestyle, and other individual factors.`,
   },
   {
     title: "Appointment Scheduling and Cancellation",

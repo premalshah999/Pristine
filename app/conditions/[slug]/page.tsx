@@ -4,6 +4,8 @@ import { ArrowRight, ArrowUpRight, Check, X } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { conditions, getCondition, getConditionSlugs } from "@/lib/conditions";
 import { CtaBand } from "@/components/sections/cta-band";
+import { JsonLd } from "@/components/seo/json-ld";
+import { absoluteUrl, pageMetadata, siteName } from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -17,10 +19,13 @@ export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const c = getCondition(slug);
   if (!c) return {};
-  return {
+
+  return pageMetadata({
     title: c.name,
     description: c.summary,
-  };
+    path: `/conditions/${c.slug}`,
+    keywords: [c.name, c.category, "functional medicine", "root cause wellness"],
+  });
 }
 
 export default async function ConditionPage({ params }: PageProps) {
@@ -31,9 +36,71 @@ export default async function ConditionPage({ params }: PageProps) {
   const i = conditions.indexOf(condition);
   const prev = i > 0 ? conditions[i - 1] : conditions[conditions.length - 1];
   const next = i < conditions.length - 1 ? conditions[i + 1] : conditions[0];
+  const pageUrl = absoluteUrl(`/conditions/${condition.slug}`);
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": pageUrl,
+      url: pageUrl,
+      name: `${condition.name} | ${siteName}`,
+      description: condition.summary,
+      isPartOf: {
+        "@type": "WebSite",
+        name: siteName,
+        url: absoluteUrl("/"),
+      },
+      about: {
+        "@type": "Thing",
+        name: condition.name,
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: absoluteUrl("/"),
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Conditions",
+          item: absoluteUrl("/conditions"),
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: condition.name,
+          item: pageUrl,
+        },
+      ],
+    },
+    ...(condition.faqs?.length
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: condition.faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          },
+        ]
+      : []),
+  ];
 
   return (
     <>
+      <JsonLd data={jsonLd} />
+
       {/* HERO */}
       <section className="pt-20 md:pt-28 pb-16 md:pb-24">
         <div className="mx-auto w-full max-w-[var(--container-page)] px-6">

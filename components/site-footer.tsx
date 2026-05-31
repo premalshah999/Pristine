@@ -71,6 +71,7 @@ export function SiteFooter() {
             <FooterLink href="/about">About Megha Shah</FooterLink>
             <FooterLink href="/blog">Blog</FooterLink>
             <FooterLink href="/new-patient-special">New patient special</FooterLink>
+            <FooterLink href="/shop">Shop coming soon</FooterLink>
             <FooterLink href="/book-appointment">Book an appointment</FooterLink>
             <FooterLink href="/contact">Contact</FooterLink>
             <li className="pt-3 mt-2 border-t" style={{ borderColor: "var(--color-line)" }}>
@@ -94,7 +95,7 @@ export function SiteFooter() {
           </FooterCol>
         </div>
 
-        {/* HIPAA + FDA + therapist safety disclaimers */}
+        {/* HIPAA + FDA + general disclaimers */}
         <div
           className="mt-14 grid grid-cols-1 gap-x-8 gap-y-7 border-t pt-8 md:grid-cols-3"
           style={{ borderColor: "var(--color-line)" }}
@@ -138,7 +139,7 @@ export function SiteFooter() {
               className="font-mono text-[0.7rem] tracking-[0.18em] font-semibold uppercase mb-2"
               style={{ color: "var(--color-forest)" }}
             >
-              Therapist Safety
+              Disclaimer
             </p>
             <p className="text-[0.88rem] leading-relaxed font-medium" style={{ color: "var(--color-ink)" }}>
               Services are not psychotherapy, psychiatric care, or crisis

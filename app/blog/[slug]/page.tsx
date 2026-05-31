@@ -4,8 +4,10 @@ import type { Metadata } from "next";
 import { ArrowLeft, Clock, Calendar, User } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/sections/cta-band";
+import { JsonLd } from "@/components/seo/json-ld";
 import { posts, getPost, getPostSlugs, formatDate } from "@/lib/blog";
 import type { BlogSection } from "@/lib/blog";
+import { absoluteUrl, siteName } from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -20,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = getPost(slug);
   if (!post) return {};
 
-  const url = `https://pristinefunctionalhealth.com/blog/${post.slug}`;
+  const url = absoluteUrl(`/blog/${post.slug}`);
 
   return {
     title: post.title,
@@ -35,6 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       authors: [post.author.name],
       tags: post.tags,
       url,
+      siteName,
     },
     twitter: {
       card: "summary_large_image",
@@ -68,12 +71,16 @@ export default async function BlogPostPage({ params }: PageProps) {
     },
     publisher: {
       "@type": "Organization",
-      name: "Pristine Functional Health",
-      url: "https://pristinefunctionalhealth.com",
+      name: siteName,
+      url: absoluteUrl("/"),
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/pristine-logo-mark.png"),
+      },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://pristinefunctionalhealth.com/blog/${post.slug}`,
+      "@id": absoluteUrl(`/blog/${post.slug}`),
     },
     keywords: post.tags.join(", "),
     articleSection: post.category,
@@ -82,10 +89,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
 
       {/* HERO */}
       <section className="pt-20 md:pt-28 pb-12 md:pb-20">

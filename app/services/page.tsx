@@ -3,12 +3,15 @@ import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { services } from "@/lib/services";
 import { CtaBand } from "@/components/sections/cta-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Services",
   description:
     "Five pillars of root-cause functional medicine: advanced testing, root-cause analysis, nutrition counseling, personal coaching, and lifestyle optimization.",
-};
+  path: "/services",
+  keywords: ["functional medicine services", "root cause analysis", "functional nutrition counseling"],
+});
 
 export default function ServicesIndex() {
   return (

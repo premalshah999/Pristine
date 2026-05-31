@@ -3,12 +3,15 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/sections/cta-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "About Megha Shah",
   description:
     "Megha Shah, PT, CFNC — a clinician who treats the whole person, not the symptom. Twenty years of clinical experience, rooted in functional medicine.",
-};
+  path: "/about",
+  keywords: ["Megha Shah", "functional nutrition counselor", "functional health clinician"],
+});
 
 export default function AboutPage() {
   return (

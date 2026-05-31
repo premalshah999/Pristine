@@ -1,12 +1,15 @@
 import { Phone, Mail, Clock } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/sections/cta-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Contact",
   description:
     "Reach Pristine Functional Health by phone, email, or book a free 20-minute call.",
-};
+  path: "/contact",
+  keywords: ["contact Pristine Functional Health", "functional health consultation", "Megha Shah contact"],
+});
 
 export default function ContactPage() {
   return (
